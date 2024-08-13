@@ -9,11 +9,11 @@
 			class="video-placeholder absolute inset-0 bg-cover bg-center bg-no-repeat"
 		>
 		</div>
-		<div id="video-container" class="w-full h-full">
+		<div id="video-container" class="w-full h-full" style="display: none;">
 			<iframe
 				id="youtube-iframe"
 				class="w-full h-full"
-				src="https://www.youtube.com/embed/zWF2L-3SxIo?autoplay=1&controls=0&mute=1&loop=1&playlist=zWF2L-3SxIo&modestbranding=1&showinfo=0&rel=0&enablejsapi=1&vq=hd1080"
+				src="https://www.youtube.com/embed/zWF2L-3SxIo?autoplay=1&controls=0&mute=1&loop=1&playlist=zWF2L-3SxIo&modestbranding=1&showinfo=0&rel=0&enablejsapi=1"
 				allow="autoplay; fullscreen"
 				allowfullscreen
 				title="Video de fondo"></iframe>
@@ -42,8 +42,7 @@
 					class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 font-play leading-tight"
 				>
 					ESTRENA LA YAMAHA DE TUS SUEÑOS
-				</h1>
-				Gran inauguración 12 de Agosto de 2024
+				</h1> Gran inauguración 12 de Agosto de 2024
 			</div>
 		</div>
 		<img
@@ -69,8 +68,6 @@
 			width: 100%;
 			height: 100%;
 			z-index: 2;
-			opacity: 0;
-			transition: opacity 0.05s ease-in-out;
 		}
 		#video-background {
 			position: relative;
@@ -85,7 +82,7 @@
 			background-repeat: no-repeat;
 			z-index: 1;
 			opacity: 1;
-			transition: opacity 0.05s ease-in-out;
+			transition: opacity 1s ease-in-out;
 			transform: scale(1.05);
 			animation: zoomEffect 10s infinite alternate;
 		}
@@ -145,26 +142,17 @@
 			};
 
 			function onPlayerReady(event) {
-				event.target.mute();
-				event.target.setPlaybackQuality("hd1080");
-				event.target.playVideo();
+				event.target.mute(); // Aseguramos que el video esté muteado
+				event.target.playVideo(); // Iniciamos la reproducción
 			}
 
 			function onPlayerStateChange(event) {
 				if (event.data == YT.PlayerState.PLAYING) {
-					const quality = event.target.getPlaybackQuality();
-					if (quality === "hd1080" || quality === "hd720") {
-						setTimeout(() => {
-							placeholder.style.opacity = "0";
-							videoContainer.style.opacity = "1";
-							setTimeout(() => {
-								placeholder.style.display = "none";
-								videoContainer.style.display = "block";
-							}, 1000);
-						}, 100);
-					} else {
-						event.target.setPlaybackQuality("hd1080");
-					}
+					// Esperamos un poco para asegurarnos de que el video se está reproduciendo
+					setTimeout(() => {
+						placeholder.style.display = "none";
+						videoContainer.style.display = "block";
+					}, 100);
 				}
 			}
 
