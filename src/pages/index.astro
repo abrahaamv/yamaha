@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+import BenefitSection from "../components/BenefitSection.astro";
+import NewArrivals from "../components/NewArrivals.astro";
+import Blogs from "../components/Blogs.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<Layout title="Yamaha Petápolis">
+	<Hero />
+	<main>
+		<Banner />
+		<BenefitSection />
+		<NewArrivals />
+		<Newsletter />
+		<Blogs />
+	</main>
+</Layout>
+
+<script>
+	window.addEventListener("scroll", function () {
+		const header = document.querySelector("header.header");
+		if (header) {
+			if (window.scrollY > 50) {
+				header.classList.add("scrolled");
+			} else {
+				header.classList.remove("scrolled");
+			}
+		}
+	});
+</script>
