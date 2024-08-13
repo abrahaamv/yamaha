@@ -2,87 +2,173 @@
 // Hero.astro
 ---
 
-<section class="relative w-full h-screen overflow-hidden">
+<section id="hero" class="relative w-full h-screen overflow-hidden">
 	<div id="video-background" class="absolute inset-0 w-full h-full">
-		<iframe
-			class="w-full h-full"
-			src="https://www.youtube.com/embed/zWF2L-3SxIo?autoplay=1&controls=0&mute=1&loop=1&playlist=zWF2L-3SxIo&modestbranding=1&showinfo=0&rel=0"
-			frameborder="0"
-			allow="autoplay; fullscreen"
-			allowfullscreen
-			loading="lazy"
-			title="Video de fondo"></iframe>
-	</div>
-
-	<div
-		class="absolute inset-0 flex flex-col justify-between items-center p-4 text-white z-10 bg-black bg-opacity-30"
-	>
 		<div
-			class="flex-grow flex flex-col justify-center items-center text-center max-w-4xl mx-auto"
+			id="video-placeholder"
+			class="video-placeholder absolute inset-0 bg-cover bg-center bg-no-repeat"
+		>
+		</div>
+		<div id="video-container" class="w-full h-full">
+			<iframe
+				id="youtube-iframe"
+				class="w-full h-full"
+				src="https://www.youtube.com/embed/zWF2L-3SxIo?autoplay=1&controls=0&mute=1&loop=1&playlist=zWF2L-3SxIo&modestbranding=1&showinfo=0&rel=0&enablejsapi=1&vq=hd1080"
+				allow="autoplay; fullscreen"
+				allowfullscreen
+				title="Video de fondo"></iframe>
+		</div>
+		<div
+			class="absolute inset-0 flex flex-col justify-between items-center p-4 text-white z-10 bg-black bg-opacity-30"
 		>
 			<div
-				class="mb-4 flex items-center bg-black bg-opacity-50 p-2 rounded"
+				class="flex-grow flex flex-col justify-center items-center text-center max-w-4xl mx-auto"
 			>
-				<img
-					src="/images/map.svg"
-					alt="Icono de mapa"
-					class="w-6 h-6 mr-2"
-					width="24"
-					height="24"
-				/>
-				<span class="text-lg md:text-xl font-bold"
-					>Avenida Petapa Zona 12</span
+				<div
+					class="mb-4 flex items-center bg-black bg-opacity-50 p-2 rounded"
 				>
+					<img
+						src="/images/map.svg"
+						alt="Icono de mapa"
+						class="w-6 h-6 mr-2"
+						width="24"
+						height="24"
+					/>
+					<span class="text-lg md:text-xl font-bold"
+						>Avenida Petapa Zona 12</span
+					>
+				</div>
+				<h1
+					class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 font-play leading-tight"
+				>
+					ESTRENA LA YAMAHA DE TUS SUEÑOS
+				</h1>
+				Gran inauguración 12 de Agosto de 2024
 			</div>
-
-			<h1
-				class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 font-play leading-tight"
-			>
-				ESTRENA LA YAMAHA DE TUS SUEÑOS
-			</h1> Gran inauguración 12 de Agosto de 2024
 		</div>
+		<img
+			src="/images/arrow_down.png"
+			alt=""
+			class="w-8 h-8 md:w-12 md:h-12"
+			width="48"
+			height="48"
+		/>
 	</div>
 
-	<img
-		src="/images/arrow_down.png"
-		alt=""
-		class="w-8 h-8 md:w-12 md:h-12"
-		width="48"
-		height="48"
-	/>
+	<style>
+		#hero {
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+		}
+		#video-container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+			opacity: 0;
+			transition: opacity 0.05s ease-in-out;
+		}
+		#video-background {
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+			height: 100vh;
+		}
+		.video-placeholder {
+			background-image: url("/assets/images/hero-background.webp");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: 1;
+			opacity: 1;
+			transition: opacity 0.05s ease-in-out;
+			transform: scale(1.05);
+			animation: zoomEffect 10s infinite alternate;
+		}
+		iframe {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 100vw;
+			height: 100vh;
+			transform: translate(-50%, -50%);
+			pointer-events: none;
+			z-index: 2;
+		}
+		@media (min-aspect-ratio: 16/9) {
+			iframe {
+				height: 56.25vw;
+			}
+		}
+		@media (max-aspect-ratio: 16/9) {
+			iframe {
+				width: 177.78vh;
+			}
+		}
+		@keyframes zoomEffect {
+			0% {
+				transform: scale(1.05);
+			}
+			100% {
+				transform: scale(1.15);
+			}
+		}
+
+		.font-play {
+			font-family: "Play", sans-serif;
+		}
+	</style>
+	<script>
+		document.addEventListener("DOMContentLoaded", (event) => {
+			const videoContainer = document.getElementById("video-container");
+			const placeholder = document.getElementById("video-placeholder");
+
+			function loadYouTubeAPI() {
+				const tag = document.createElement("script");
+				tag.src = "https://www.youtube.com/iframe_api";
+				const firstScriptTag =
+					document.getElementsByTagName("script")[0];
+				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+			}
+
+			window.onYouTubeIframeAPIReady = function () {
+				new YT.Player("youtube-iframe", {
+					events: {
+						onReady: onPlayerReady,
+						onStateChange: onPlayerStateChange,
+					},
+				});
+			};
+
+			function onPlayerReady(event) {
+				event.target.mute();
+				event.target.setPlaybackQuality("hd1080");
+				event.target.playVideo();
+			}
+
+			function onPlayerStateChange(event) {
+				if (event.data == YT.PlayerState.PLAYING) {
+					const quality = event.target.getPlaybackQuality();
+					if (quality === "hd1080" || quality === "hd720") {
+						setTimeout(() => {
+							placeholder.style.opacity = "0";
+							videoContainer.style.opacity = "1";
+							setTimeout(() => {
+								placeholder.style.display = "none";
+								videoContainer.style.display = "block";
+							}, 1000);
+						}, 100);
+					} else {
+						event.target.setPlaybackQuality("hd1080");
+					}
+				}
+			}
+
+			loadYouTubeAPI();
+		});
+	</script>
 </section>
-
-<style>
-	#video-background {
-		position: relative;
-		overflow: hidden;
-		width: 100%;
-		height: 100vh;
-	}
-
-	iframe {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 100vw;
-		height: 100vh;
-		transform: translate(-50%, -50%);
-		pointer-events: none;
-	}
-
-	@media (min-aspect-ratio: 16/9) {
-		iframe {
-			height: 56.25vw;
-		}
-	}
-
-	@media (max-aspect-ratio: 16/9) {
-		iframe {
-			width: 177.78vh;
-		}
-	}
-
-	.font-play {
-		font-family: "Play", sans-serif;
-	}
-</style>
