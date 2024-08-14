@@ -84,7 +84,7 @@
 			opacity: 1;
 			transition: opacity 1s ease-in-out;
 			transform: scale(1.05);
-			animation: zoomEffect 10s infinite alternate;
+			animation: zoomEffect 8s infinite alternate;
 		}
 		iframe {
 			position: absolute;
@@ -95,6 +95,7 @@
 			transform: translate(-50%, -50%);
 			pointer-events: none;
 			z-index: 2;
+			loading: lazy;
 		}
 		@media (min-aspect-ratio: 16/9) {
 			iframe {
@@ -114,7 +115,6 @@
 				transform: scale(1.15);
 			}
 		}
-
 		.font-play {
 			font-family: "Play", sans-serif;
 		}
