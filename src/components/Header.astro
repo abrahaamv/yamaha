@@ -45,3 +45,14 @@
         @apply bg-opacity-90 backdrop-blur-sm;
     }
 </style>
+<script>
+    window.addEventListener("scroll", function () {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 50) {
+            // Ajusta el valor según cuando quieras que el cambio ocurra
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    });
+</script>
