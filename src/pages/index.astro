@@ -5,18 +5,22 @@ import BenefitSection from "../components/BenefitSection.astro";
 import NewArrivals from "../components/NewArrivals.astro";
 import Blogs from "../components/Blogs.astro";
 import Newsletter from "../components/Newsletter.astro";
+import Header from "@components/Header.astro";
 import Hero from "../components/Hero.astro";
+import Footer from "@components/Footer.astro";
 ---
 
 <Layout title="Yamaha Petápolis">
+	<Header />
 	<Hero />
-	<main>
+	<main class="w-[80%] mx-auto">
 		<Banner />
 		<BenefitSection />
 		<NewArrivals />
 		<Newsletter />
 		<Blogs />
 	</main>
+	<Footer />
 </Layout>
 
 <script>
