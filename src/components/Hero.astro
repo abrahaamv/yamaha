@@ -145,10 +145,7 @@ import { Image } from "astro:assets";
 						totalSize = 0;
 
 						// Comenzar la reproducción tan pronto como haya suficientes datos
-						if (
-							!video.playing &&
-							sourceBuffer.buffered.length > 0
-						) {
+						if (!video.paused && sourceBuffer.buffered.length > 0) {
 							video.play().catch(console.error);
 						}
 					}
