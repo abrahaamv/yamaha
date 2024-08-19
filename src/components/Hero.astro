@@ -30,7 +30,8 @@ import { Image } from "astro:assets";
 				loop
 				muted
 				playsinline
-				preload="auto"></video>
+				preload="metadata"
+				poster="/assets/images/hero-background.webp"></video>
 		</div>
 		<div id="overlay" class="absolute inset-0 bg-black bg-opacity-50 z-30">
 		</div>
@@ -97,15 +98,18 @@ import { Image } from "astro:assets";
 
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
-		const videoContainer = document.getElementById("video-container");
-		const imagePlaceholder = document.getElementById("image-placeholder");
+		const videoContainer = document.getElementById(
+			"video-container",
+		) as HTMLDivElement | null;
+		const imagePlaceholder = document.getElementById(
+			"image-placeholder",
+		) as HTMLDivElement | null;
 		const video = document.getElementById(
 			"background-video",
-		) as HTMLVideoElement;
+		) as HTMLVideoElement | null;
 
 		if (video) {
 			video.src = "/assets/hero-background.mp4";
-			video.preload = "auto";
 
 			video.play().catch((error) => {
 				console.log("Error al reproducir automáticamente:", error);
@@ -124,12 +128,12 @@ import { Image } from "astro:assets";
 									playVideoOnTouch,
 								);
 							})
-							.catch((e) =>
+							.catch((e) => {
 								console.log(
 									"Error al reproducir después de interacción:",
 									e,
-								),
-							);
+								);
+							});
 					},
 					{ once: true },
 				);
