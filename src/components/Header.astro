@@ -1,5 +1,6 @@
 ---
 // Header.astro
+import { Image } from "astro:assets";
 ---
 
 <header class="header trans_300">
@@ -7,10 +8,13 @@
         <div class="container mx-auto">
             <div class="flex justify-between items-center">
                 <div class="logo_container">
-                    <img
-                        src="./images/yamaha-logo.svg"
-                        alt="Yamaha Logo"
-                        class="logo"
+                    <Image
+                        src="/assets/images/yamaha-logo.svg"
+                        alt="Yamaha logo"
+                        width={200}
+                        height={200}
+                        loading="eager"
+                        format="webp"
                     />
                 </div>
                 <nav class="navbar">
