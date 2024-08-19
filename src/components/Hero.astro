@@ -99,7 +99,9 @@ import { Image } from "astro:assets";
 	document.addEventListener("DOMContentLoaded", function () {
 		const videoContainer = document.getElementById("video-container");
 		const imagePlaceholder = document.getElementById("image-placeholder");
-		const video = document.getElementById("background-video");
+		const video = document.getElementById(
+			"background-video",
+		) as HTMLVideoElement;
 
 		if (video) {
 			video.src = "/assets/hero-background.mp4";
@@ -135,8 +137,8 @@ import { Image } from "astro:assets";
 
 			video.addEventListener("canplay", () => {
 				setTimeout(() => {
-					videoContainer.style.opacity = "1";
-					imagePlaceholder.style.opacity = "0";
+					if (videoContainer) videoContainer.style.opacity = "1";
+					if (imagePlaceholder) imagePlaceholder.style.opacity = "0";
 				}, 1500);
 			});
 
