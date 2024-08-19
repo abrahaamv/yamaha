@@ -104,35 +104,59 @@ import { Image } from "astro:assets";
 		) as HTMLVideoElement;
 
 		if (video) {
-			video.src = "/assets/hero-background.mp4";
-			video.load();
+			const videoUrl = "/assets/hero-background.mp4";
 
-			video.play().catch((error) => {
-				console.log("Error al reproducir automáticamente:", error);
+			// Crear un MediaSource
+			const mediaSource = new MediaSource();
+			video.src = URL.createObjectURL(mediaSource);
 
-				document.body.addEventListener(
-					"touchstart",
-					function playVideoOnTouch() {
-						video
-							.play()
-							.then(() => {
-								console.log(
-									"Video reproducido después de interacción",
-								);
-								document.body.removeEventListener(
-									"touchstart",
-									playVideoOnTouch,
-								);
-							})
-							.catch((e) =>
-								console.log(
-									"Error al reproducir después de interacción:",
-									e,
-								),
-							);
-					},
-					{ once: true },
+			mediaSource.addEventListener("sourceopen", async () => {
+				const sourceBuffer = mediaSource.addSourceBuffer(
+					'video/mp4; codecs="avc1.42E01E, mp4a.40.2"',
 				);
+
+				try {
+					const response = await fetch(videoUrl);
+					const reader = response.body.getReader();
+
+					let chunks = [];
+					let totalSize = 0;
+
+					while (true) {
+						const { done, value } = await reader.read();
+
+						if (done) break;
+
+						chunks.push(value);
+						totalSize += value.length;
+
+						// Agregar chunk al sourceBuffer
+						const chunk = new Uint8Array(totalSize);
+						let offset = 0;
+						for (let i = 0; i < chunks.length; i++) {
+							chunk.set(chunks[i], offset);
+							offset += chunks[i].length;
+						}
+
+						sourceBuffer.appendBuffer(chunk);
+
+						// Limpiar chunks después de agregarlos al buffer
+						chunks = [];
+						totalSize = 0;
+
+						// Comenzar la reproducción tan pronto como haya suficientes datos
+						if (
+							!video.playing &&
+							sourceBuffer.buffered.length > 0
+						) {
+							video.play().catch(console.error);
+						}
+					}
+
+					mediaSource.endOfStream();
+				} catch (error) {
+					console.error("Error al cargar el video:", error);
+				}
 			});
 
 			video.addEventListener("canplay", () => {
@@ -142,9 +166,18 @@ import { Image } from "astro:assets";
 				}, 1500);
 			});
 
-			video.addEventListener("error", (error) => {
-				console.error("Error al cargar el video:", error);
-			});
+			// Manejar la reproducción en dispositivos móviles
+			document.body.addEventListener(
+				"touchstart",
+				function playVideoOnTouch() {
+					video.play().catch(console.error);
+					document.body.removeEventListener(
+						"touchstart",
+						playVideoOnTouch,
+					);
+				},
+				{ once: true },
+			);
 		}
 	});
 </script>
