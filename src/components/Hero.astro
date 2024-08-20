@@ -36,39 +36,39 @@ import { Image } from "astro:assets";
 		<div id="overlay" class="absolute inset-0 bg-black bg-opacity-30 z-30">
 		</div>
 		<div
-			class="absolute inset-0 flex flex-col justify-between items-center p-4 text-white z-40"
+			class="absolute inset-0 flex flex-col justify-between items-center p-4 sm:p-6 lg:p-8 text-white z-40"
 		>
 			<div
-				class="flex-grow flex flex-col justify-center items-center text-center w-full md:w-[30%] max-w-4xl mx-auto"
+				class="flex-grow flex flex-col justify-center items-center text-center w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[40%] max-w-4xl mx-auto"
 			>
 				<div
-					class="mb-4 flex items-center bg-black bg-opacity-50 p-2 rounded"
+					class="mb-4 sm:mb-6 flex items-center bg-black bg-opacity-50 p-2 sm:p-3 rounded"
 				>
 					<Image
 						src="/assets/images/map.svg"
 						alt="Icono de mapa"
-						class="w-6 h-6 mr-2"
+						class="w-5 h-5 sm:w-6 sm:h-6 mr-2"
 						width={24}
 						height={24}
 						loading="lazy"
 					/>
-					<span class="text-lg md:text-xl font-semibold"
+					<span class="text-base sm:text-lg md:text-xl font-semibold"
 						>Avenida Petapa Zona 12</span
 					>
 				</div>
 				<h1
-					class="text-4xl md:text-5xl font-bold mb-6 font-play leading-tight"
+					class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
 				>
 					ESTRENA LA YAMAHA DE TUS SUEÑOS
 				</h1>
-				<p class="text-xl md:text-2xl">
+				<p class="text-lg sm:text-xl md:text-2xl lg:text-3xl">
 					Gran inauguración 12 de Agosto de 2024
 				</p>
 			</div>
 			<Image
 				src="/assets/images/arrow-down.svg"
 				alt="Flecha hacia abajo"
-				class="w-8 h-8 md:w-12 md:h-12"
+				class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 animate-bounce"
 				width={48}
 				height={48}
 				loading="lazy"
@@ -91,8 +91,20 @@ import { Image } from "astro:assets";
 		animation: zoom 8s infinite alternate;
 	}
 
-	.font-play {
-		font-family: "Play", sans-serif;
+	@keyframes bounce {
+		0%,
+		100% {
+			transform: translateY(-25%);
+			animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+		}
+		50% {
+			transform: translateY(0);
+			animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		}
+	}
+
+	.animate-bounce {
+		animation: bounce 2s infinite;
 	}
 </style>
 
@@ -114,28 +126,34 @@ import { Image } from "astro:assets";
 			video.play().catch((error) => {
 				console.log("Error al reproducir automáticamente:", error);
 
-				document.body.addEventListener(
-					"touchstart",
-					function playVideoOnTouch() {
-						video
-							.play()
-							.then(() => {
-								console.log(
-									"Video reproducido después de interacción",
-								);
+				const playVideoOnInteraction = () => {
+					video
+						.play()
+						.then(() => {
+							console.log(
+								"Video reproducido después de interacción",
+							);
+							["touchstart", "click"].forEach((event) =>
 								document.body.removeEventListener(
-									"touchstart",
-									playVideoOnTouch,
-								);
-							})
-							.catch((e) => {
-								console.log(
-									"Error al reproducir después de interacción:",
-									e,
-								);
-							});
-					},
-					{ once: true },
+									event,
+									playVideoOnInteraction,
+								),
+							);
+						})
+						.catch((e) => {
+							console.log(
+								"Error al reproducir después de interacción:",
+								e,
+							);
+						});
+				};
+
+				["touchstart", "click"].forEach((event) =>
+					document.body.addEventListener(
+						event,
+						playVideoOnInteraction,
+						{ once: true },
+					),
 				);
 			});
 
