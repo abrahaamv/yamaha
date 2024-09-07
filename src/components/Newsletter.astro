@@ -1,45 +1,44 @@
-<section>
-    <div class="2xl:mx-auto 2xl:container mx-4 py-16">
-        <div class="w-full relative flex items-center justify-center">
-            <img
-                src="/assets/images/newsletter-bg.png"
-                alt="dining"
-                class="w-full h-full absolute z-0 hidden xl:block object-contain"
-            />
-            <img
-                src="/assets/images/newsletter-bg.png"
-                alt="dining"
-                class="w-full h-full absolute z-0 hidden sm:block xl:hidden"
-            />
-            <img
-                src="/assets/images/newsletter-bg.png"
-                alt="dining"
-                class="w-full h-full absolute z-0 sm:hidden"
-            />
+<section class="relative bg-white">
+    <div class="relative w-full min-h-[415px] overflow-hidden">
+        <img
+            src="/assets/images/newsletter-bg.png"
+            alt="Newsletter Background"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+        />
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <!-- Overlay to position the content properly -->
+        <div class="absolute inset-0 flex items-center justify-center">
             <div
-                class="bg-gray-800 bg-opacity-80 md:my-16 lg:py-16 py-10 w-full md:mx-24 md:px-12 px-4 flex flex-col items-center justify-center relative z-40"
+                class="relative container mx-auto px-4 md:px-8 text-center text-white"
             >
-                <h1
-                    class="text-4xl font-semibold leading-9 text-white text-center"
-                >
-                    Don’t miss out!
-                </h1>
-                <p class="text-base leading-normal text-center text-white mt-6">
-                    Subscribe to your newsletter to stay in the loop. Our
-                    newsletter is sent once in <br />
-                    a week on every friday so subscribe to get latest news and updates.
-                </p>
                 <div
-                    class="sm:border border-white flex-col sm:flex-row flex items-center lg:w-5/12 w-full mt-12 space-y-4 sm:space-y-0"
+                    class="max-w-3xl p-8 md:p-12 rounded-lg shadow-lg relative z-10"
                 >
-                    <input
-                        class="border border-white sm:border-transparent text-base w-full font-medium leading-none text-white p-4 focus:outline-none bg-transparent placeholder-white"
-                        placeholder="Email Address"
-                    />
-                    <button
-                        class="focus:outline-none focus:ring-offset-2 focus:ring border border-white sm:border-transparent w-full sm:w-auto bg-white py-4 px-6 hover:bg-opacity-75"
-                        >Subscribe</button
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4">
+                        Stay Updated with Us
+                    </h1>
+                    <p class="text-base md:text-lg mb-6">
+                        Subscribe to our newsletter to get the latest news,
+                        updates, and special offers. We send out updates weekly
+                        to keep you informed and engaged.
+                    </p>
+                    <div
+                        class="flex flex-col sm:flex-row items-center justify-center gap-4"
                     >
+                        <input
+                            type="email"
+                            class="border border-gray-600 rounded-md text-gray-900 placeholder-gray-400 px-4 py-2 w-full sm:w-auto flex-grow focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Your Email Address"
+                            aria-label="Your Email Address"
+                        />
+                        <button
+                            class="bg-red-600 text-white rounded-md py-2 px-6 hover:bg-red-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            aria-label="Subscribe"
+                        >
+                            Subscribe
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
