@@ -1,22 +1,45 @@
-<div class="product-item" data-category="wave">
+---
+// ProductCard.astro
+export interface ProductCardProps {
+    product: {
+        category: string;
+        image: string;
+        name: string;
+        description: string;
+        discount?: number;
+        isNew?: boolean;
+    };
+}
+
+const { product } = Astro.props as ProductCardProps;
+---
+
+<div class="product-item" data-category={product.category}>
     <div
         class="relative overflow-hidden group border border-gray-200 sm:border-l sm:border-t sm:border-r-0 sm:border-b-0 transition-all duration-300 h-[400px] flex flex-col hover:shadow-lg"
     >
         <img
-            src="/assets/images/product_2.jpg"
-            alt="FX SVHO"
+            src={product.image}
+            alt={product.name}
             class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
         />
-        <div
-            class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 text-xs rounded"
-        >
-            new
-        </div>
+        {
+            product.discount && (
+                <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs rounded">
+                    -Q{product.discount}
+                </div>
+            )
+        }
+        {
+            product.isNew && (
+                <div class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 text-xs rounded">
+                    NUEVO
+                </div>
+            )
+        }
         <div class="p-4 flex-grow">
-            <h3 class="text-lg font-semibold mb-2">FX SVHO</h3>
-            <p class="text-sm text-gray-600">
-                Rendimiento superior en el agua.
-            </p>
+            <h3 class="text-lg font-semibold mb-2">{product.name}</h3>
+            <p class="text-sm text-gray-600">{product.description}</p>
         </div>
         <div
             class="absolute bottom-0 left-0 right-0 bg-red-600 text-white py-2 px-4 text-center translate-y-full transition-transform duration-300 group-hover:translate-y-0 sm:block"

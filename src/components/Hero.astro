@@ -7,11 +7,11 @@ import { Image } from "astro:assets";
 	<div id="video-background" class="absolute inset-0 w-full h-full">
 		<div
 			id="image-placeholder"
-			class="absolute inset-0 bg-cover bg-center bg-no-repeat z-10 transition-opacity duration-300 animate-zoom"
+			class="absolute inset-0 bg-cover bg-center bg-no-repeat z-10 transition-opacity duration-300"
 		>
 			<Image
 				src="/assets/images/hero-background.webp"
-				alt="Hero background"
+				alt="Fondo de Yamaha Motos"
 				class="w-full h-full object-cover"
 				width={1920}
 				height={1080}
@@ -21,7 +21,7 @@ import { Image } from "astro:assets";
 		</div>
 		<div
 			id="video-container"
-			class="w-full h-full opacity-0 transition-opacity duration-300 z-20"
+			class="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-300 z-20"
 		>
 			<video
 				id="background-video"
@@ -31,69 +31,74 @@ import { Image } from "astro:assets";
 				muted
 				playsinline
 				preload="metadata"
-				poster="/assets/images/hero-background.webp"></video>
+				poster="/assets/images/hero-background.webp"
+				aria-hidden="true"></video>
 		</div>
-		<div id="overlay" class="absolute inset-0 bg-black bg-opacity-30 z-30">
-		</div>
-		<div
-			class="absolute inset-0 flex flex-col justify-between items-center p-4 sm:p-6 lg:p-8 text-white z-40"
-		>
-			<div
-				class="flex-grow flex flex-col justify-center items-center text-center w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[40%] max-w-4xl mx-auto"
-			>
-				<div
-					class="mb-4 sm:mb-6 flex items-center bg-black bg-opacity-50 p-2 sm:p-3 rounded"
-				>
-					<Image
-						src="/assets/images/map.svg"
-						alt="Icono de mapa"
-						class="w-5 h-5 sm:w-6 sm:h-6 mr-2"
-						width={24}
-						height={24}
-						loading="lazy"
-					/>
-					<span class="text-base sm:text-lg md:text-xl font-semibold"
-						>Avenida Petapa Zona 12</span
-					>
-				</div>
-				<h1
-					class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
-				>
-					ESTRENA LA YAMAHA DE TUS SUEÑOS
-				</h1>
+		<div class="absolute inset-0 bg-black bg-opacity-40 z-30"></div>
+	</div>
 
-				<div class="btn-main">
-					<a href="#">
-						<h1>Gran inauguración 12 de Agosto de 2024</h1>
+	<div class="relative z-40 h-full flex flex-col justify-between">
+		<div class="flex-grow flex items-center">
+			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="max-w-3xl">
+					<div class="flex items-center mb-4">
+						<Image
+							src="/assets/images/map.svg"
+							alt=""
+							class="w-5 h-5 mr-2"
+							width={20}
+							height={20}
+							loading="lazy"
+						/>
+						<span class="text-white text-sm sm:text-base">
+							Avenida Petapa Zona 12, Ciudad de Guatemala
+						</span>
+					</div>
+					<h1
+						class="text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight"
+					>
+						ESTRENA LA YAMAHA DE TUS SUEÑOS
+					</h1>
+					<!-- Base -->
+
+					<a
+						class="group relative inline-block focus:outline-none focus:ring"
+						href="#"
+					>
+						<span
+							class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-red-700 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"
+						></span>
+
+						<span
+							class="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-75"
+						>
+							Descubre nuestro catálogo
+						</span>
 					</a>
 				</div>
+			</div>
+		</div>
+
+		<div class="text-center pb-8">
+			<a
+				href="#content"
+				aria-label="Explorar más contenido"
+				class="inline-block"
+			>
 				<Image
 					src="/assets/images/arrow-down.svg"
-					alt="Flecha hacia abajo"
-					class="mt-36 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 animate-bounce"
-					width={24}
-					height={24}
+					alt=""
+					class="w-8 h-8 animate-bounce"
+					width={32}
+					height={32}
 					loading="lazy"
 				/>
-			</div>
+			</a>
 		</div>
 	</div>
 </section>
 
 <style>
-	@keyframes zoom {
-		0% {
-			transform: scale(1.05);
-		}
-		100% {
-			transform: scale(1.15);
-		}
-	}
-
-	.animate-zoom {
-		animation: zoom 8s infinite alternate;
-	}
-
 	@keyframes bounce {
 		0%,
 		100% {
@@ -108,72 +113,6 @@ import { Image } from "astro:assets";
 
 	.animate-bounce {
 		animation: bounce 2s infinite;
-	}
-
-	.btn-main {
-		display: -webkit-inline-box;
-		display: -moz-inline-box;
-		display: -ms-inline-flexbox;
-		display: -webkit-inline-flex;
-		display: inline-flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: auto;
-		height: 40px;
-		background: #fe4c50;
-		border-radius: 3px;
-		-webkit-transition: all 0.3s ease;
-		-moz-transition: all 0.3s ease;
-		-ms-transition: all 0.3s ease;
-		-o-transition: all 0.3s ease;
-		transition: all 0.3s ease;
-	}
-
-	.btn-main:hover {
-		background: #fe7c7f !important;
-	}
-
-	.btn-main a {
-		display: block;
-		color: #ffffff;
-		text-transform: uppercase;
-		font-size: 14px;
-		font-weight: 500;
-		text-align: center;
-		line-height: 40px;
-		width: 100%;
-	}
-
-	.btn-main {
-		display: inline-block;
-	}
-
-	.btn-main a {
-		display: block;
-		color: #fff;
-		text-decoration: none;
-		background: rgba(255, 0, 0, 0.7);
-		padding: 0.2rem 1rem;
-		transition: 0.6s;
-		border: none;
-	}
-
-	@media (max-width: 697px) {
-		.btn-main a {
-			display: block;
-			color: #fff;
-			height: 64px;
-			text-decoration: none;
-			background: rgba(255, 0, 0, 0.7);
-			padding: 0.2rem 1rem;
-			transition: 0.6s;
-			border: none;
-		}
-	}
-
-	.btn-main a:hover {
-		background: rgba(255, 0, 0, 1);
 	}
 </style>
 
@@ -192,49 +131,26 @@ import { Image } from "astro:assets";
 		if (video) {
 			video.src = "/assets/hero-background.mp4";
 
-			video.play().catch((error) => {
-				console.log("Error al reproducir automáticamente:", error);
+			const playVideo = () => {
+				video
+					.play()
+					.then(() => {
+						if (videoContainer) videoContainer.style.opacity = "1";
+						if (imagePlaceholder)
+							imagePlaceholder.style.opacity = "0";
+					})
+					.catch((error) => {
+						console.error("Error al reproducir el video:", error);
+					});
+			};
 
-				const playVideoOnInteraction = () => {
-					video
-						.play()
-						.then(() => {
-							console.log(
-								"Video reproducido después de interacción",
-							);
-							["touchstart", "click"].forEach((event) =>
-								document.body.removeEventListener(
-									event,
-									playVideoOnInteraction,
-								),
-							);
-						})
-						.catch((e) => {
-							console.log(
-								"Error al reproducir después de interacción:",
-								e,
-							);
-						});
-				};
+			video.addEventListener("canplay", playVideo, { once: true });
 
-				["touchstart", "click"].forEach((event) =>
-					document.body.addEventListener(
-						event,
-						playVideoOnInteraction,
-						{ once: true },
-					),
-				);
-			});
-
-			video.addEventListener("canplay", () => {
-				setTimeout(() => {
-					if (videoContainer) videoContainer.style.opacity = "1";
-					if (imagePlaceholder) imagePlaceholder.style.opacity = "0";
-				}, 1500);
-			});
-
-			video.addEventListener("error", (error) => {
-				console.error("Error al cargar el video:", error);
+			// Fallback para dispositivos móviles
+			["touchstart", "click"].forEach((event) => {
+				document.body.addEventListener(event, playVideo, {
+					once: true,
+				});
 			});
 		}
 	});
