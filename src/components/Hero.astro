@@ -37,45 +37,45 @@ import { Image } from "astro:assets";
 		<div class="absolute inset-0 bg-black bg-opacity-40 z-30"></div>
 	</div>
 
-	<div class="relative z-40 h-full flex flex-col justify-between">
-		<div class="flex-grow flex items-center">
-			<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="max-w-3xl">
-					<div class="flex items-center mb-4">
-						<Image
-							src="/assets/images/map.svg"
-							alt=""
-							class="w-5 h-5 mr-2"
-							width={20}
-							height={20}
-							loading="lazy"
-						/>
-						<span class="text-white text-sm sm:text-base">
-							Avenida Petapa Zona 12, Ciudad de Guatemala
-						</span>
-					</div>
-					<h1
-						class="text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight"
-					>
-						ESTRENA LA YAMAHA DE TUS SUEÑOS
-					</h1>
-					<!-- Base -->
-
-					<a
-						class="group relative inline-block focus:outline-none focus:ring"
-						href="#"
-					>
-						<span
-							class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-red-700 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"
-						></span>
-
-						<span
-							class="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-75"
-						>
-							Descubre nuestro catálogo
-						</span>
-					</a>
+	<div
+		class="relative z-40 h-full flex flex-col justify-between items-center text-center"
+	>
+		<div
+			class="flex-grow flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8"
+		>
+			<div class="max-w-3xl">
+				<div class="flex items-center mb-4">
+					<Image
+						src="/assets/images/map.svg"
+						alt=""
+						class="w-5 h-5 mr-2"
+						width={20}
+						height={20}
+						loading="lazy"
+					/>
+					<span class="text-white text-sm sm:text-base">
+						Avenida Petapa Zona 12, Ciudad de Guatemala
+					</span>
 				</div>
+				<h1
+					class="text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight"
+				>
+					ESTRENA LA YAMAHA DE TUS SUEÑOS
+				</h1>
+				<a
+					class="group relative inline-block focus:outline-none focus:ring mt-6"
+					href="#"
+				>
+					<span
+						class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-red-700 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"
+					></span>
+
+					<span
+						class="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-75"
+					>
+						Descubre nuestro catálogo
+					</span>
+				</a>
 			</div>
 		</div>
 
