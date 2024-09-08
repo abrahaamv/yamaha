@@ -1,0 +1,43 @@
+<div class="product-item" data-category="wave">
+    <div
+        class="relative overflow-hidden group border border-gray-200 sm:border-l sm:border-t sm:border-r-0 sm:border-b-0 transition-all duration-300 h-[400px] flex flex-col hover:shadow-lg"
+    >
+        <img
+            src="/assets/images/product_2.jpg"
+            alt="FX SVHO"
+            class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div
+            class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 text-xs rounded"
+        >
+            new
+        </div>
+        <div class="p-4 flex-grow">
+            <h3 class="text-lg font-semibold mb-2">FX SVHO</h3>
+            <p class="text-sm text-gray-600">
+                Rendimiento superior en el agua.
+            </p>
+        </div>
+        <div
+            class="absolute bottom-0 left-0 right-0 bg-red-600 text-white py-2 px-4 text-center translate-y-full transition-transform duration-300 group-hover:translate-y-0 sm:block"
+        >
+            <a href="#" class="block w-full">Cotizar</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    @media (max-width: 640px) {
+        .product-item .group > div:last-child {
+            transform: translateY(0);
+        }
+    }
+    @media (min-width: 640px) {
+        .product-item:first-child .group {
+            @apply border-l-0;
+        }
+        .product-item:nth-child(5n + 1) .group {
+            @apply border-l-0;
+        }
+    }
+</style>
