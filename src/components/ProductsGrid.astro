@@ -1,6 +1,80 @@
 ---
 // Astro component
 import ProductCard from "./ProductCard.astro";
+
+// Define interfaces for our data structures
+interface Product {
+    category: string;
+    image: string;
+    name: string;
+    description: string;
+    discount?: number;
+    isNew?: boolean;
+}
+
+// You might want to fetch this data from an API or database
+const products: Product[] = [
+    {
+        category: "motocicletas",
+        image: "/assets/images/product_1.jpg",
+        name: "MT-03",
+        description: "Potencia y agilidad en un diseño compacto.",
+        discount: 1000,
+    },
+    {
+        category: "motocicletas",
+        image: "/assets/images/product_1.jpg",
+        name: "MT-03",
+        description: "Potencia y agilidad en un diseño compacto.",
+        discount: 1000,
+    },
+    {
+        category: "motocicletas",
+        image: "/assets/images/product_1.jpg",
+        name: "MT-03",
+        description: "Potencia y agilidad en un diseño compacto.",
+        discount: 1000,
+    },
+    {
+        category: "wave",
+        image: "/assets/images/product_2.jpg",
+        name: "WAVE",
+        description: "Potencia y agilidad en un diseño compacto.",
+        discount: 1000,
+    },
+    {
+        category: "wave",
+        image: "/assets/images/product_2.jpg",
+        name: "WAVE",
+        description: "Potencia y agilidad en un diseño compacto.",
+        discount: 1000,
+    },
+    {
+        category: "wave",
+        image: "/assets/images/product_2.jpg",
+        name: "WAVE",
+        description: "Potencia y agilidad en un diseño compacto.",
+        discount: 1000,
+    },
+    {
+        category: "wave",
+        image: "/assets/images/product_2.jpg",
+        name: "WAVE",
+        description: "Potencia y agilidad en un diseño compacto.",
+        discount: 1000,
+    },
+    // Add more products here...
+];
+
+const categories = [
+    { id: "all", name: "TODO" },
+    { id: "motocicletas", name: "MOTOCICLETAS" },
+    { id: "wave", name: "WAVE RUNNERS" },
+    { id: "atv", name: "ATVS Y SIDE BY SIDE" },
+    { id: "motores", name: "MOTORES" },
+    { id: "bombas", name: "BOMBAS DE AGUA" },
+    { id: "generadores", name: "GENERADORES" },
+];
 ---
 
 <div class="new_arrivals bg-white py-8 sm:py-16" id="new_arrivals">
@@ -10,7 +84,6 @@ import ProductCard from "./ProductCard.astro";
                 class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"
             >
             </div>
-
             <span class="relative z-10 bg-white px-6">
                 <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
                     EXPLORA NUESTRA TIENDA
@@ -22,225 +95,63 @@ import ProductCard from "./ProductCard.astro";
                 class="flex my-1 flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-2 sm:gap-4 pb-2 sm:pb-0"
                 id="category-buttons"
             >
-                <li>
-                    <button
-                        class="category-button active whitespace-nowrap"
-                        data-filter="all">TODO</button
-                    >
-                </li>
-                <li>
-                    <button
-                        class="category-button whitespace-nowrap"
-                        data-filter="motocicletas">MOTOCICLETAS</button
-                    >
-                </li>
-                <li>
-                    <button
-                        class="category-button whitespace-nowrap"
-                        data-filter="wave">WAVE RUNNERS</button
-                    >
-                </li>
-                <li>
-                    <button
-                        class="category-button whitespace-nowrap"
-                        data-filter="atv">ATVS Y SIDE BY SIDE</button
-                    >
-                </li>
-                <li>
-                    <button
-                        class="category-button whitespace-nowrap"
-                        data-filter="motores">MOTORES</button
-                    >
-                </li>
-                <li>
-                    <button
-                        class="category-button whitespace-nowrap"
-                        data-filter="bombas">BOMBAS DE AGUA</button
-                    >
-                </li>
-                <li>
-                    <button
-                        class="category-button whitespace-nowrap"
-                        data-filter="generadores">GENERADORES</button
-                    >
-                </li>
+                {
+                    categories.map((category) => (
+                        <li>
+                            <button
+                                class:list={[
+                                    "category-button",
+                                    { active: category.id === "all" },
+                                ]}
+                                data-filter={category.id}
+                            >
+                                {category.name}
+                            </button>
+                        </li>
+                    ))
+                }
             </ul>
         </div>
         <div
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-0"
             id="product-grid"
         >
-            <!-- Motocicletas -->
-            <ProductCard />
-            <div class="product-item" data-category="motocicletas">
-                <div
-                    class="relative overflow-hidden group border border-gray-200 sm:border-l sm:border-t sm:border-r-0 sm:border-b-0 transition-all duration-300 h-[400px] flex flex-col hover:shadow-lg"
-                >
-                    <img
-                        src="/assets/images/product_1.jpg"
-                        alt="MT-03"
-                        class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div
-                        class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs rounded"
-                    >
-                        -Q1000
+            {
+                products.map((product) => (
+                    <div class="product-item" data-category={product.category}>
+                        <div class="relative overflow-hidden group border border-gray-200 sm:border-l sm:border-t sm:border-r-0 sm:border-b-0 transition-all duration-300 h-[400px] flex flex-col hover:shadow-lg">
+                            <img
+                                src={product.image}
+                                alt={product.name}
+                                class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                            />
+                            {product.discount && (
+                                <div class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs rounded">
+                                    -Q{product.discount}
+                                </div>
+                            )}
+                            {product.isNew && (
+                                <div class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 text-xs rounded">
+                                    new
+                                </div>
+                            )}
+                            <div class="p-4 flex-grow">
+                                <h3 class="text-lg font-semibold mb-2">
+                                    {product.name}
+                                </h3>
+                                <p class="text-sm text-gray-600">
+                                    {product.description}
+                                </p>
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-red-600 text-white py-2 px-4 text-center translate-y-full transition-transform duration-300 group-hover:translate-y-0 sm:block">
+                                <a href="#" class="block w-full">
+                                    Cotizar
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="p-4 flex-grow">
-                        <h3 class="text-lg font-semibold mb-2">MT-03</h3>
-                        <p class="text-sm text-gray-600">
-                            Potencia y agilidad en un diseño compacto.
-                        </p>
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-red-600 text-white py-2 px-4 text-center translate-y-full transition-transform duration-300 group-hover:translate-y-0 sm:block"
-                    >
-                        <a href="#" class="block w-full">Cotizar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="product-item" data-category="motocicletas">
-                <div
-                    class="relative overflow-hidden group border border-gray-200 sm:border-l sm:border-t sm:border-r-0 sm:border-b-0 transition-all duration-300 h-[400px] flex flex-col hover:shadow-lg"
-                >
-                    <img
-                        src="/assets/images/product_1.jpg"
-                        alt="MT-03"
-                        class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div
-                        class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs rounded"
-                    >
-                        -Q1000
-                    </div>
-                    <div class="p-4 flex-grow">
-                        <h3 class="text-lg font-semibold mb-2">MT-03</h3>
-                        <p class="text-sm text-gray-600">
-                            Potencia y agilidad en un diseño compacto.
-                        </p>
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-red-600 text-white py-2 px-4 text-center translate-y-full transition-transform duration-300 group-hover:translate-y-0 sm:block"
-                    >
-                        <a href="#" class="block w-full">Cotizar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="product-item" data-category="motocicletas">
-                <div
-                    class="relative overflow-hidden group border border-gray-200 sm:border-l sm:border-t sm:border-r-0 sm:border-b-0 transition-all duration-300 h-[400px] flex flex-col hover:shadow-lg"
-                >
-                    <img
-                        src="/assets/images/product_1.jpg"
-                        alt="MT-03"
-                        class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div
-                        class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs rounded"
-                    >
-                        -Q1000
-                    </div>
-                    <div class="p-4 flex-grow">
-                        <h3 class="text-lg font-semibold mb-2">MT-03</h3>
-                        <p class="text-sm text-gray-600">
-                            Potencia y agilidad en un diseño compacto.
-                        </p>
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-red-600 text-white py-2 px-4 text-center translate-y-full transition-transform duration-300 group-hover:translate-y-0 sm:block"
-                    >
-                        <a href="#" class="block w-full">Cotizar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="product-item" data-category="motocicletas">
-                <div
-                    class="relative overflow-hidden group border border-gray-200 sm:border-l sm:border-t sm:border-r-0 sm:border-b-0 transition-all duration-300 h-[400px] flex flex-col hover:shadow-lg"
-                >
-                    <img
-                        src="/assets/images/product_1.jpg"
-                        alt="MT-03"
-                        class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div
-                        class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs rounded"
-                    >
-                        -Q1000
-                    </div>
-                    <div class="p-4 flex-grow">
-                        <h3 class="text-lg font-semibold mb-2">MT-03</h3>
-                        <p class="text-sm text-gray-600">
-                            Potencia y agilidad en un diseño compacto.
-                        </p>
-                    </div>
-
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-red-600 text-white py-2 px-4 text-center translate-y-full transition-transform duration-300 group-hover:translate-y-0 sm:block"
-                    >
-                        <a href="#" class="block w-full font-bold">COTIZAR</a>
-                    </div>
-                </div>
-            </div>
-            <div class="product-item" data-category="motocicletas">
-                <div
-                    class="relative overflow-hidden group border border-gray-200 sm:border-l sm:border-t sm:border-r-0 sm:border-b-0 transition-all duration-300 h-[400px] flex flex-col hover:shadow-lg"
-                >
-                    <img
-                        src="/assets/images/product_1.jpg"
-                        alt="MT-03"
-                        class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div
-                        class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-xs rounded"
-                    >
-                        -Q1000
-                    </div>
-                    <div class="p-4 flex-grow">
-                        <h3 class="text-lg font-semibold mb-2">MT-03</h3>
-                        <p class="text-sm text-gray-600">
-                            Potencia y agilidad en un diseño compacto.
-                        </p>
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-red-600 text-white py-2 px-4 text-center translate-y-full transition-transform duration-300 group-hover:translate-y-0 sm:block"
-                    >
-                        <a href="#" class="block w-full">Cotizar</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Motocicletas (repetir 4 veces más) -->
-            <!-- ... -->
-
-            <!-- Wave Runners -->
-            <div class="product-item" data-category="wave">
-                <div
-                    class="relative overflow-hidden group border border-gray-200 sm:border-l sm:border-t sm:border-r-0 sm:border-b-0 transition-all duration-300 h-[400px] flex flex-col hover:shadow-lg"
-                >
-                    <img
-                        src="/assets/images/product_2.jpg"
-                        alt="FX SVHO"
-                        class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                    <div
-                        class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 text-xs rounded"
-                    >
-                        new
-                    </div>
-                    <div class="p-4 flex-grow">
-                        <h3 class="text-lg font-semibold mb-2">FX SVHO</h3>
-                        <p class="text-sm text-gray-600">
-                            Rendimiento superior en el agua.
-                        </p>
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 right-0 bg-red-600 text-white py-2 px-4 text-center translate-y-full transition-transform duration-300 group-hover:translate-y-0 sm:block"
-                    >
-                        <a href="#" class="block w-full">Cotizar</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Add more product items here following the same structure -->
+                ))
+            }
         </div>
     </div>
 </div>
@@ -268,28 +179,28 @@ import ProductCard from "./ProductCard.astro";
 </style>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const filterButtons = document.querySelectorAll(".category-button");
-        const productItems = document.querySelectorAll(".product-item");
+    const filterButtons =
+        document.querySelectorAll<HTMLButtonElement>(".category-button");
+    const productItems =
+        document.querySelectorAll<HTMLDivElement>(".product-item");
 
-        filterButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                const filterValue = button.getAttribute("data-filter");
+    filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const filterValue = button.getAttribute("data-filter");
 
-                productItems.forEach((item) => {
-                    if (
-                        filterValue === "all" ||
-                        item.getAttribute("data-category") === filterValue
-                    ) {
-                        item.style.display = "block";
-                    } else {
-                        item.style.display = "none";
-                    }
-                });
-
-                filterButtons.forEach((btn) => btn.classList.remove("active"));
-                button.classList.add("active");
+            productItems.forEach((item) => {
+                if (
+                    filterValue === "all" ||
+                    item.getAttribute("data-category") === filterValue
+                ) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
             });
+
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
         });
     });
 </script>
