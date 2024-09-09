@@ -14,7 +14,10 @@ export interface ProductCardProps {
 const { product } = Astro.props as ProductCardProps;
 ---
 
-<div class="product-item" data-category={product.category}>
+<div
+    class="animate-pulse-fade-in product-item"
+    data-category={product.category}
+>
     <div
         class="relative overflow-hidden group border border-gray-200 sm:border-l sm:border-t sm:border-r-0 sm:border-b-0 transition-all duration-300 h-[400px] flex flex-col hover:shadow-lg"
     >
