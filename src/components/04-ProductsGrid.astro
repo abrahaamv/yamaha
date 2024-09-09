@@ -4,7 +4,8 @@ import ProductCard from "./05-ProductCard.astro";
 
 // Define interfaces for our data structures
 interface Product {
-    category: string;
+    category: string | null;
+    subcategory: string;
     image: string;
     name: string;
     description: string;
@@ -16,6 +17,7 @@ interface Product {
 const products: Product[] = [
     {
         category: "motocicletas",
+        subcategory: "deportiva",
         image: "/assets/images/product_1.jpg",
         name: "MT-03",
         description: "Potencia y agilidad en un diseño compacto.",
@@ -23,6 +25,7 @@ const products: Product[] = [
     },
     {
         category: "motocicletas",
+        subcategory: "deportiva",
         image: "/assets/images/product_1.jpg",
         name: "MT-03",
         description: "Potencia y agilidad en un diseño compacto.",
@@ -30,6 +33,7 @@ const products: Product[] = [
     },
     {
         category: "motocicletas",
+        subcategory: "urbana",
         image: "/assets/images/product_1.jpg",
         name: "MT-03",
         description: "Potencia y agilidad en un diseño compacto.",
@@ -37,6 +41,7 @@ const products: Product[] = [
     },
     {
         category: "wave",
+        subcategory: null,
         image: "/assets/images/product_2.jpg",
         name: "FX SVHO",
         description: "Rendimiento superior en el agua.",
@@ -44,6 +49,7 @@ const products: Product[] = [
     },
     {
         category: "wave",
+        subcategory: null,
         image: "/assets/images/product_2.jpg",
         name: "FX SVHO",
         description: "Rendimiento superior en el agua.",
@@ -52,6 +58,7 @@ const products: Product[] = [
     },
     {
         category: "wave",
+        subcategory: null,
         image: "/assets/images/product_2.jpg",
         name: "FX SVHO",
         description: "Rendimiento superior en el agua.",
@@ -60,6 +67,7 @@ const products: Product[] = [
     },
     {
         category: "wave",
+        subcategory: null,
         image: "/assets/images/product_2.jpg",
         name: "FX SVHO",
         description: "Rendimiento superior en el agua.",
@@ -67,6 +75,7 @@ const products: Product[] = [
     },
     {
         category: "motocicletas",
+        subcategory: "urbana",
         image: "/assets/images/product_1.jpg",
         name: "MT-03",
         description: "Potencia y agilidad en un diseño compacto.",
@@ -74,6 +83,7 @@ const products: Product[] = [
     },
     {
         category: "motocicletas",
+        subcategory: "urbana",
         image: "/assets/images/product_1.jpg",
         name: "MT-03",
         description: "Potencia y agilidad en un diseño compacto.",
@@ -81,6 +91,7 @@ const products: Product[] = [
     },
     {
         category: "motocicletas",
+        subcategory: "urbana",
         image: "/assets/images/product_1.jpg",
         name: "MT-03",
         description: "Potencia y agilidad en un diseño compacto.",
@@ -88,6 +99,7 @@ const products: Product[] = [
     },
     {
         category: "wave",
+        subcategory: null,
         image: "/assets/images/product_2.jpg",
         name: "FX SVHO",
         description: "Rendimiento superior en el agua.",
@@ -95,6 +107,7 @@ const products: Product[] = [
     },
     {
         category: "wave",
+        subcategory: null,
         image: "/assets/images/product_2.jpg",
         name: "FX SVHO",
         description: "Rendimiento superior en el agua.",
@@ -103,6 +116,7 @@ const products: Product[] = [
     },
     {
         category: "wave",
+        subcategory: null,
         image: "/assets/images/product_2.jpg",
         name: "FX SVHO",
         description: "Rendimiento superior en el agua.",
@@ -111,6 +125,7 @@ const products: Product[] = [
     },
     {
         category: "wave",
+        subcategory: null,
         image: "/assets/images/product_2.jpg",
         name: "FX SVHO",
         description: "Rendimiento superior en el agua.",
@@ -142,9 +157,9 @@ const categories = [
                 </h2>
             </span>
         </span>
-        <div class="ml-1 mb-6 sm:mb-8 overflow-x-auto">
+        <div class="mb-6 sm:mb-8 overflow-x-auto">
             <ul
-                class="flex my-1 flex-nowrap justify-start sm:justify-center gap-2 sm:gap-4 pb-2 sm:pb-0"
+                class="flex px-1 my-1 flex-nowrap justify-start sm:justify-center gap-2 sm:gap-4 pb-2 sm:pb-0"
                 id="category-buttons"
             >
                 {
@@ -211,7 +226,6 @@ const categories = [
         });
     }
 
-    // Initially filter to show motorcycles
     filterProducts("motocicletas");
 
     filterButtons.forEach((button) => {
