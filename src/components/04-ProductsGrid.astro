@@ -120,7 +120,6 @@ const products: Product[] = [
 ];
 
 const categories = [
-    { id: "all", name: "TODO" },
     { id: "motocicletas", name: "MOTOCICLETAS" },
     { id: "wave", name: "WAVE RUNNERS" },
     { id: "atv", name: "ATVS Y SIDE BY SIDE" },
@@ -149,12 +148,12 @@ const categories = [
                 id="category-buttons"
             >
                 {
-                    categories.map((category) => (
+                    categories.map((category, index) => (
                         <li>
                             <button
                                 class:list={[
                                     "category-button",
-                                    { active: category.id === "all" },
+                                    { active: index === 0 },
                                 ]}
                                 data-filter={category.id}
                             >
@@ -173,7 +172,6 @@ const categories = [
         </div>
     </div>
 </div>
-
 <style>
     .category-button {
         @apply px-3 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors duration-300;
@@ -196,27 +194,33 @@ const categories = [
         }
     }
 </style>
-
 <script>
     const filterButtons =
         document.querySelectorAll<HTMLButtonElement>(".category-button");
     const productItems =
         document.querySelectorAll<HTMLDivElement>(".product-item");
 
+    // Function to filter products
+    function filterProducts(category: string) {
+        productItems.forEach((item) => {
+            if (item.getAttribute("data-category") === category) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+        });
+    }
+
+    // Initially filter to show motorcycles
+    filterProducts("motocicletas");
+
     filterButtons.forEach((button) => {
         button.addEventListener("click", () => {
             const filterValue = button.getAttribute("data-filter");
 
-            productItems.forEach((item) => {
-                if (
-                    filterValue === "all" ||
-                    item.getAttribute("data-category") === filterValue
-                ) {
-                    item.style.display = "block";
-                } else {
-                    item.style.display = "none";
-                }
-            });
+            if (filterValue) {
+                filterProducts(filterValue);
+            }
 
             filterButtons.forEach((btn) => btn.classList.remove("active"));
             button.classList.add("active");
