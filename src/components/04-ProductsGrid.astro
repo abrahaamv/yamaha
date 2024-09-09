@@ -182,17 +182,9 @@ const categories = [
     .category-button.active {
         @apply bg-red-600 text-white border-red-600 hover:bg-red-700;
     }
-    @media (max-width: 640px) {
-        .product-item .group > div:last-child {
-            transform: translateY(0);
-        }
-    }
     @media (min-width: 640px) {
-        .product-item:first-child .group {
-            @apply border-l-0;
-        }
-        .product-item:nth-child(5n + 1) .group {
-            @apply border-l-0;
+        #product-grid:not(:last-child) {
+            border: 10px solid red;
         }
     }
 </style>
