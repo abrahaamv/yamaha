@@ -24,18 +24,18 @@ const { product } = Astro.props as ProductCardProps;
         <img
             src={product.image}
             alt={product.name}
-            class="w-full h-48 object-cover transition-transform duration-300 group-hover:animate-pulsing group-hover:animate-duration-fast"
+            class="w-full h-48 object-cover transition-transform duration-300 animate-scale animate-duration-fast group-hover:animate-pulsing group-hover:animate-duration-fast"
         />
         {
             product.discount && (
-                <div class="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 text-xs rounded-md shadow-md">
+                <div class="absolute top-2 right-2 bg-red-500 text-white font-bold px-3 py-1 text-xs rounded-md shadow-md animate-tada animate-delay-300 animate-duration-slowest">
                     -Q{product.discount}
                 </div>
             )
         }
         {
             product.isNew && (
-                <div class="absolute top-2 left-2 bg-green-500 text-white px-3 py-1 text-xs rounded-md shadow-md hover:animate-">
+                <div class="absolute top-2 left-2 bg-green-600 text-white font-bold px-3 py-1 text-xs rounded-md shadow-md animate-sway animate-delay-300 animate-duration-slowest">
                     NUEVO
                 </div>
             )
