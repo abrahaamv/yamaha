@@ -160,6 +160,7 @@ const subcategories = categories.reduce(
 );
 ---
 
+---
 <div class="new_arrivals bg-white py-8 sm:py-16" id="new_arrivals">
     <div class="container mx-auto px-4">
         <span class="relative flex justify-center mb-4">
@@ -173,58 +174,68 @@ const subcategories = categories.reduce(
                 </h2>
             </span>
         </span>
-        <div class="mb-6 sm:mb-8 overflow-x-auto">
-            <ul
-                class="flex mx-1 my-1 flex-nowrap justify-start sm:justify-center gap-2 sm:gap-4 pb-2 sm:pb-0"
-                id="category-buttons"
-            >
+        <div class="mb-6 sm:mb-8 relative">
+            <div class="overflow-x-auto">
+                <ul
+                    class="flex mx-1 my-1 flex-nowrap justify-start sm:justify-center gap-2 sm:gap-4 pb-2 sm:pb-0"
+                    id="category-buttons"
+                >
+                    {
+                        categories.map((category, index) => (
+                            <li class="relative">
+                                <button
+                                    class:list={[
+                                        "category-button",
+                                        { active: index === 0 },
+                                    ]}
+                                    data-category={category.id}
+                                >
+                                    {category.name}
+                                </button>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+            <div id="dropdown-container" class="absolute left-0 right-0 mt-2">
                 {
-                    categories.map((category, index) => (
-                        <li class="relative">
-                            <button
-                                class:list={[
-                                    "category-button",
-                                    { active: index === 0 },
-                                ]}
-                                data-category={category.id}
-                            >
-                                {category.name}
-                            </button>
-                            {subcategories[category.id] &&
-                                subcategories[category.id].length > 0 && (
-                                    <ul class="subcategory-dropdown hidden absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
-                                        <li>
-                                            <button
-                                                class="subcategory-button block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                                data-category={category.id}
-                                                data-subcategory="all"
-                                            >
-                                                Todas las subcategorías
-                                            </button>
-                                        </li>
-                                        {subcategories[category.id].map(
-                                            (subcategory) => (
-                                                <li>
-                                                    <button
-                                                        class="subcategory-button block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                                        data-category={
-                                                            category.id
-                                                        }
-                                                        data-subcategory={
-                                                            subcategory
-                                                        }
-                                                    >
-                                                        {subcategory}
-                                                    </button>
-                                                </li>
-                                            ),
-                                        )}
-                                    </ul>
-                                )}
-                        </li>
-                    ))
+                    categories.map(
+                        (category) =>
+                            subcategories[category.id] &&
+                            subcategories[category.id].length > 0 && (
+                                <ul
+                                    class="subcategory-dropdown hidden rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10"
+                                    data-category={category.id}
+                                >
+                                    <li>
+                                        <button
+                                            class="subcategory-button block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                            data-category={category.id}
+                                            data-subcategory="all"
+                                        >
+                                            Todas las subcategorías
+                                        </button>
+                                    </li>
+                                    {subcategories[category.id].map(
+                                        (subcategory) => (
+                                            <li>
+                                                <button
+                                                    class="subcategory-button block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                                    data-category={category.id}
+                                                    data-subcategory={
+                                                        subcategory
+                                                    }
+                                                >
+                                                    {subcategory}
+                                                </button>
+                                            </li>
+                                        ),
+                                    )}
+                                </ul>
+                            ),
+                    )
                 }
-            </ul>
+            </div>
         </div>
         <div
             class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-0"
@@ -255,8 +266,8 @@ const subcategories = categories.reduce(
         position: relative;
         z-index: 40;
     }
-    #category-buttons > li {
-        position: relative;
+    #dropdown-container {
+        z-index: 50;
     }
 </style>
 
@@ -268,6 +279,7 @@ const subcategories = categories.reduce(
     );
     const productItems =
         document.querySelectorAll<HTMLDivElement>(".product-item");
+    const dropdownContainer = document.getElementById("dropdown-container");
 
     function filterProducts(
         category: string,
@@ -290,9 +302,18 @@ const subcategories = categories.reduce(
         });
     }
 
-    categoryButtons.forEach((button, index) => {
-        const dropdown = button.nextElementSibling as HTMLUListElement;
+    function positionDropdown(
+        button: HTMLButtonElement,
+        dropdown: HTMLUListElement,
+    ) {
+        const buttonRect = button.getBoundingClientRect();
+        const containerRect = dropdownContainer!.getBoundingClientRect();
 
+        dropdown.style.left = `${buttonRect.left - containerRect.left}px`;
+        dropdown.style.minWidth = `${buttonRect.width}px`;
+    }
+
+    categoryButtons.forEach((button, index) => {
         button.addEventListener("click", () => {
             const category = button.getAttribute("data-category");
             if (category) {
@@ -301,15 +322,21 @@ const subcategories = categories.reduce(
                     btn.classList.remove("active"),
                 );
                 button.classList.add("active");
-            }
 
-            // Toggle dropdown visibility
-            subcategoryDropdowns.forEach((drop) => {
-                if (drop !== dropdown) {
-                    drop.classList.add("hidden");
+                // Hide all dropdowns
+                subcategoryDropdowns.forEach((drop) =>
+                    drop.classList.add("hidden"),
+                );
+
+                // Show and position the corresponding dropdown
+                const dropdown = document.querySelector<HTMLUListElement>(
+                    `.subcategory-dropdown[data-category="${category}"]`,
+                );
+                if (dropdown) {
+                    dropdown.classList.remove("hidden");
+                    positionDropdown(button, dropdown);
                 }
-            });
-            dropdown?.classList.toggle("hidden");
+            }
         });
 
         // Activate the first button (Motocicletas) on page load
@@ -339,10 +366,26 @@ const subcategories = categories.reduce(
 
     // Close dropdowns when clicking outside
     document.addEventListener("click", (event) => {
-        if (!(event.target as HTMLElement).closest(".category-button")) {
+        if (
+            !(event.target as HTMLElement).closest(".category-button") &&
+            !(event.target as HTMLElement).closest(".subcategory-dropdown")
+        ) {
             subcategoryDropdowns.forEach((dropdown) => {
                 dropdown.classList.add("hidden");
             });
+        }
+    });
+
+    // Reposition dropdowns on window resize
+    window.addEventListener("resize", () => {
+        const activeButton = document.querySelector<HTMLButtonElement>(
+            ".category-button.active",
+        );
+        const activeDropdown = document.querySelector<HTMLUListElement>(
+            ".subcategory-dropdown:not(.hidden)",
+        );
+        if (activeButton && activeDropdown) {
+            positionDropdown(activeButton, activeDropdown);
         }
     });
 
