@@ -189,9 +189,11 @@ const subcategories = categories.reduce(
                                     ]}
                                     data-category={category.id}
                                 >
-                                    {category.name}
+                                    <span class="category-name">
+                                        {category.name}
+                                    </span>
                                     {subcategories[category.id]?.length > 0 && (
-                                        <span class="ml-2">
+                                        <span class="ml-2 dropdown-toggle">
                                             <svg
                                                 class="w-4 h-4 inline-block"
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -224,15 +226,6 @@ const subcategories = categories.reduce(
                                     class="subcategory-dropdown hidden rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10"
                                     data-category={category.id}
                                 >
-                                    <li>
-                                        <button
-                                            class="subcategory-button block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                            data-category={category.id}
-                                            data-subcategory="all"
-                                        >
-                                            TODAS
-                                        </button>
-                                    </li>
                                     {subcategories[category.id].map(
                                         (subcategory) => (
                                             <li>
@@ -287,7 +280,6 @@ const subcategories = categories.reduce(
         z-index: 50;
     }
 </style>
-
 <script>
     const categoryButtons =
         document.querySelectorAll<HTMLButtonElement>(".category-button");
@@ -297,6 +289,8 @@ const subcategories = categories.reduce(
     const productItems =
         document.querySelectorAll<HTMLDivElement>(".product-item");
     const dropdownContainer = document.getElementById("dropdown-container");
+    const dropdownToggles =
+        document.querySelectorAll<HTMLSpanElement>(".dropdown-toggle");
 
     function filterProducts(
         category: string,
@@ -308,9 +302,7 @@ const subcategories = categories.reduce(
 
             if (
                 category === itemCategory &&
-                (subcategory === null ||
-                    subcategory === "all" ||
-                    subcategory === itemSubcategory)
+                (subcategory === null || subcategory === itemSubcategory)
             ) {
                 item.style.display = "block";
             } else {
@@ -330,39 +322,76 @@ const subcategories = categories.reduce(
         dropdown.style.minWidth = `${buttonRect.width}px`;
     }
 
+    function activateCategory(
+        category: string,
+        subcategory: string | null = null,
+    ) {
+        categoryButtons.forEach((btn) => {
+            if (btn.getAttribute("data-category") === category) {
+                btn.classList.add("active");
+                if (subcategory) {
+                    const subcategoryNameSpan =
+                        btn.querySelector(".subcategory-name");
+                    if (subcategoryNameSpan) {
+                        subcategoryNameSpan.textContent =
+                            subcategory.toUpperCase();
+                    }
+                }
+            } else {
+                btn.classList.remove("active");
+            }
+        });
+    }
+
     categoryButtons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-            const category = button.getAttribute("data-category");
-            if (category) {
-                filterProducts(category);
-                categoryButtons.forEach((btn) =>
-                    btn.classList.remove("active"),
-                );
-                button.classList.add("active");
+        button.addEventListener("click", (event) => {
+            if (!(event.target as HTMLElement).closest(".dropdown-toggle")) {
+                const category = button.getAttribute("data-category");
+                if (category) {
+                    filterProducts(category);
+                    activateCategory(category);
 
-                // Hide all dropdowns
-                subcategoryDropdowns.forEach((drop) =>
-                    drop.classList.add("hidden"),
-                );
-
-                // Show and position the corresponding dropdown
-                const dropdown = document.querySelector<HTMLUListElement>(
-                    `.subcategory-dropdown[data-category="${category}"]`,
-                );
-                if (dropdown) {
-                    dropdown.classList.remove("hidden");
-                    positionDropdown(button, dropdown);
+                    // Ocultar todos los dropdowns
+                    subcategoryDropdowns.forEach((drop) =>
+                        drop.classList.add("hidden"),
+                    );
                 }
             }
         });
 
-        // Activate the first button (Motocicletas) on page load
+        // Activar el primer botón (Motocicletas) al cargar la página
         if (index === 0) {
             const category = button.getAttribute("data-category");
             if (category) {
                 filterProducts(category);
+                activateCategory(category);
             }
         }
+    });
+
+    dropdownToggles.forEach((toggle) => {
+        toggle.addEventListener("click", (event) => {
+            event.stopPropagation();
+            const button = toggle.closest(
+                ".category-button",
+            ) as HTMLButtonElement;
+            const category = button.getAttribute("data-category");
+            if (category) {
+                // Ocultar todos los dropdowns
+                subcategoryDropdowns.forEach((drop) =>
+                    drop.classList.add("hidden"),
+                );
+
+                // Mostrar y posicionar el dropdown correspondiente
+                const dropdown = document.querySelector<HTMLUListElement>(
+                    `.subcategory-dropdown[data-category="${category}"]`,
+                );
+                if (dropdown) {
+                    dropdown.classList.toggle("hidden");
+                    positionDropdown(button, dropdown);
+                }
+            }
+        });
     });
 
     document
@@ -373,15 +402,16 @@ const subcategories = categories.reduce(
                 const subcategory = button.getAttribute("data-subcategory");
                 if (category && subcategory) {
                     filterProducts(category, subcategory);
+                    activateCategory(category, subcategory);
                 }
-                // Hide dropdown after selection
+                // Ocultar dropdown después de la selección
                 button
                     .closest(".subcategory-dropdown")
                     ?.classList.add("hidden");
             });
         });
 
-    // Close dropdowns when clicking outside
+    // Cerrar dropdowns al hacer clic fuera
     document.addEventListener("click", (event) => {
         if (
             !(event.target as HTMLElement).closest(".category-button") &&
@@ -393,7 +423,7 @@ const subcategories = categories.reduce(
         }
     });
 
-    // Reposition dropdowns on window resize
+    // Reposicionar dropdowns al redimensionar la ventana
     window.addEventListener("resize", () => {
         const activeButton = document.querySelector<HTMLButtonElement>(
             ".category-button.active",
@@ -406,6 +436,6 @@ const subcategories = categories.reduce(
         }
     });
 
-    // Filter motocicletas on page load
+    // Filtrar motocicletas al cargar la página
     filterProducts("motocicletas");
 </script>
