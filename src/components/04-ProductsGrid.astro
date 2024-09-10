@@ -5,7 +5,7 @@ import ProductCard from "./05-ProductCard.astro";
 // Define interfaces for our data structures
 interface Product {
     category: string;
-    subcategory: String | null;
+    subcategory: string | null;
     image: string;
     name: string;
     description: string;
@@ -19,7 +19,7 @@ const products: Product[] = [
         category: "motocicletas",
         subcategory: "urbana",
         image: "/assets/images/product_1.jpg",
-        name: "MT-03",
+        name: "MT-03 urbana",
         description: "Potencia y agilidad en un diseño compacto.",
         discount: 1000,
     },
@@ -27,7 +27,7 @@ const products: Product[] = [
         category: "motocicletas",
         subcategory: "deportiva",
         image: "/assets/images/product_1.jpg",
-        name: "MT-03",
+        name: "MT-03 deportiva",
         description: "Potencia y agilidad en un diseño compacto.",
         discount: 1000,
     },
@@ -35,7 +35,7 @@ const products: Product[] = [
         category: "motocicletas",
         subcategory: "urbana",
         image: "/assets/images/product_1.jpg",
-        name: "MT-03",
+        name: "MT-03 urbana",
         description: "Potencia y agilidad en un diseño compacto.",
         discount: 1000,
     },
@@ -107,7 +107,7 @@ const products: Product[] = [
     },
     {
         category: "wave",
-        subcategory: null,
+        subcategory: "urbana",
         image: "/assets/images/product_2.jpg",
         name: "FX SVHO",
         description: "Rendimiento superior en el agua.",
@@ -142,6 +142,22 @@ const categories = [
     { id: "bombas", name: "BOMBAS DE AGUA" },
     { id: "generadores", name: "GENERADORES" },
 ];
+
+// Get unique subcategories for each category
+const subcategories = categories.reduce(
+    (acc, category) => {
+        acc[category.id] = [
+            ...new Set(
+                products
+                    .filter((product) => product.category === category.id)
+                    .map((product) => product.subcategory)
+                    .filter((subcategory) => subcategory !== null),
+            ),
+        ];
+        return acc;
+    },
+    {} as Record<string, string[]>,
+);
 ---
 
 <div class="new_arrivals bg-white py-8 sm:py-16" id="new_arrivals">
@@ -164,16 +180,47 @@ const categories = [
             >
                 {
                     categories.map((category, index) => (
-                        <li>
+                        <li class="relative">
                             <button
                                 class:list={[
                                     "category-button",
                                     { active: index === 0 },
                                 ]}
-                                data-filter={category.id}
+                                data-category={category.id}
                             >
                                 {category.name}
                             </button>
+                            {subcategories[category.id] &&
+                                subcategories[category.id].length > 0 && (
+                                    <ul class="subcategory-dropdown hidden absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                                        <li>
+                                            <button
+                                                class="subcategory-button block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                                data-category={category.id}
+                                                data-subcategory="all"
+                                            >
+                                                Todas las subcategorías
+                                            </button>
+                                        </li>
+                                        {subcategories[category.id].map(
+                                            (subcategory) => (
+                                                <li>
+                                                    <button
+                                                        class="subcategory-button block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                                        data-category={
+                                                            category.id
+                                                        }
+                                                        data-subcategory={
+                                                            subcategory
+                                                        }
+                                                    >
+                                                        {subcategory}
+                                                    </button>
+                                                </li>
+                                            ),
+                                        )}
+                                    </ul>
+                                )}
                         </li>
                     ))
                 }
@@ -196,17 +243,46 @@ const categories = [
     .category-button.active {
         @apply bg-red-600 text-white border-red-600 hover:bg-red-700;
     }
+    .subcategory-dropdown {
+        @apply py-1 rounded-md bg-white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 50;
+        min-width: 150px;
+    }
+    #category-buttons {
+        position: relative;
+        z-index: 40;
+    }
+    #category-buttons > li {
+        position: relative;
+    }
 </style>
 
 <script>
-    const filterButtons =
+    const categoryButtons =
         document.querySelectorAll<HTMLButtonElement>(".category-button");
+    const subcategoryDropdowns = document.querySelectorAll<HTMLUListElement>(
+        ".subcategory-dropdown",
+    );
     const productItems =
         document.querySelectorAll<HTMLDivElement>(".product-item");
 
-    function filterProducts(filterValue: string) {
+    function filterProducts(
+        category: string,
+        subcategory: string | null = null,
+    ) {
         productItems.forEach((item) => {
-            if (item.getAttribute("data-category") === filterValue) {
+            const itemCategory = item.getAttribute("data-category");
+            const itemSubcategory = item.getAttribute("data-subcategory");
+
+            if (
+                category === itemCategory &&
+                (subcategory === null ||
+                    subcategory === "all" ||
+                    subcategory === itemSubcategory)
+            ) {
                 item.style.display = "block";
             } else {
                 item.style.display = "none";
@@ -214,23 +290,59 @@ const categories = [
         });
     }
 
-    filterButtons.forEach((button, index) => {
+    categoryButtons.forEach((button, index) => {
+        const dropdown = button.nextElementSibling as HTMLUListElement;
+
         button.addEventListener("click", () => {
-            const filterValue = button.getAttribute("data-filter");
-            if (filterValue) {
-                filterProducts(filterValue);
+            const category = button.getAttribute("data-category");
+            if (category) {
+                filterProducts(category);
+                categoryButtons.forEach((btn) =>
+                    btn.classList.remove("active"),
+                );
+                button.classList.add("active");
             }
 
-            filterButtons.forEach((btn) => btn.classList.remove("active"));
-            button.classList.add("active");
+            // Toggle dropdown visibility
+            subcategoryDropdowns.forEach((drop) => {
+                if (drop !== dropdown) {
+                    drop.classList.add("hidden");
+                }
+            });
+            dropdown?.classList.toggle("hidden");
         });
 
         // Activate the first button (Motocicletas) on page load
         if (index === 0) {
-            const filterValue = button.getAttribute("data-filter");
-            if (filterValue) {
-                filterProducts(filterValue);
+            const category = button.getAttribute("data-category");
+            if (category) {
+                filterProducts(category);
             }
+        }
+    });
+
+    document
+        .querySelectorAll<HTMLButtonElement>(".subcategory-button")
+        .forEach((button) => {
+            button.addEventListener("click", () => {
+                const category = button.getAttribute("data-category");
+                const subcategory = button.getAttribute("data-subcategory");
+                if (category && subcategory) {
+                    filterProducts(category, subcategory);
+                }
+                // Hide dropdown after selection
+                button
+                    .closest(".subcategory-dropdown")
+                    ?.classList.add("hidden");
+            });
+        });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener("click", (event) => {
+        if (!(event.target as HTMLElement).closest(".category-button")) {
+            subcategoryDropdowns.forEach((dropdown) => {
+                dropdown.classList.add("hidden");
+            });
         }
     });
 
