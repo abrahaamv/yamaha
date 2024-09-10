@@ -160,7 +160,6 @@ const subcategories = categories.reduce(
 );
 ---
 
----
 <div class="new_arrivals bg-white py-8 sm:py-16" id="new_arrivals">
     <div class="container mx-auto px-4">
         <span class="relative flex justify-center mb-4">
@@ -191,13 +190,31 @@ const subcategories = categories.reduce(
                                     data-category={category.id}
                                 >
                                     {category.name}
+                                    {subcategories[category.id]?.length > 0 && (
+                                        <span class="ml-2">
+                                            <svg
+                                                class="w-4 h-4 inline-block"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M19 9l-7 7-7-7"
+                                                />
+                                            </svg>
+                                        </span>
+                                    )}
                                 </button>
                             </li>
                         ))
                     }
                 </ul>
             </div>
-            <div id="dropdown-container" class="absolute left-0 right-0 mt-2">
+            <div id="dropdown-container" class="absolute left-0 right-0">
                 {
                     categories.map(
                         (category) =>
@@ -213,7 +230,7 @@ const subcategories = categories.reduce(
                                             data-category={category.id}
                                             data-subcategory="all"
                                         >
-                                            Todas las subcategorías
+                                            TODAS
                                         </button>
                                     </li>
                                     {subcategories[category.id].map(
@@ -226,7 +243,7 @@ const subcategories = categories.reduce(
                                                         subcategory
                                                     }
                                                 >
-                                                    {subcategory}
+                                                    {subcategory.toUpperCase()}
                                                 </button>
                                             </li>
                                         ),
