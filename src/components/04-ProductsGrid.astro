@@ -320,6 +320,16 @@ const subcategories = categories.reduce(
         });
     }
 
+    function setActiveButton(category: string) {
+        categoryButtons.forEach((btn) => {
+            if (btn.getAttribute("data-category") === category) {
+                btn.classList.add("active");
+            } else {
+                btn.classList.remove("active");
+            }
+        });
+    }
+
     function positionDropdown(
         button: HTMLButtonElement,
         dropdown: HTMLUListElement,
@@ -337,12 +347,7 @@ const subcategories = categories.reduce(
                 const category = button.getAttribute("data-category");
                 if (category) {
                     filterProducts(category);
-                    categoryButtons.forEach((btn) =>
-                        btn.classList.remove("active"),
-                    );
-                    button.classList.add("active");
-
-                    // Ocultar todos los dropdowns
+                    setActiveButton(category);
                     subcategoryDropdowns.forEach((drop) =>
                         drop.classList.add("hidden"),
                     );
@@ -350,7 +355,6 @@ const subcategories = categories.reduce(
             }
         });
 
-        // Activar el primer botón (Motocicletas) al cargar la página
         if (index === 0) {
             const category = button.getAttribute("data-category");
             if (category) {
@@ -367,12 +371,9 @@ const subcategories = categories.reduce(
             ) as HTMLButtonElement;
             const category = button.getAttribute("data-category");
             if (category) {
-                // Ocultar todos los dropdowns
                 subcategoryDropdowns.forEach((drop) =>
                     drop.classList.add("hidden"),
                 );
-
-                // Mostrar y posicionar el dropdown correspondiente
                 const dropdown = document.querySelector<HTMLUListElement>(
                     `.subcategory-dropdown[data-category="${category}"]`,
                 );
@@ -392,15 +393,14 @@ const subcategories = categories.reduce(
                 const subcategory = button.getAttribute("data-subcategory");
                 if (category && subcategory) {
                     filterProducts(category, subcategory);
+                    setActiveButton(category);
                 }
-                // Ocultar dropdown después de la selección
                 button
                     .closest(".subcategory-dropdown")
                     ?.classList.add("hidden");
             });
         });
 
-    // Cerrar dropdowns al hacer clic fuera
     document.addEventListener("click", (event) => {
         if (
             !(event.target as HTMLElement).closest(".category-button") &&
@@ -412,7 +412,6 @@ const subcategories = categories.reduce(
         }
     });
 
-    // Reposicionar dropdowns al redimensionar la ventana
     window.addEventListener("resize", () => {
         const activeButton = document.querySelector<HTMLButtonElement>(
             ".category-button.active",
@@ -425,6 +424,6 @@ const subcategories = categories.reduce(
         }
     });
 
-    // Filtrar motocicletas al cargar la página
     filterProducts("motocicletas");
+    setActiveButton("motocicletas");
 </script>
