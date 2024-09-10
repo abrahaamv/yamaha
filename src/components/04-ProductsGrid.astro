@@ -189,9 +189,7 @@ const subcategories = categories.reduce(
                                     ]}
                                     data-category={category.id}
                                 >
-                                    <span class="category-name">
-                                        {category.name}
-                                    </span>
+                                    {category.name}
                                     {subcategories[category.id]?.length > 0 && (
                                         <span class="ml-2 dropdown-toggle">
                                             <svg
@@ -226,6 +224,15 @@ const subcategories = categories.reduce(
                                     class="subcategory-dropdown hidden rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10"
                                     data-category={category.id}
                                 >
+                                    <li>
+                                        <button
+                                            class="subcategory-button block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                            data-category={category.id}
+                                            data-subcategory="all"
+                                        >
+                                            TODAS
+                                        </button>
+                                    </li>
                                     {subcategories[category.id].map(
                                         (subcategory) => (
                                             <li>
@@ -302,7 +309,9 @@ const subcategories = categories.reduce(
 
             if (
                 category === itemCategory &&
-                (subcategory === null || subcategory === itemSubcategory)
+                (subcategory === null ||
+                    subcategory === "all" ||
+                    subcategory === itemSubcategory)
             ) {
                 item.style.display = "block";
             } else {
@@ -322,34 +331,16 @@ const subcategories = categories.reduce(
         dropdown.style.minWidth = `${buttonRect.width}px`;
     }
 
-    function activateCategory(
-        category: string,
-        subcategory: string | null = null,
-    ) {
-        categoryButtons.forEach((btn) => {
-            if (btn.getAttribute("data-category") === category) {
-                btn.classList.add("active");
-                if (subcategory) {
-                    const subcategoryNameSpan =
-                        btn.querySelector(".subcategory-name");
-                    if (subcategoryNameSpan) {
-                        subcategoryNameSpan.textContent =
-                            subcategory.toUpperCase();
-                    }
-                }
-            } else {
-                btn.classList.remove("active");
-            }
-        });
-    }
-
     categoryButtons.forEach((button, index) => {
         button.addEventListener("click", (event) => {
             if (!(event.target as HTMLElement).closest(".dropdown-toggle")) {
                 const category = button.getAttribute("data-category");
                 if (category) {
                     filterProducts(category);
-                    activateCategory(category);
+                    categoryButtons.forEach((btn) =>
+                        btn.classList.remove("active"),
+                    );
+                    button.classList.add("active");
 
                     // Ocultar todos los dropdowns
                     subcategoryDropdowns.forEach((drop) =>
@@ -364,7 +355,6 @@ const subcategories = categories.reduce(
             const category = button.getAttribute("data-category");
             if (category) {
                 filterProducts(category);
-                activateCategory(category);
             }
         }
     });
@@ -402,7 +392,6 @@ const subcategories = categories.reduce(
                 const subcategory = button.getAttribute("data-subcategory");
                 if (category && subcategory) {
                     filterProducts(category, subcategory);
-                    activateCategory(category, subcategory);
                 }
                 // Ocultar dropdown después de la selección
                 button
