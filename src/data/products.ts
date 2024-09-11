@@ -143,8 +143,8 @@ const productCatalog: ProductCatalog = {
                 name: "Sea-Doo GTI",
                 description: "Diversión y velocidad sobre el agua.",
                 image: "/assets/images/product_3.jpg",
+                price: undefined,
                 discount: 1200,
-                price: null,
                 isNewArrival: true
             }
         ]
