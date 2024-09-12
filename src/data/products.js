@@ -1,13 +1,13 @@
-// src/data/products.js
-
-const productsData = [
-  {
+const products = [
+      {
     category: "motocicletas",
     subcategories: {
-      adventure: [
+      "adventure": [
         {
-          image: "/assets/images/products/motorcycles/adventure/TENERE700.webp",
+          image: "/assets/images/products/motocicletas/adventure/TENERE700.webp",
           name: "TENERE 700",
+          category: "motocicletas",
+          subcategory: "adventure",
           description: "Potencia y versatilidad para aventuras extremas.",
           discount: null,
           isNew: false,
@@ -43,10 +43,12 @@ const productsData = [
           },
         },
       ],
-      sport: [
+      "deportivas": [
         {
-          image: "/assets/images/products/motorcycles/sport/MT-15.webp",
-          name: "MT-15",
+          image: "/assets/images/products/motocicletas/deportivas/MT-10SP.webp",
+          name: "MT-10SP",
+          category: "motocicletas",
+          subcategory: "deportivas",
           description: "Desempeño y estilo en un diseño ligero.",
           discount: null,
           isNew: false,
@@ -82,10 +84,12 @@ const productsData = [
           },
         },
       ],
-      dualSport: [
+      "doble propósito": [
         {
-          image: "/assets/images/products/motorcycles/dual-sport/AG200.webp",
+          image: "/assets/images/products/motocicletas/doble-proposito/AG200.webp",
           name: "AG200",
+          category: "doble propósito",
+          subcategory: "adventure",
           description: "Versatilidad para uso urbano y off-road.",
           discount: null,
           isNew: false,
@@ -121,10 +125,12 @@ const productsData = [
           },
         },
       ],
-      motocross: [
+      "motocross": [
         {
-          image: "/assets/images/products/motorcycles/motocross/WR250F.webp",
+          image: "/assets/images/products/motocicletas/motocross/WR250F.webp",
           name: "WR250F",
+          category: "motocicletas",
+          subcategory: "motocross",
           description: "Rendimiento y durabilidad para el motocross.",
           discount: null,
           isNew: false,
@@ -160,10 +166,12 @@ const productsData = [
           },
         },
       ],
-      scooter: [
+      "scooter": [
         {
-          image: "/assets/images/products/motorcycles/scooter/RAYZR125FI.webp",
-          name: "RAY ZR 125 FI",
+          image: "/assets/images/products/motocicletas/scooter/TMAX560.webp",
+          name: "TMAX 560",
+          category: "motocicletas",
+          subcategory: "scooter",
           description: "Eficiencia y comodidad para el uso urbano.",
           discount: null,
           isNew: false,
@@ -199,10 +207,12 @@ const productsData = [
           },
         },
       ],
-      touring: [
+      "semi deportivas": [
         {
-          image: "/assets/images/products/motorcycles/sport-touring/FZ-X150.webp",
+          image: "/assets/images/products/motocicletas/semi-deportivas/FZ-X150.webp",
           name: "FZ-X 150",
+          category: "motocicletas",
+          subcategory: "semi deportivas",
           description: "Comodidad y rendimiento para largos viajes.",
           discount: null,
           isNew: false,
@@ -238,10 +248,12 @@ const productsData = [
           },
         },
       ],
-      sportHeritage: [
+      "sport heritage": [
         {
-          image: "/assets/images/products/motorcycles/sport-heritage/XSR900.webp",
+          image: "/assets/images/products/motocicletas/sport-heritage/XSR900.webp",
           name: "XSR900",
+          category: "motocicletas",
+          subcategory: "sport heritage",
           description: "Un diseño clásico con tecnología moderna.",
           discount: null,
           isNew: false,
@@ -277,10 +289,12 @@ const productsData = [
           },
         },
       ],
-      sportTouring: [
+      "sport touring": [
         {
-          image: "/assets/images/products/motorcycles/sport-touring/TRACER900GT.webp",
+          image: "/assets/images/products/motocicletas/sport-touring/TRACER900GT.webp",
           name: "TRACER 900 GT",
+          category: "motocicletas",
+          subcategory: "sport touring",
           description: "Tecnología avanzada para un viaje deportivo.",
           discount: null,
           isNew: false,
@@ -316,10 +330,12 @@ const productsData = [
           },
         },
       ],
-      racing: [
+      "super deportivas": [
         {
-          image: "/assets/images/products/motorcycles/racing/R15.webp",
-          name: "R15",
+          image: "/assets/images/products/motocicletas/super-deportivas/R6RACE.webp",
+          name: "R6 RACE",
+          category: "motocicletas",
+          subcategory: "super deportivas",
           description: "Velocidad y agilidad para carreras.",
           discount: null,
           isNew: false,
@@ -355,10 +371,12 @@ const productsData = [
           },
         },
       ],
-      urban: [
+      "urbanas": [
         {
-          image: "/assets/images/products/motorcycles/urban/YBR125ED.webp",
+          image: "/assets/images/products/motocicletas/urbanas/YBR125ED.webp",
           name: "YBR 125 ED",
+          category: "motocicletas",
+          subcategory: "urbanas",
           description: "Compacta y económica para la ciudad.",
           discount: null,
           isNew: false,
@@ -396,15 +414,15 @@ const productsData = [
       ],
     },
   },
-  // Parte 2: Vehículos y motores
   {
-    category: "vehículos y motores",
+    category: "side by side and atvs",
     subcategories: {
-      sideBySideAndATVS: {
         atv: [
-          {
-            image: "/assets/images/products/motorcycles/sidebyside-and-utvs/atv/KODIAK450.webp",
-            name: "KODIAK 450",
+        {
+            image: "/assets/images/products/sidebyside-y-atvs/atv/RAPTOR700.webp",
+            name: "RAPTOR 700",
+            category: "side by side and atvs",
+          subcategory: "atv",
             description: null,
             discount: null,
             isNew: false,
@@ -419,7 +437,7 @@ const productsData = [
               Arranque: "Eléctrico",
               SistemaDeAlimentación: "Inyección Electrónica",
               CapacidadDeCombustible: "4.3 Galones",
-            },
+          },
             chassis: {
               FrenoDelantero: "Doble Disco",
               FrenoTrasero: "Disco",
@@ -428,7 +446,7 @@ const productsData = [
               NeumáticoTrasero: "150/70 R18M/C 70V M+S",
               SuspensiónDelantera: "Horquilla telescópica",
               SuspensiónTrasera: "Basculante con Monoshock",
-            },
+          },
             dimensions: {
               LongitudTotal: "2,370 mm",
               AnchoTotal: "910 mm",
@@ -437,13 +455,15 @@ const productsData = [
               DistanciaEntreEjes: "1,595 mm",
               DistanciaMinimaAlSuelo: "240 mm",
               PesoTotalConLíquidos: "449 libras",
-            },
           },
-        ],
+        },
+      ],
         utv: [
-          {
-            image: "/assets/images/products/motorcycles/sidebyside-and-utvs/utv/RMAX2.webp",
+        {
+            image: "/assets/images/products/sidebyside-y-atvs/utv/RMAX2.webp",
             name: "RMAX 2",
+            category: "side by side and atvs",
+          subcategory: "utv",
             description: null,
             discount: null,
             isNew: false,
@@ -458,7 +478,7 @@ const productsData = [
               Arranque: "Eléctrico",
               SistemaDeAlimentación: "Inyección Electrónica",
               CapacidadDeCombustible: "4.3 Galones",
-            },
+          },
             chassis: {
               FrenoDelantero: "Doble Disco",
               FrenoTrasero: "Disco",
@@ -467,7 +487,7 @@ const productsData = [
               NeumáticoTrasero: "150/70 R18M/C 70V M+S",
               SuspensiónDelantera: "Horquilla telescópica",
               SuspensiónTrasera: "Basculante con Monoshock",
-            },
+          },
             dimensions: {
               LongitudTotal: "2,370 mm",
               AnchoTotal: "910 mm",
@@ -476,15 +496,20 @@ const productsData = [
               DistanciaEntreEjes: "1,595 mm",
               DistanciaMinimaAlSuelo: "240 mm",
               PesoTotalConLíquidos: "449 libras",
-            },
           },
-        ],
-      },
-      marineEngines: {
-        twoStrokeEngine: [
-          {
-            image: "/assets/images/products/marine-engines/two-stroke-engines/200AETX.webp",
+        },
+      ],
+    },
+  },
+  {
+        category: "motores marinos",
+        subcategories: {
+      "dos tiempos": [
+        {
+            image: "/assets/images/products/motores-marinos/dos-tiempos/200AETX.webp",
             name: "200AETX",
+            category: "motores marinos",
+            subcategory: "dos tiempos",
             description: null,
             discount: null,
             isNew: false,
@@ -502,13 +527,15 @@ const productsData = [
               Combustible: "Gasolina",
               ConsumoMaxCombustible: "81-L/H",
               ContraRotación: "No",
-            },
           },
-        ],
-        fourStrokeEngine: [
-          {
-            image: "/assets/images/products/marine-engines/four-stroke-engines/F115BETL.webp",
+        }
+      ],
+      "cuatro tiempos": [
+        {
+            image: "/assets/images/products/motores-marinos/cuatro-tiempos/F115BETL.webp",
             name: "F115BETL",
+             category: "motores marinos",
+            subcategory: "cuatro tiempos",
             description: null,
             discount: null,
             isNew: false,
@@ -526,14 +553,20 @@ const productsData = [
               Combustible: "Gasolina",
               ConsumoMaxCombustible: "81-L/H",
               ContraRotación: "No",
-            },
           },
-        ],
-      },
-      waveRunners: [
+        },
+      ]
+    },
+  },
+  {
+        category: "wave runners",
+        subcategories: {
+      null: [
         {
-          image: "/assets/images/products/wave-runners/SUPERJET.webp",
-          name: "SUPER JET",
+          image: "/assets/images/products/wave-runners/FX-SVHO.webp",
+          name: "FX SVHO",
+           category: "wave runners",
+            subcategory: null,
           description: null,
           discount: null,
           isNew: false,
@@ -550,49 +583,63 @@ const productsData = [
             CapacidadDeCombustible: "4.3 Galones",
           },
         },
-      ],
-      waterPumps: [
-        {
-          image: "/assets/images/products/water-pumps/YP30C.webp",
-          name: "YP30C",
-          description: null,
-          discount: null,
-          isNew: false,
-          technicalInformation: {
-            Motor: "4 Tiempos, OHV",
-            Refrigeración: "Por aire forzada",
-            Cilindrada: "179 c.c.",
-            Caballaje: "4.2 Hp",
-            Transmisión: "No especificada",
-            Arranque: "Manual",
-            CapacidadDeTanque: "0.9 Gal",
-            Combustible: "Gasolina",
-            Peso: "28.7 Kg",
-          },
-        },
-      ],
-      generators: [
-        {
-          image: "/assets/images/products/generators/MZ175B2B.webp",
-          name: "MZ175B2B",
-          description: null,
-          discount: null,
-          isNew: false,
-          technicalInformation: {
-            Motor: "4 Tiempos, OHV",
-            Refrigeración: "Por aire forzada",
-            Cilindrada: "179 c.c.",
-            Caballaje: "4.2 Hp",
-            Transmisión: "No especificada",
-            Arranque: "Manual",
-            CapacidadDeTanque: "0.9 Gal",
-            Combustible: "Gasolina",
-            Peso: "28.7 Kg",
-          },
-        },
-      ],
-    },
+      ]
+    }
   },
-];
+  {
+        category: "bombas de agua",
+        subcategories: {
+      null: [
+        {
+          image: "/assets/images/products/bombas-de-agua/YP30C.webp",
+          name: "YP30C",
+           category: "bombas de agua",
+            subcategory: null,
+          description: null,
+          discount: null,
+          isNew: false,
+          technicalInformation: {
+            Motor: "4 Tiempos, OHV",
+            Refrigeración: "Por aire forzada",
+            Cilindrada: "179 c.c.",
+            Caballaje: "4.2 Hp",
+            Transmisión: "No especificada",
+            Arranque: "Manual",
+            CapacidadDeTanque: "0.9 Gal",
+            Combustible: "Gasolina",
+            Peso: "28.7 Kg",
+          },
+        },
+      ]
+    }
+  },
+  {
+        category: "generadores",
+        subcategories: {
+      null: [
+        {
+          image: "/assets/images/products/generadores/MZ175B2B.webp",
+          name: "MZ175B2B",
+           category: "generadores",
+            subcategory: null,
+          description: null,
+          discount: null,
+          isNew: false,
+          technicalInformation: {
+            Motor: "4 Tiempos, OHV",
+            Refrigeración: "Por aire forzada",
+            Cilindrada: "179 c.c.",
+            Caballaje: "4.2 Hp",
+            Transmisión: "No especificada",
+            Arranque: "Manual",
+            CapacidadDeTanque: "0.9 Gal",
+            Combustible: "Gasolina",
+            Peso: "28.7 Kg",
+          },
+        },
+      ]
+    }
+  }
+]
 
-export default productsData;
+export default products

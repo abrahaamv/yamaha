@@ -1,6 +1,7 @@
 ---
 // Astro component
 import ProductCard from "./05-ProductCard.astro";
+import productsData from "../data/products.js";
 
 // Define interfaces for our data structures
 interface Product {
@@ -13,135 +14,25 @@ interface Product {
     isNew?: boolean;
 }
 
-// You might want to fetch this data from an API or database
-const products: Product[] = [
-    {
-        category: "motocicletas",
-        subcategory: "urbana",
-        image: "/assets/images/product_1.jpg",
-        name: "MT-03",
-        description: "Potencia y agilidad en un diseño compacto.",
-        discount: 1000,
-    },
-    {
-        category: "motocicletas",
-        subcategory: "deportiva",
-        image: "/assets/images/product_1.jpg",
-        name: "MT-03",
-        description: "Potencia y agilidad en un diseño compacto.",
-        discount: 1000,
-    },
-    {
-        category: "motocicletas",
-        subcategory: "urbana",
-        image: "/assets/images/product_1.jpg",
-        name: "MT-03",
-        description: "Potencia y agilidad en un diseño compacto.",
-        discount: 1000,
-    },
-    {
-        category: "wave",
-        subcategory: null,
-        image: "/assets/images/product_2.jpg",
-        name: "FX SVHO",
-        description: "Rendimiento superior en el agua.",
-        isNew: true,
-    },
-    {
-        category: "wave",
-        subcategory: null,
-        image: "/assets/images/product_2.jpg",
-        name: "FX SVHO",
-        description: "Rendimiento superior en el agua.",
-        isNew: true,
-        discount: null,
-    },
-    {
-        category: "wave",
-        subcategory: null,
-        image: "/assets/images/product_2.jpg",
-        name: "FX SVHO",
-        description: "Rendimiento superior en el agua.",
-        isNew: true,
-        discount: 1000,
-    },
-    {
-        category: "wave",
-        subcategory: null,
-        image: "/assets/images/product_2.jpg",
-        name: "FX SVHO",
-        description: "Rendimiento superior en el agua.",
-        isNew: true,
-    },
-    {
-        category: "motocicletas",
-        subcategory: null,
-        image: "/assets/images/product_1.jpg",
-        name: "MT-03",
-        description: "Potencia y agilidad en un diseño compacto.",
-        discount: 1000,
-    },
-    {
-        category: "motocicletas",
-        subcategory: "urbana",
-        image: "/assets/images/product_1.jpg",
-        name: "MT-03",
-        description: "Potencia y agilidad en un diseño compacto.",
-        discount: 1000,
-    },
-    {
-        category: "motocicletas",
-        subcategory: "deportiva",
-        image: "/assets/images/product_1.jpg",
-        name: "MT-03",
-        description: "Potencia y agilidad en un diseño compacto.",
-        discount: 1000,
-    },
-    {
-        category: "wave",
-        subcategory: null,
-        image: "/assets/images/product_2.jpg",
-        name: "FX SVHO",
-        description: "Rendimiento superior en el agua.",
-        isNew: true,
-    },
-    {
-        category: "wave",
-        subcategory: "urbana",
-        image: "/assets/images/product_2.jpg",
-        name: "FX SVHO",
-        description: "Rendimiento superior en el agua.",
-        isNew: true,
-        discount: null,
-    },
-    {
-        category: "wave",
-        subcategory: null,
-        image: "/assets/images/product_2.jpg",
-        name: "FX SVHO",
-        description: "Rendimiento superior en el agua.",
-        isNew: true,
-        discount: 1000,
-    },
-    {
-        category: "wave",
-        subcategory: null,
-        image: "/assets/images/product_2.jpg",
-        name: "FX SVHO",
-        description: "Rendimiento superior en el agua.",
-        isNew: true,
-    },
-    // Add more products here...
-];
+// Transform the imported data into a flat array of individual products
+const products: Product[] = productsData.flatMap((category) =>
+    Object.values(category.subcategories).flatMap((subcategoryProducts) =>
+        subcategoryProducts.map((product) => ({
+            ...product,
+            category: category.category,
+            subcategory: product.subcategory || null,
+            description: product.description || "",
+        })),
+    ),
+);
 
+// Extract unique categories and subcategories
 const categories = [
-    { id: "motocicletas", name: "MOTOCICLETAS" },
-    { id: "wave", name: "WAVE RUNNERS" },
-    { id: "atv", name: "ATVS Y SIDE BY SIDE" },
-    { id: "motores", name: "MOTORES" },
-    { id: "bombas", name: "BOMBAS DE AGUA" },
-    { id: "generadores", name: "GENERADORES" },
-];
+    ...new Set(products.map((product) => product.category)),
+].map((category) => ({
+    id: category,
+    name: category.toUpperCase(),
+}));
 
 // Get unique subcategories for each category
 const subcategories = categories.reduce(
