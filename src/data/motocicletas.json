@@ -1301,8 +1301,7 @@
             "Transmisión Final": "Cadena",
             "Velocidades": "5 velocidades",
             "Arranque": "Electrico y Patada",
-            "Sistemadealimentacion": "Caburador",
-            "": ""
+            "Sistemadealimentacion": "Caburador"
         },
         "chassis": {
             "Freno delantero": "Disco",
