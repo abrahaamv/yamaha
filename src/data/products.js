@@ -651,7 +651,7 @@ const products = [
         "image": "/assets/images/products/motocicletas/scooter/RAYZR125FI.webp",
         "name": "RAY ZR 125 FI",
         "category": "motocicletas",
-        "subcategory": "scooter",
+        "subcategory": "scooters",
         "discount": null,
         "isNew": false,
         "technicalInformation": {
@@ -685,45 +685,118 @@ const products = [
             "Peso total con líquidos": "99 kg"
         }
     },
-        {
-          image: "/assets/images/products/motocicletas/scooter/TMAX560.webp",
-          name: "TMAX 560",
-          category: "motocicletas",
-          subcategory: "scooter",
-          description: "Eficiencia y comodidad para el uso urbano.",
-          discount: null,
-          isNew: false,
-          technicalInformation: {
-            Motor: "4 Tiempos, Bicilíndrico, DOHC",
-            Refrigeración: "Por líquido",
-            Cilindrada: "321 c.c.",
-            Caballaje: "41 Hp",
-            Revolución: "10,750 RPM",
-            TransmisiónFinal: "Cadena",
-            Velocidades: "6 velocidades",
-            Arranque: "Eléctrico",
-            SistemaDeAlimentación: "Inyección Electrónica",
-            CapacidadDeCombustible: "3.7 Galones",
-          },
-          chassis: {
-            FrenoDelantero: "Disco",
-            FrenoTrasero: "Disco",
-            TipoDeAros: "Magnesio",
-            NeumáticoDelantero: "110/70-17M/C 54H",
-            NeumáticoTrasero: "140/70-17M/C 66H",
-            SuspensiónDelantera: "Horquilla telescópica",
-            SuspensiónTrasera: "Brazo Basculante",
-          },
-          dimensions: {
-            LongitudTotal: "2,090 mm",
-            AnchoTotal: "745 mm",
-            AlturaTotal: "1,035 mm",
-            AlturaAlAsiento: "780 mm",
-            DistanciaEntreEjes: "1,350 mm",
-            DistanciaMinimaAlSuelo: "160 mm",
-            PesoTotalConLíquidos: "363 libras",
-          },
+    {
+        "image": "/assets/images/products/motocicletas/scooter/TMAX560.webp",
+        "name": "TMAX 560",
+        "category": "motocicletas",
+        "subcategory": "scooters",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, bi-cilindrico DOHC",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "562 c.c.",
+            "Caballaje": "46 Hp",
+            "Revolucion": "7,500 rpm",
+            "Transmisión Final": "Banda",
+            "Velocidades": "Automática",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Inyección Electrónica",
+            "ParMáximoDeclarado": "56 nm"
         },
+        "chassis": {
+            "Longitud total": "2,200 mm",
+            "Ancho total": "765 mm",
+            "Altura total": "1420 mm-1555 mm (parabrisas ajustable)",
+            "Altura al asiento": "800 mm",
+            "Distancia entre ejes": "1,575 mm",
+            "Distanciaminimaalsuelo": "125 mm",
+            "Pesototalconliquidos": "218 Kg"
+        },
+        "dimensions": {
+            "Freno delantero": "Doble disco 267mm",
+            "Freno trasero": "Disco 282mm",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "120/70 x 15″",
+            "Neumático trasero": "160/60 x 15″",
+            "Suspensión delantera": "Horquilla telescopica",
+            "Suspensión trasera": "Monoamortiguador"
+        }
+    },
+    {
+        "image": "/assets/images/products/motocicletas/scooter/XMAX300.webp",
+        "name": "XMAX 300",
+        "category": "motocicletas",
+        "subcategory": "scooters",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, monocilindrico SOHC",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "292 c.c.",
+            "Caballaje": "27.6 Hp",
+            "Revolucion": "7,250 rpm",
+            "Transmisión Final": "Banda",
+            "Velocidades": "Automatica",
+            "Arranque": "Electrico",
+            "Sistemadealimentacion": "Inyección Electrónica",
+            "Capacidad de combustible": "3.4 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "2.50 x 18 4PR",
+            "Neumático trasero": "2.75 x 18 6PR",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Doble Amortiguador"
+        },
+        "dimensions": {
+            "Longitud total": "2,185 mm",
+            "Ancho total": "775 mm",
+            "Altura total": "1,415 mm",
+            "Altura al asiento": "795 mm",
+            "Distancia entre ejes": "1,540 mm",
+            "Distanciaminimaalsuelo": "135 mm",
+            "Pesototalconliquidos": "394 libras"
+        }
+    },
+     {
+        "image": "/assets/images/products/motocicletas/scooter/NMAX155.webp",
+        "name": "NMAX 155",
+        "category": "motocicletas",
+        "subcategory": "scooters",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, SOHC",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "155 c.c.",
+            "Caballaje": "14.9 Hp",
+            "Revolución": "8,000 rpm",
+            "Transmisión Final": "Banda",
+            "Velocidades": "Automática",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Inyección Electrónica",
+            "Capacidad de combustible": "1.7 Galones"
+        },
+        "chassis": {
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "2.50 x 18 4PR",
+            "Neumático trasero": "2.75 x 18 6PR",
+            "Suspensión delantera": "Horquilla telescopica",
+            "Suspensión trasera": "Doble Amortiguador"
+        },
+        "dimensions": {
+            "Longitud total": "1,995mm",
+            "Ancho total": "740 mm",
+            "Altura total": "1,115 mm",
+            "Altura al asiento": "765 mm",
+            "Distancia entre ejes": "1,350 mm",
+            "Distancia mínima al suelo": "135 mm",
+            "Peso total con líquidos": "279 libras"
+        }
+    },
       ],
       "semi deportivas": [
         {
