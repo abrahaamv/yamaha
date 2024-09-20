@@ -119,90 +119,572 @@ const products = [
             "Peso total con líquidos": "462 libras"
         }
     },
+    {
+        "image": "/assets/images/products/motocicletas/deportivas/MT-09SP.webp",
+        "name": "MT-09 SP",
+        "category": "motocicletas",
+        "subcategory": "deportivas",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, 3 Cilindros, DOHC",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "847 c.c.",
+            "Caballaje": "113.4 Hp",
+            "Revolución": "10,000 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "6 velocidades",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Inyección Electrónica",
+            "Capacidad de combustible": "3.70 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Doble Disco",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "120/70ZR17M/C (58W)",
+            "Neumático trasero": "180/55ZR17M/C (73W)",
+            "Suspensión delantera": "Horquilla telescópica invertida",
+            "Suspensión trasera": "Coil spring/Gas-hydraulic damper"
+        },
+        "dimensions": {
+            "Longitud total": "2,075 mm",
+            "Ancho total": "815 mm",
+            "Altura total": "1,120 mm",
+            "Altura al asiento": "820 mm",
+            "Distancia entre ejes": "1,440 mm",
+            "Distancia mínima al suelo": "135 mm",
+            "Peso total con líquidos": "425 libras"
+        }
+    },
+     {
+        "image": "/assets/images/products/motocicletas/deportivas/MT-09.webp",
+        "name": "MT-09",
+        "category": "motocicletas",
+        "subcategory": "deportivas",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, 3 Cilindros, DOHC",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "847 c.c.",
+            "Caballaje": "113.4 Hp",
+            "Revolución": "10,000rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "6 velocidades",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Inyección Electrónica",
+            "Capacidad de combustible": "3.70 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Doble Disco",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "120/70ZR17M/C (58W)",
+            "Neumático trasero": "180/55ZR17M/C (73W)",
+            "Suspensión delantera": "Horquilla telescopica invertida",
+            "Suspensión trasera": "Monoshock"
+        },
+        "dimensions": {
+            "Longitud total": "2,075 mm",
+            "Ancho total": "815 mm",
+            "Altura total": "1,120 mm",
+            "Altura al asiento": "820 mm",
+            "Distancia entre ejes": "1,440 mm",
+            "Distancia mínima al suelo": "135 mm",
+            "Peso total con líquidos": "425 libras"
+        }
+    },
+    {
+        "image": "/assets/images/products/motocicletas/deportivas/MT-07.webp",
+        "name": "MT-07",
+        "category": "motocicletas",
+        "subcategory": "deportivas",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, Bicilindrico, DOHC",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "689 c.c.",
+            "Caballaje": "73.7 Hp",
+            "Revolución": "9,000 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "6 velocidades",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Inyección Electrónica",
+            "Capacidad de combustible": "3.70 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Doble Disco",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "120/70 ZR 17M/C 58W",
+            "Neumático trasero": "180/55 ZR 17M/C 73W",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Brazo Basculante"
+        },
+        "dimensions": {
+            "Longitud total": "2,085 mm",
+            "Ancho total": "745 mm",
+            "Altura total": "1,090 mm",
+            "Altura al asiento": "805 mm",
+            "Distancia entre ejes": "1,400 mm",
+            "Distancia mínima al suelo": "140 mm",
+            "Peso total con líquidos": "403 libras"
+        }
+    },
+    {
+        "image": "/assets/images/products/motocicletas/deportivas/MT-03.webp",
+        "name": "MT-03",
+        "category": "motocicletas",
+        "subcategory": "deportivas",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, Bicilindrico, DOHC",
+            "Refrigeración": "Por líquido",
+            "Cilindrada": "321 c.c.",
+            "Caballaje": "41 Hp",
+            "Revolución": "10,750 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "6 velocidades",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Inyección Electrónica",
+            "Capacidad de combustible": "3.7 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "110/70-17M/C 54H",
+            "Neumático trasero": "140/70-17M/C 66H",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Brazo Basculante"
+        },
+        "dimensions": {
+            "Longitud total": "2,090 mm",
+            "Ancho total": "745 mm",
+            "Altura total": "1,035 mm",
+            "Altura al asiento": "780 mm",
+            "Distancia entre ejes": "1,350 mm",
+            "Distancia mínima al suelo": "160 mm",
+            "Peso total con líquidos": "363 libras"
+        }
+    },
       ],
       "doble propósito": [
         {
-          image: "/assets/images/products/motocicletas/doble-proposito/AG200.webp",
-          name: "AG200",
-          category: "doble propósito",
-          subcategory: "adventure",
-          description: "Versatilidad para uso urbano y off-road.",
-          discount: null,
-          isNew: false,
-          technicalInformation: {
-            Motor: "4 Tiempos, Bicilíndrico, DOHC",
-            Refrigeración: "Por líquido",
-            Cilindrada: "321 c.c.",
-            Caballaje: "41 Hp",
-            Revolución: "10,750 RPM",
-            TransmisiónFinal: "Cadena",
-            Velocidades: "6 velocidades",
-            Arranque: "Eléctrico",
-            SistemaDeAlimentación: "Inyección Electrónica",
-            CapacidadDeCombustible: "3.7 Galones",
-          },
-          chassis: {
-            FrenoDelantero: "Disco",
-            FrenoTrasero: "Disco",
-            TipoDeAros: "Magnesio",
-            NeumáticoDelantero: "110/70-17M/C 54H",
-            NeumáticoTrasero: "140/70-17M/C 66H",
-            SuspensiónDelantera: "Horquilla telescópica",
-            SuspensiónTrasera: "Brazo Basculante",
-          },
-          dimensions: {
-            LongitudTotal: "2,090 mm",
-            AnchoTotal: "745 mm",
-            AlturaTotal: "1,035 mm",
-            AlturaAlAsiento: "780 mm",
-            DistanciaEntreEjes: "1,350 mm",
-            DistanciaMinimaAlSuelo: "160 mm",
-            PesoTotalConLíquidos: "363 libras",
-          },
+        "image": "/assets/images/products/motocicletas/doble-proposito/AG200.webp",
+        "name": "AG200",
+        "category": "motocicletas",
+        "subcategory": "doble propósito",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, SOHC, 2 válvulas",
+            "Refrigeración": "por aire",
+            "Cilindrada": "196 c.c.",
+            "Caballaje": "14.1 Hp",
+            "Revolución": "7,000 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "5 velocidades",
+            "Arranque": "Patada",
+            "Sistema de alimentación": "Carburador",
+            "Capacidad de combustible": "2.6 Galones"
         },
+        "chassis": {
+            "Freno delantero": "Fricción",
+            "Freno trasero": "Fricción",
+            "Tipo de aros": "Rayos",
+            "Neumático delantero": "80/100-21 51M",
+            "Neumático trasero": "4.10-18 59M",
+            "Suspensión delantera": "Horquilla telescopica",
+            "Suspensión trasera": "Monoshock"
+        },
+        "dimensions": {
+            "Longitud total": "2,160 mm",
+            "Ancho total": "930 mm",
+            "Altura total": "1,555 mm",
+            "Altura al asiento": "930 mm",
+            "Distancia entre ejes": "1345 mm",
+            "Distancia mínima al suelo": "255 mm",
+            "Peso total con líquidos": "282 libras"
+        }
+    },
+        {
+        "image": "/assets/images/products/motocicletas/doble-proposito/XTZ150.webp",
+        "name": "XTZ150",
+        "category": "motocicletas",
+        "subcategory": "doble propósito",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, SOHC",
+            "Refrigeración": "por aire",
+            "Cilindrada": "149 c.c.",
+            "Caballaje": "12.3 Hp",
+            "Revolucion": "7,750 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "5 velocidades",
+            "Arranque": "Electrico",
+            "Sistemadealimentacion": "Inyección Electrónica",
+            "Capacidad de combustible": "3.17 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Fricción",
+            "Tipo de aros": "Rayos",
+            "Neumático delantero": "90/90-19M/C 60P",
+            "Neumático trasero": "110/90-17MC 60P",
+            "Suspensión delantera": "Horquilla telescopica",
+            "Suspensión trasera": "Monoshock con biela"
+        },
+        "dimensions": {
+            "Longitud total": "2,050 mm",
+            "Ancho total": "830 mm",
+            "Altura total": "1,140 mm",
+            "Altura al asiento": "835 mm",
+            "Distancia entre ejes": "1,350 mm",
+            "Distanciaminimaalsuelo": "235 mm",
+            "Pesototalconliquidos": "288 libras"
+        }
+    },
+     {
+        "image": "/assets/images/products/motocicletas/doble-proposito/XTZ125E.webp",
+        "name": "XTZ125E",
+        "category": "motocicletas",
+        "subcategory": "doble propósito",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 tiempos, monocilíndrico SOHC",
+            "Refrigeración": "por aire",
+            "Cilindrada": "125 c.c.",
+            "Caballaje": "10 Hp",
+            "Revolucion": "8,000 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "5 velocidades",
+            "Arranque": "Electrico y Patada",
+            "Sistemadealimentacion": "Caburador",
+            "Capacidad de combustible": "2.8 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Fricción",
+            "Tipo de aros": "Rayos",
+            "Neumático delantero": "80/90-21M/C 48P",
+            "Neumático trasero": "110/80-18M/C 58P",
+            "Suspensión delantera": "Horquilla telescopica",
+            "Suspensión trasera": "Monoshock"
+        },
+        "dimensions": {
+            "Longitud total": "2,090 mm",
+            "Ancho total": "830 mm",
+            "Altura total": "1,115 mm",
+            "Altura al asiento": "840 mm",
+            "Distancia entre ejes": "1,340 mm",
+            "Distanciaminimaalsuelo": "260 mm",
+            "Pesototalconliquidos": "260 libras"
+        }
+    },
+     {
+        "image": "/assets/images/products/motocicletas/doble-proposito/YBR125G.webp",
+        "name": "YBR125G",
+        "category": "motocicletas",
+        "subcategory": "doble propósito",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, monocilindrico SOHC",
+            "Refrigeración": "por aire",
+            "Cilindrada": "125 c.c.",
+            "Caballaje": "10 Hp",
+            "Revolucion": "8,000 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "5 velocidades",
+            "Arranque": "Electrico y Patada",
+            "Sistemadealimentacion": "Carburador",
+            "Capacidad de combustible": "3.17 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Discos",
+            "Freno trasero": "Fricción",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "2.75-18 42P",
+            "Neumático trasero": "90/90-1857P",
+            "Suspensión delantera": "Horquilla telescopica",
+            "Suspensión trasera": "Doble Amortiguador"
+        },
+        "dimensions": {
+            "Longitud total": "1,980 mm",
+            "Ancho total": "745 mm",
+            "Altura total": "1,050 mm",
+            "Altura al asiento": "780 mm",
+            "Distancia entre ejes": "1,290 mm",
+            "Distanciaminimaalsuelo": "160 mm",
+            "Pesototalconliquidos": "264 libras"
+        }
+    },
       ],
       "motocross": [
         {
-          image: "/assets/images/products/motocicletas/motocross/WR250F.webp",
-          name: "WR250F",
-          category: "motocicletas",
-          subcategory: "motocross",
-          description: "Rendimiento y durabilidad para el motocross.",
-          discount: null,
-          isNew: false,
-          technicalInformation: {
-            Motor: "4 Tiempos, Bicilíndrico, DOHC",
-            Refrigeración: "Por líquido",
-            Cilindrada: "321 c.c.",
-            Caballaje: "41 Hp",
-            Revolución: "10,750 RPM",
-            TransmisiónFinal: "Cadena",
-            Velocidades: "6 velocidades",
-            Arranque: "Eléctrico",
-            SistemaDeAlimentación: "Inyección Electrónica",
-            CapacidadDeCombustible: "3.7 Galones",
-          },
-          chassis: {
-            FrenoDelantero: "Disco",
-            FrenoTrasero: "Disco",
-            TipoDeAros: "Magnesio",
-            NeumáticoDelantero: "110/70-17M/C 54H",
-            NeumáticoTrasero: "140/70-17M/C 66H",
-            SuspensiónDelantera: "Horquilla telescópica",
-            SuspensiónTrasera: "Brazo Basculante",
-          },
-          dimensions: {
-            LongitudTotal: "2,090 mm",
-            AnchoTotal: "745 mm",
-            AlturaTotal: "1,035 mm",
-            AlturaAlAsiento: "780 mm",
-            DistanciaEntreEjes: "1,350 mm",
-            DistanciaMinimaAlSuelo: "160 mm",
-            PesoTotalConLíquidos: "363 libras",
-          },
+        "image": "/assets/images/products/motocicletas/motocross/WR250F.webp",
+        "name": "WR250F",
+        "category": "motocicletas",
+        "subcategory": "motocross",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, DOHC",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "250cc",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "6 velocidades",
+            "Arranque": "Eléctrico",
+            "Sistemadealimentacion": "Inyección electrónica",
+            "Capacidad de combustible": "2.5 Galones"
         },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Rayos",
+            "Neumático delantero": "80/100 – 21",
+            "Neumático trasero": "110/100 – 18",
+            "Suspensión delantera": "Horquilla telescopica invertida",
+            "Suspensión trasera": "Monocross"
+        },
+        "dimensions": {
+            "Longitud total": "2.174 mm",
+            "Ancho total": "825 mm",
+            "Altura total": "1.270 mm",
+            "Altura al asiento": "1.480 mm",
+            "Distancia entre ejes": "955 mm",
+            "Distanciaminimaalsuelo": "117 mm",
+            "Pesototalconliquidos": "253 libras"
+        }
+    },
+       {
+        "image": "/assets/images/products/motocicletas/motocross/TTR-230.webp",
+        "name": "TTR-230",
+        "category": "motocicletas",
+        "subcategory": "motocross",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "Monocilíndrico, 4T, SOHC,",
+            "Refrigeración": "por aire",
+            "Cilindrada": "223 c.c.",
+            "Transmisión Final": "Banda",
+            "Velocidades": "Toma constante, 6 velocidades",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Carburador",
+            "Capacidad de combustible": "8 Litros"
+        },
+        "chassis": {
+            "CHASIS": "Tipo Diamante",
+            "Freno delantero": "Disco simple de 220 mm x 3,5 mm",
+            "Freno trasero": "Tambor de 130 mm",
+            "Tipo de aros": "Rayos",
+            "Neumático delantero": "80/100-21 51R",
+            "Neumático trasero": "100/100-18 59R",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Basculante monocross"
+        },
+        "dimensions": {
+            "Longitud total": "2,065 mm",
+            "Ancho total": "800 mm",
+            "Altura total": "1,180 mm",
+            "Altura al asiento": "860 mm",
+            "Distancia entre ejes": "1,385 mm",
+            "Distancia mínima al suelo": "295 mm",
+            "Peso total con líquidos": "114 kg"
+        }
+    },
+      {
+        "image": "/assets/images/products/motocicletas/motocross/TTR-50.webp",
+        "name": "TTR-50",
+        "category": "motocicletas",
+        "subcategory": "motocross",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 tiempos, 1 cilindro, SOHC, 2 válvulas",
+            "Refrigeración": "Aire",
+            "Cilindrada": "49 c.c.",
+            "Caballaje": "3 Hp",
+            "Revolucion": "8,500 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "3 marchas",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Carburador Mikuni VM11",
+            "Capacidad de combustible": "3.1 Litros"
+        },
+        "chassis": {
+            "Freno delantero": "Tambor",
+            "Freno trasero": "Tambor",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "2.50-10 4PR",
+            "Neumático trasero": "2.50-10 4PR",
+            "Suspensión delantera": "Horquilla telescópica"
+        },
+        "dimensions": {
+            "Longitud total": "1,305 mm",
+            "Ancho total": "595 mm",
+            "Altura total": "775 mm",
+            "Altura al asiento": "555 mm",
+            "Distancia entre ejes": "925 mm",
+            "Peso total con líquidos": "57 kg"
+        }
+    },
+    {
+        "image": "/assets/images/products/motocicletas/motocross/YZ250F.webp",
+        "name": "YZ250F",
+        "category": "motocicletas",
+        "subcategory": "motocross",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, DOHC",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "250 c.c.",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "5 velocidades",
+            "Arranque": "Electrico",
+            "Sistemadealimentacion": "Inyeccion Electronica",
+            "Capacidad de combustible": "1.6 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Rayos",
+            "Neumático delantero": "80/100 – 21 51M",
+            "Neumático trasero": "100/90 – 19 57M",
+            "Suspensión delantera": "Horquilla telescopica invertida",
+            "Suspensión trasera": "Monocross"
+        },
+        "dimensions": {
+            "Longitud total": "2,175 mm",
+            "Ancho total": "825 mm",
+            "Altura total": "1,285 mm",
+            "Altura al asiento": "970 mm",
+            "Distancia entre ejes": "1,465 mm",
+            "Distanciaminimaalsuelo": "360 mm",
+            "Pesototalconliquidos": "229 libras"
+        }
+    },
+     {
+        "image": "/assets/images/products/motocicletas/motocross/YZ85LW.webp",
+        "name": "YZ85LW",
+        "category": "motocicletas",
+        "subcategory": "motocross",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "2 Tiempos",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "85 cc",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "6 velocidades",
+            "Arranque": "Patada",
+            "Sistemadealimentacion": "Caburador",
+            "Capacidad de combustible": "1.3 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Rayos",
+            "Neumático delantero": "70/100-19 42M",
+            "Neumático trasero": "90/100-16 52M",
+            "Suspensión delantera": "Horquilla telescopica invertida",
+            "Suspensión trasera": "Monoshock"
+        },
+        "dimensions": {
+            "Longitud total": "1,903 mm",
+            "Ancho total": "758 mm",
+            "Altura total": "1,156 mm",
+            "Altura al asiento": "904 mm",
+            "Distancia entre ejes": "1,286 mm",
+            "Distanciaminimaalsuelo": "393 mm",
+            "Pesototalconliquidos": "160 libras"
+        }
+    },
+    {
+        "image": "/assets/images/products/motocicletas/motocross/PW50.webp",
+        "name": "PW50",
+        "category": "motocicletas",
+        "subcategory": "motocross",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "2 Tiempos Monocilindro",
+            "Refrigeración": "por aire",
+            "Cilindrada": "49 c.c.",
+            "Caballaje": "2.7 Hp",
+            "Transmisión Final": "Eje",
+            "Velocidades": "Automática",
+            "Arranque": "Pata",
+            "Sistema de alimentación": "Carburador",
+            "Capacidad de combustible": "0.5 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Tambor",
+            "Freno trasero": "Tambor",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "2.50-10 4PR",
+            "Neumático trasero": "2.50-10 4PR",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Basculante, doble amortiguador"
+        },
+        "dimensions": {
+            "Longitud total": "1,245 mm",
+            "Ancho total": "610 mm",
+            "Altura total": "705 mm",
+            "Altura al asiento": "485 mm",
+            "Distancia entre ejes": "855 mm",
+            "Distancia mínima al suelo": "95 mm",
+            "Peso total con líquidos": "90 libras"
+        }
+    },
       ],
       "scooter": [
+        {
+        "image": "/assets/images/products/motocicletas/scooter/RAYZR125FI.webp",
+        "name": "RAY ZR 125 FI",
+        "category": "motocicletas",
+        "subcategory": "scooter",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, SOHC",
+            "Refrigeración": "por aire",
+            "Cilindrada": "125 c.c.",
+            "Caballaje": "8 Hp",
+            "Revolución": "5,000 rpm",
+            "Transmisión Final": "Automático CVT",
+            "Velocidades": "4 velocidades",
+            "Arranque": "Eléctrico y pedal",
+            "Sistema de alimentación": "Inyección electrónica",
+            "Capacidad de combustible": "5.2 Litros"
+        },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Fricción",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "90/90/12",
+            "Neumático trasero": "110/90/10",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Amortiguador Lateral"
+        },
+        "dimensions": {
+            "Longitud total": "1.850 mm",
+            "Ancho total": "670 mm",
+            "Altura total": "1,080 mm",
+            "AlturaAsiento": "780 mm",
+            "Distancia entre ejes": "1,250 mm",
+            "Distancia mínima al suelo": "145 mm",
+            "Peso total con líquidos": "99 kg"
+        }
+    },
         {
           image: "/assets/images/products/motocicletas/scooter/TMAX560.webp",
           name: "TMAX 560",
@@ -409,44 +891,80 @@ const products = [
       ],
       "urbanas": [
         {
-          image: "/assets/images/products/motocicletas/urbanas/YBR125ED.webp",
-          name: "YBR 125 ED",
-          category: "motocicletas",
-          subcategory: "urbanas",
-          description: "Compacta y económica para la ciudad.",
-          discount: null,
-          isNew: false,
-          technicalInformation: {
-            Motor: "4 Tiempos, Bicilíndrico, DOHC",
-            Refrigeración: "Por líquido",
-            Cilindrada: "321 c.c.",
-            Caballaje: "41 Hp",
-            Revolución: "10,750 RPM",
-            TransmisiónFinal: "Cadena",
-            Velocidades: "6 velocidades",
-            Arranque: "Eléctrico",
-            SistemaDeAlimentación: "Inyección Electrónica",
-            CapacidadDeCombustible: "3.7 Galones",
-          },
-          chassis: {
-            FrenoDelantero: "Disco",
-            FrenoTrasero: "Disco",
-            TipoDeAros: "Magnesio",
-            NeumáticoDelantero: "110/70-17M/C 54H",
-            NeumáticoTrasero: "140/70-17M/C 66H",
-            SuspensiónDelantera: "Horquilla telescópica",
-            SuspensiónTrasera: "Brazo Basculante",
-          },
-          dimensions: {
-            LongitudTotal: "2,090 mm",
-            AnchoTotal: "745 mm",
-            AlturaTotal: "1,035 mm",
-            AlturaAlAsiento: "780 mm",
-            DistanciaEntreEjes: "1,350 mm",
-            DistanciaMinimaAlSuelo: "160 mm",
-            PesoTotalConLíquidos: "363 libras",
-          },
+        "image": "/assets/images/products/motocicletas/urbanas/YBR125ED.webp",
+        "name": "YBR125ED",
+        "category": "motocicletas",
+        "subcategory": "urbanas",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, monocilindros SOHC",
+            "Refrigeración": "por aire",
+            "Cilindrada": "125 c.c.",
+            "Caballaje": "10 Hp",
+            "Revolucion": "8,000 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "5 velocidades",
+            "Arranque": "Electrico y Patada",
+            "Sistemadealimentacion": "Caburador"
         },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Fricción",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "2-75 – 18 42 P",
+            "Neumático trasero": "90/90 – 18 57p",
+            "Suspensión delantera": "Horquilla telescopica",
+            "Suspensión trasera": "Doble Amortiguador"
+        },
+        "dimensions": {
+            "Longitud total": "1,980 mm",
+            "Ancho total": "745 mm",
+            "Altura total": "1,050 mm",
+            "Altura al asiento": "780 mm",
+            "Distancia entre ejes": "1,290 mm",
+            "Distanciaminimaalsuelo": "160 mm",
+            "Pesototalconliquidos": "266 libras"
+        }
+    },
+     {
+        "image": "/assets/images/products/motocicletas/urbanas/CRUX.webp",
+        "name": "CRUX",
+        "category": "motocicletas",
+        "subcategory": "urbanas",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "Blue Core, 4 Tiempos, SOHC",
+            "Refrigeración": "por aire",
+            "Cilindrada": "110 c.c.",
+            "Caballaje": "7.5 Hp",
+            "Revolución": "7,500 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "4 velocidades",
+            "Arranque": "Eléctrico y Patada",
+            "Sistema de alimentación": "Carburador",
+            "Capacidad de combustible": "2.9 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Fricción",
+            "Freno trasero": "Fricción",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "2.50 x 18 4PR",
+            "Neumático trasero": "2.75 x 18 6PR",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Doble Amortiguador"
+        },
+        "dimensions": {
+            "Longitud total": "2,000 mm",
+            "Ancho total": "735 mm",
+            "Altura total": "1,075 mm",
+            "Altura al asiento": "780 mm",
+            "Distancia entre ejes": "",
+            "Distancia mínima al suelo": "160 mm",
+            "Peso total con líquidos": "249 libras"
+        }
+    },
       ],
     },
   },
