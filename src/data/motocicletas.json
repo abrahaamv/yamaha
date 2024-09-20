@@ -86,7 +86,6 @@
             "Motor": "4 Tiempos, SOHC",
             "Refrigeración": "por aire",
             "Cilindrada": "110 c.c.",
-            "": "",
             "Revolucion": "8,000 rpm",
             "Transmisión Final": "Cadena",
             "Velocidades": "4 velocidades",
@@ -475,7 +474,6 @@
             "Capacidad de combustible": "1.7 Galones"
         },
         "chassis": {
-            "": "",
             "Tipo de aros": "Magnesio",
             "Neumático delantero": "2.50 x 18 4PR",
             "Neumático trasero": "2.75 x 18 6PR",
