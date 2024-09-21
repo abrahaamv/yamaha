@@ -1182,45 +1182,82 @@ const products = [
     },
       ],
       "sport touring": [
-        {
-          image: "/assets/images/products/motocicletas/sport-touring/TRACER900GT.webp",
-          name: "TRACER 900 GT",
-          category: "motocicletas",
-          subcategory: "sport touring",
-          description: "Tecnología avanzada para un viaje deportivo.",
-          discount: null,
-          isNew: false,
-          technicalInformation: {
-            Motor: "4 Tiempos, Bicilíndrico, DOHC",
-            Refrigeración: "Por líquido",
-            Cilindrada: "321 c.c.",
-            Caballaje: "41 Hp",
-            Revolución: "10,750 RPM",
-            TransmisiónFinal: "Cadena",
-            Velocidades: "6 velocidades",
-            Arranque: "Eléctrico",
-            SistemaDeAlimentación: "Inyección Electrónica",
-            CapacidadDeCombustible: "3.7 Galones",
-          },
-          chassis: {
-            FrenoDelantero: "Disco",
-            FrenoTrasero: "Disco",
-            TipoDeAros: "Magnesio",
-            NeumáticoDelantero: "110/70-17M/C 54H",
-            NeumáticoTrasero: "140/70-17M/C 66H",
-            SuspensiónDelantera: "Horquilla telescópica",
-            SuspensiónTrasera: "Brazo Basculante",
-          },
-          dimensions: {
-            LongitudTotal: "2,090 mm",
-            AnchoTotal: "745 mm",
-            AlturaTotal: "1,035 mm",
-            AlturaAlAsiento: "780 mm",
-            DistanciaEntreEjes: "1,350 mm",
-            DistanciaMinimaAlSuelo: "160 mm",
-            PesoTotalConLíquidos: "363 libras",
-          },
+         {
+        "image": "/assets/images/products/motocicletas/sport-touring/TRACER900GT.webp",
+        "name": "TRACER 900 GT",
+        "category": "motocicletas",
+        "subcategory": "sport touring",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, 3 Cilindros, DOHC",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "890c.c.",
+            "Caballaje": "119 Hp",
+            "Revolucion": "10,000 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "6 velocidades",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Inyección Electrónica",
+            "Capacidad de combustible": "4.7 Galones"
         },
+        "chassis": {
+            "Freno delantero": "Doble Disco",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "120/70ZR17M/C (58W)",
+            "Neumático trasero": "180/55ZR17M/C (73W)",
+            "Suspensión delantera": "Horquilla telescopica invertida",
+            "Suspensión trasera": "Brazo Basculante"
+        },
+        "dimensions": {
+            "Longitud total": "2,175 mm",
+            "Ancho total": "850 mm",
+            "Altura total": "1,375 mm max 1,430 mm",
+            "Altura al asiento": "810 mm",
+            "Distancia entre ejes": "1,500 mm",
+            "Distanciaminimaalsuelo": "135 mm",
+            "Pesototalconliquidos": "213 kg"
+        }
+    },
+     {
+        "image": "/assets/images/products/motocicletas/sport-touring/TRACER900GT+.webp",
+        "name": "TRACER 9 GT+",
+        "category": "motocicletas",
+        "subcategory": "sport touring",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, 3 Cilindros, DOHC",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "890 c.c.",
+            "Caballaje": "119 Hp",
+            "Revolucion": "10,000 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "6 velocidades",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Inyección Electrónico",
+            "Capacidad de combustible": "4.7 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Doble Disco",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "120/70ZR17M/C (58W)",
+            "Neumático trasero": "180/55ZR17M/C (73W)",
+            "Suspensión delantera": "Horquilla telescopica invertida",
+            "Suspensión trasera": "Brazo Basculante"
+        },
+        "dimensions": {
+            "Longitud total": "2,175 mm",
+            "Ancho total": "850 mm",
+            "Altura total": "1,375 mm max 1,430 mm",
+            "Altura al asiento": "810 mm",
+            "Distancia entre ejes": "1,500 mm",
+            "Distanciaminimaalsuelo": "135 mm",
+            "Pesototalconliquidos": "213 kg"
+        }
+    },
       ],
       "super deportivas": [
         {
