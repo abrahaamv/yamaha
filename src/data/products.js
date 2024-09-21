@@ -1260,6 +1260,45 @@ const products = [
     },
       ],
       "super deportivas": [
+          {
+        "image": "/assets/images/products/motocicletas/super-deportivas/R15.webp",
+        "name": "R15",
+        "category": "motocicletas",
+        "subcategory": "super deportivas",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 tiempos, monocilíndrica, SOHC, 4 válvulas",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "155 c.c.",
+            "Caballaje": "18Hp a 10000 rpm",
+            "Revolucion": "7,500 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "6 velocidades",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Inyección Electrónica",
+            "Capacidad de combustible": "11 Litros"
+        },
+        "chassis": {
+            "CHASIS": "Diamante",
+            "Freno delantero": "Disco hidráulico con ABS",
+            "Freno trasero": "Disco hidráulico con ABS",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "100/80-17M/C 52P",
+            "Neumático trasero": "140/70R17M/C 66H",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Basculante"
+        },
+        "dimensions": {
+            "Longitud total": "1,990 mm",
+            "Ancho total": "725 mm",
+            "Altura total": "1,135 mm",
+            "Altura al asiento": "835 mm",
+            "Distancia entre ejes": "815 mm",
+            "Distancia mínima al suelo": "170 mm",
+            "Peso total con líquidos": "140 kg"
+        }
+    },
         {
           image: "/assets/images/products/motocicletas/super-deportivas/R6RACE.webp",
           name: "R6 RACE",
