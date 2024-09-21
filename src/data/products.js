@@ -797,88 +797,389 @@ const products = [
             "Peso total con líquidos": "279 libras"
         }
     },
+       {
+        "image": "/assets/images/products/motocicletas/scooter/CRYPTON.webp",
+        "name": "CRYPTON",
+        "category": "motocicletas",
+        "subcategory": "scooters",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, SOHC",
+            "Refrigeración": "por aire",
+            "Cilindrada": "110 c.c.",
+            "Revolucion": "8,000 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "4 velocidades",
+            "Arranque": "Eléctrico y Patada",
+            "Sistema de alimentación": "Carburador",
+            "Capacidad de combustible": "1,1 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Fricción",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "70/90 17M/C 38P",
+            "Neumático trasero": "80/90 17M/C 50P",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Doble Amortiguador"
+        },
+        "dimensions": {
+            "Longitud total": "1,870 mm",
+            "Ancho total": "675 mm",
+            "Altura total": "1,040 mm",
+            "Altura al asiento": "770 mm",
+            "Distancia entre ejes": "1,205 mm",
+            "Distancia mínima al suelo": "130 mm",
+            "Peso total con líquidos": "224 libras"
+        }
+    },
+    {
+        "image": "/assets/images/products/motocicletas/scooter/RAYZ.webp",
+        "name": "RAY ZR CON FRENO DE DISCO",
+        "category": "motocicletas",
+        "subcategory": "scooters",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "Blue Core, 4 Tiempos, SOHC",
+            "Refrigeración": "por aire",
+            "Cilindrada": "113 c.c.",
+            "Caballaje": "7.1 Hp",
+            "Revolución": "7,500 rpm",
+            "Transmisión Final": "Banda",
+            "Velocidades": "Automática",
+            "Arranque": "Eléctrico y Patada",
+            "Sistema de alimentación": "Carburador",
+            "Capacidad de combustible": "1.3 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Fricción",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "90/100-10 53J",
+            "Neumático trasero": "90/100-10 53J",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Mono Amortiguador"
+        },
+        "dimensions": {
+            "Longitud total": "1,820 mm",
+            "Ancho total": "690 mm",
+            "Altura total": "1,115 mm",
+            "Altura al asiento": "775 mm",
+            "Distancia entre ejes": "1,270 mm",
+            "Distancia mínima al suelo": "130 mm",
+            "Peso total con líquidos": "227 libras"
+        }
+    },
+     {
+        "image": "/assets/images/products/motocicletas/scooter/RAYZR.webp",
+        "name": "RAY ZR",
+        "category": "motocicletas",
+        "subcategory": "scooters",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "Blue Core, 4 Tiempos, SOHC",
+            "Refrigeración": "por aire",
+            "Cilindrada": "115 c.c.",
+            "Caballaje": "7.1 Hp",
+            "Revolución": "7,500 rpm",
+            "Transmisión Final": "Banda",
+            "Velocidades": "Automática",
+            "Arranque": "Eléctrico y Patada",
+            "Sistema de alimentación": "Carburador",
+            "Capacidad de combustible": "1.3 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Fricción",
+            "Freno trasero": "Fricción",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "90/100-10 53J",
+            "Neumático trasero": "90/100-10 53J",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Mono Amortiguador"
+        },
+        "dimensions": {
+            "Longitud total": "",
+            "Ancho total": "690 mm",
+            "Altura total": "1,115 mm",
+            "Altura al asiento": "775mm",
+            "Distancia entre ejes": "1,270 mm",
+            "Distancia mínima al suelo": "130 mm",
+            "Peso total con líquidos": "1,820 libras"
+        }
+    },
       ],
       "semi deportivas": [
-        {
-          image: "/assets/images/products/motocicletas/semi-deportivas/FZ-X150.webp",
-          name: "FZ-X 150",
-          category: "motocicletas",
-          subcategory: "semi deportivas",
-          description: "Comodidad y rendimiento para largos viajes.",
-          discount: null,
-          isNew: false,
-          technicalInformation: {
-            Motor: "4 Tiempos, Bicilíndrico, DOHC",
-            Refrigeración: "Por líquido",
-            Cilindrada: "321 c.c.",
-            Caballaje: "41 Hp",
-            Revolución: "10,750 RPM",
-            TransmisiónFinal: "Cadena",
-            Velocidades: "6 velocidades",
-            Arranque: "Eléctrico",
-            SistemaDeAlimentación: "Inyección Electrónica",
-            CapacidadDeCombustible: "3.7 Galones",
-          },
-          chassis: {
-            FrenoDelantero: "Disco",
-            FrenoTrasero: "Disco",
-            TipoDeAros: "Magnesio",
-            NeumáticoDelantero: "110/70-17M/C 54H",
-            NeumáticoTrasero: "140/70-17M/C 66H",
-            SuspensiónDelantera: "Horquilla telescópica",
-            SuspensiónTrasera: "Brazo Basculante",
-          },
-          dimensions: {
-            LongitudTotal: "2,090 mm",
-            AnchoTotal: "745 mm",
-            AlturaTotal: "1,035 mm",
-            AlturaAlAsiento: "780 mm",
-            DistanciaEntreEjes: "1,350 mm",
-            DistanciaMinimaAlSuelo: "160 mm",
-            PesoTotalConLíquidos: "363 libras",
-          },
+         {
+        "image": "/assets/images/products/motocicletas/semi-deportivas/FZ-X150.webp",
+        "name": "FZ-X 150",
+        "category": "motocicletas",
+        "subcategory": "semi deportivas",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "Blue Core, 4 Tiempos, SOHC",
+            "Refrigeración": "por aire",
+            "Cilindrada": "149 c.c.",
+            "Caballaje": "14 Hp",
+            "Revolución": "7,500 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "5 velocidades",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Inyección Electrónica",
+            "Capacidad de combustible": "3.17 Galones"
         },
+        "chassis": {
+            "Freno delantero": "Disco ABS",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "100/80-17M/C 52P",
+            "Neumático trasero": "140/60-17M/C 63P",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Monoshock"
+        },
+        "dimensions": {
+            "Longitud total": "1,990 mm",
+            "Ancho total": "770 mm",
+            "Altura total": "1,050 mm",
+            "Altura al asiento": "790 mm",
+            "Distancia entre ejes": "1,330 mm",
+            "Distancia mínima al suelo": "160 mm",
+            "Peso total con líquidos": "291 libras"
+        }
+    },
+       {
+        "image": "/assets/images/products/motocicletas/semi-deportivas/FZ25.webp",
+        "name": "FZN250",
+        "category": "motocicletas",
+        "subcategory": "semi deportivas",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "Blue Core, 4 Tiempos, SOHC",
+            "Refrigeración": "por aire y aceite",
+            "Cilindrada": "249 c.c.",
+            "Caballaje": "20.6 Hp",
+            "Revolución": "8,000 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "5 velocidades",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Inyección Electrónica",
+            "Capacidad de combustible": "3.6 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "100/80-17 M/C 52P",
+            "Neumático trasero": "140/70-17M/C 66S",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Monoshock"
+        },
+        "dimensions": {
+            "Longitud total": "2,015 mm",
+            "Ancho total": "770 mm",
+            "Altura total": "1,075 mm",
+            "Altura al asiento": "795mm",
+            "Distancia entre ejes": "1360 mm",
+            "Distancia mínima al suelo": "160 mm",
+            "Peso total con líquidos": "321 libras"
+        }
+    },
+      {
+        "image": "/assets/images/products/motocicletas/semi-deportivas/FZS150.webp",
+        "name": "FZS150 V3.0",
+        "category": "motocicletas",
+        "subcategory": "semi deportivas",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "Blue Core, 4 Tiempos, SOHC",
+            "Refrigeración": "por aire",
+            "Cilindrada": "149 c.c.",
+            "Caballaje": "14 Hp",
+            "Revolución": "7,500 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "5 velocidades",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Inyección Electrónica",
+            "Capacidad de combustible": "3.17 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Disco ABS",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "100/80-17M/C 52P",
+            "Neumático trasero": "140/60-17M/C 63P",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Monoshock"
+        },
+        "dimensions": {
+            "Longitud total": "1,990 mm",
+            "Ancho total": "770 mm",
+            "Altura total": "1,050 mm",
+            "Altura al asiento": "790 mm",
+            "Distancia entre ejes": "1,330 mm",
+            "Distancia mínima al suelo": "160 mm",
+            "Peso total con líquidos": "291 libras"
+        }
+    },
+     {
+        "image": "/assets/images/products/motocicletas/semi-deportivas/FZ150.webp",
+        "name": "FZN150",
+        "category": "motocicletas",
+        "subcategory": "semi deportivas",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "Blue Core, 4 Tiempos, SOHC",
+            "Refrigeración": "por aire",
+            "Cilindrada": "149 c.c.",
+            "Caballaje": "14 Hp",
+            "Revolución": "7,500 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "5 velocidades",
+            "Arranque": "Patada",
+            "Sistema de alimentación": "Inyección Electrónica",
+            "Capacidad de combustible": "3.17 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Fricción",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "100/80-17M/C 52P",
+            "Neumático trasero": "140/60-17M/C 63P",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Monoshock"
+        },
+        "dimensions": {
+            "Longitud total": "1,990 mm",
+            "Ancho total": "770 mm",
+            "Altura total": "1,050 mm",
+            "Altura al asiento": "790 mm",
+            "Distancia entre ejes": "1,330 mm",
+            "Distancia mínima al suelo": "160 mm",
+            "Peso total con líquidos": "291 libras"
+        }
+    },
+    {
+        "image": "/assets/images/products/motocicletas/semi-deportivas/SZ150.webp",
+        "name": "SZ150",
+        "category": "motocicletas",
+        "subcategory": "semi deportivas",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "Blue Core, 4 Tiempos, SOHC",
+            "Refrigeración": "por aire",
+            "Cilindrada": "150 c.c.",
+            "Caballaje": "12 Hp",
+            "Revolución": "7,500 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "5 velocidades",
+            "Arranque": "Eléctrico y Patada",
+            "Sistema de alimentación": "Carburador",
+            "Capacidad de combustible": "3.7 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Disco",
+            "Freno trasero": "Fricción",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "2-75 17 41P",
+            "Neumático trasero": "100/90 – 17 55P",
+            "Suspensión delantera": "Horquilla telescópica",
+            "Suspensión trasera": "Doble Amortiguador"
+        },
+        "dimensions": {
+            "Longitud total": "2,050 mm",
+            "Ancho total": "730 mm",
+            "Altura total": "1,100 mm",
+            "Altura al asiento": "802 mm",
+            "Distancia entre ejes": "1,320",
+            "Distancia mínima al suelo": "165 mm",
+            "Pesototalconliquidos": "266 libras"
+        }
+    },
       ],
       "sport heritage": [
         {
-          image: "/assets/images/products/motocicletas/sport-heritage/XSR900.webp",
-          name: "XSR900",
-          category: "motocicletas",
-          subcategory: "sport heritage",
-          description: "Un diseño clásico con tecnología moderna.",
-          discount: null,
-          isNew: false,
-          technicalInformation: {
-            Motor: "4 Tiempos, Bicilíndrico, DOHC",
-            Refrigeración: "Por líquido",
-            Cilindrada: "321 c.c.",
-            Caballaje: "41 Hp",
-            Revolución: "10,750 RPM",
-            TransmisiónFinal: "Cadena",
-            Velocidades: "6 velocidades",
-            Arranque: "Eléctrico",
-            SistemaDeAlimentación: "Inyección Electrónica",
-            CapacidadDeCombustible: "3.7 Galones",
-          },
-          chassis: {
-            FrenoDelantero: "Disco",
-            FrenoTrasero: "Disco",
-            TipoDeAros: "Magnesio",
-            NeumáticoDelantero: "110/70-17M/C 54H",
-            NeumáticoTrasero: "140/70-17M/C 66H",
-            SuspensiónDelantera: "Horquilla telescópica",
-            SuspensiónTrasera: "Brazo Basculante",
-          },
-          dimensions: {
-            LongitudTotal: "2,090 mm",
-            AnchoTotal: "745 mm",
-            AlturaTotal: "1,035 mm",
-            AlturaAlAsiento: "780 mm",
-            DistanciaEntreEjes: "1,350 mm",
-            DistanciaMinimaAlSuelo: "160 mm",
-            PesoTotalConLíquidos: "363 libras",
-          },
+        "image": "/assets/images/products/motocicletas/sport-heritage/XSR900.webp",
+        "name": "XSR900",
+        "category": "motocicletas",
+        "subcategory": "sport heritage",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, 3 Cilindros, DOHC",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "890 c.c.",
+            "Caballaje": "119 Hp",
+            "Revolucíon": "8,750 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "6 velocidades",
+            "Arranque": "Eléctrico",
+            "Sistema de alimentación": "Inyección Electrónica",
+            "Capacidad de combustible": "3.70 Galones"
         },
+        "chassis": {
+            "Freno delantero": "Doble Disco",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "120/70ZR17M/C (58W)",
+            "Neumático trasero": "180/55ZR17M/C (73W)",
+            "Suspensión delantera": "Horquilla telescopica invertida",
+            "Suspensión trasera": "MonoShock"
+        },
+        "dimensions": {
+            "Longitud total": "2,155 mm",
+            "Ancho total": "815 mm",
+            "Altura total": "1,135 mm",
+            "Altura al asiento": "810 mm",
+            "Distancia entre ejes": "1,495 mm",
+            "Distanciaminimaalsuelo": "140 mm",
+            "Pesototalconliquidos": "193 Kg"
+        }
+    },
+     {
+        "image": "/assets/images/products/motocicletas/sport-heritage/XSR700.webp",
+        "name": "XSR700",
+        "category": "motocicletas",
+        "subcategory": "sport heritage",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, 2 cilindros, DOHC",
+            "Refrigeración": "por liquido",
+            "Cilindrada": "689 c.c.",
+            "Caballaje": "73.7 Hp",
+            "Revolucion": "9,000 rpm",
+            "Transmisión Final": "Cadena",
+            "Velocidades": "6 velocidades",
+            "Arranque": "Electrico",
+            "Sistemadealimentacion": "Inyeccion Electronica",
+            "Capacidad de combustible": "3.70 Galones"
+        },
+        "chassis": {
+            "Freno delantero": "Doble Disco",
+            "Freno trasero": "Disco",
+            "Tipo de aros": "Magnesio",
+            "Neumático delantero": "120/70 ZR 17M/C(58V)",
+            "Neumático trasero": "180/55 ZR 17M/C(73V)",
+            "Suspensión delantera": "Horquilla telescopica",
+            "Suspensión trasera": "Brazo Basculante"
+        },
+        "dimensions": {
+            "Longitud total": "2,075 mm",
+            "Ancho total": "820 mm",
+            "Altura total": "1,130 mm",
+            "Altura al asiento": "835 mm",
+            "Distancia entre ejes": "1,405 mm",
+            "Distanciaminimaalsuelo": "140 mm",
+            "Pesototalconliquidos": "410 libras"
+        }
+    },
       ],
       "sport touring": [
         {
