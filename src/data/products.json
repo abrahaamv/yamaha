@@ -1,0 +1,71 @@
+[
+    {
+        "image": "https://www.yamaha.com.gt/wp-content/uploads/2023/02/logo.svg",
+        "name": "Viking VI Ranch Edition",
+        "category": "sidebyside-y-atvs",
+        "subcategory": "",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 Tiempos, SOHC, (4 válvulas) 4WD",
+            "Refrigeración": "Por Liquido",
+            "Cilindrada": "686 c.c.",
+            "Alimentación": "Inyección electrónica",
+            "Trasmisión": "Ultramatic V-belt",
+            "Arranque": "Eléctrico TCI",
+            "Freno delantero": "Doble Disco",
+            "Freno trasero": "Doble Disco",
+            "Tipo de aros": "Magnesio",
+            "Neumáticos": "AT25 x 8-12 — AT25 x 10-12",
+            "Suspensión delantera": "Independiente, dobles trapecios",
+            "Suspensión trasera": "Independiente sobre dobles trapecios con barra estabilizadora",
+            "Capacidad de combustible": "9.7 Galones"
+        }
+    },
+    {
+        "image": "https://www.yamaha.com.gt/wp-content/uploads/2023/02/logo.svg",
+        "name": "Rmax 2",
+        "category": "sidebyside-y-atvs",
+        "subcategory": "",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 tiempos, DOHC, Parallel Twin",
+            "Refrigeración": "Por Liquido",
+            "Cilindrada": "999 c.c.",
+            "Sistema de lubricación": "Cárter seco",
+            "Trasmisión": "Yamaha Ultramatic® CVT automatic V-belt",
+            "Arranque": "Eléctrico",
+            "Freno delantero": "Disco hidráulico ventilado doble",
+            "Freno trasero": "Disco hidráulico ventilado doble, Freno de estacionamiento montado en el eje",
+            "Neumáticos delanteros": "29×9-14",
+            "Neumáticos traseros": "30×10-14",
+            "Suspensión delantera": "Independiente sobre dobles trapecios con barra estabilizadora",
+            "Suspensión trasera": "Independiente sobre dobles trapecios con barra estabilizadora",
+            "Capacidad de combustible": "35 litros"
+        }
+    },
+    {
+        "image": "https://www.yamaha.com.gt/wp-content/uploads/2023/02/logo.svg",
+        "name": "Rmax 4",
+        "category": "sidebyside-y-atvs",
+        "subcategory": "",
+        "discount": null,
+        "isNew": false,
+        "technicalInformation": {
+            "Motor": "4 tiempos, DOHC, Parallel Twin",
+            "Refrigeración": "Por Liquido",
+            "Cilindrada": "999 c.c.",
+            "Sistema de lubricación": "Cárter seco",
+            "Trasmisión": "Yamaha Ultramatic® CVT automatic V-belt",
+            "Arranque": "Eléctrico",
+            "Freno delantero": "Disco hidráulico ventilado doble",
+            "Freno trasero": "Disco hidráulico ventilado doble, Freno de estacionamiento montado en el eje",
+            "Neumáticos delanteros": "AT29 x 9-14 GBC® Dirt Commander®",
+            "Neumáticos traseros": "AT29 x 11-14 GBC® Dirt Commander®",
+            "Suspensión delantera": "Independiente sobre dobles trapecios con barra estabilizadora",
+            "Suspensión trasera": "Independiente sobre dobles trapecios con barra estabilizadora",
+            "Capacidad de combustible": "35 litros"
+        }
+    }
+]
