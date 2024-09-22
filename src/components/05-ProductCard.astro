@@ -43,10 +43,14 @@ const { product } = Astro.props as ProductCardProps;
             )
         }
         <div class="p-4 pt-2 flex-grow">
-            <h3 class="text-lg font-semibold text-gray-800">
+            <h3
+                class="text-lg font-semibold text-gray-800 animate-slide-out-bottom group-hover:animate-slide-out-top group-hover:animate-duration-fast no-animation-on-mobile"
+            >
                 {product.name}
             </h3>
-            <ul class="text-sm text-gray-600">
+            <ul
+                class="text-sm text-gray-600 animate-slide-out-bottom group-hover:animate-slide-out-top group-hover:animate-duration-fast no-animation-on-mobile"
+            >
                 {
                     Object.entries(product.technicalInformation || {})
                         .slice(0, 3)
@@ -68,6 +72,9 @@ const { product } = Astro.props as ProductCardProps;
 
 <style>
     @media (max-width: 640px) {
+        .no-animation-on-mobile {
+            animation: none !important;
+        }
         .product-item .group > div:last-child {
             transform: translateY(0);
         }
