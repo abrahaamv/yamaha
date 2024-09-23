@@ -55,8 +55,9 @@ const { product } = Astro.props as ProductCardProps;
                     Object.entries(product.technicalInformation || {})
                         .slice(0, 3)
                         .map(([key, value]) => (
-                            <li>
-                                <strong>{key}:</strong> {value}
+                            <li class="flex items-center space-x-1">
+                                <strong>{key}:</strong>
+                                <span class="truncate max-w-xs">{value}</span>
                             </li>
                         ))
                 }
