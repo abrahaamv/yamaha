@@ -2,22 +2,25 @@
 import { Image } from "astro:assets";
 ---
 
-<footer class="bg-gray-100">
+<footer class="bg-gray-100 text-gray-800">
     <div
         class="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24"
     >
-        <div class="absolute end-1 top-4 sm:end-1 sm:top-6 lg:end-1 lg:top-8">
+        <!-- Botón volver arriba -->
+        <div
+            class="absolute right-4 top-4 sm:right-6 sm:top-6 lg:right-8 lg:top-8"
+        >
             <a
-                class="inline-block rounded-full bg-red-600 p-2 text-white shadow transition hover:bg-red-500 sm:p-3 lg:p-4"
+                class="inline-block rounded-full bg-red-600 p-2 text-white shadow transition hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-red-400"
                 href="#hero"
+                aria-label="Volver al inicio"
             >
-                <span class="sr-only">Back to top</span>
-
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="size-5"
+                    class="w-6 h-6"
                     viewBox="0 0 20 20"
                     fill="currentColor"
+                    aria-hidden="true"
                 >
                     <path
                         fill-rule="evenodd"
@@ -27,69 +30,195 @@ import { Image } from "astro:assets";
             </a>
         </div>
 
-        <div class="lg:flex lg:items-end lg:justify-between">
-            <div>
-                <div class="flex justify-center text-teal-600 lg:justify-start">
+        <div class="lg:flex lg:items-start lg:justify-between">
+            <!-- Logo y Redes Sociales -->
+            <div class="flex flex-col items-center lg:items-start mb-8 lg:mb-0">
+                <div class="flex justify-center lg:justify-start">
                     <Image
                         id="logo"
                         src="/assets/images/yamaha-logo.svg"
                         alt="Yamaha Logo"
-                        width={120}
-                        height={40}
-                        class="h-14 sm:h-20 w-auto transition-all duration-300"
+                        width={150}
+                        height={50}
+                        loading="lazy"
+                        class="h-16 sm:h-20 w-auto transition-transform duration-300 hover:scale-105"
                     />
                 </div>
 
-                <p
-                    class="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left"
-                >
-                    La moto que mejor trabaja
-                </p>
+                <!-- Redes sociales -->
+                <div class="mt-8">
+                    <h2 class="text-lg font-bold mb-4">
+                        Síguenos en redes sociales
+                    </h2>
+                    <div class="flex space-x-4">
+                        <!-- Facebook -->
+                        <a
+                            href="https://www.facebook.com/yamahaguatemala"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-red-600 transition-colors"
+                            aria-label="Facebook Yamaha"
+                        >
+                            <svg
+                                height="24"
+                                width="24"
+                                viewBox="0 0 512 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                                class="w-6 h-6"
+                            >
+                                <circle cx="256" cy="256" r="256" fill="#3b5998"
+                                ></circle>
+                                <path
+                                    d="M256 0C114.71 0 0 114.71 0 256c0 127.684 93.681 233.661 216 252.887V330h-65v-74h65v-56.4c0-64.16 38.219-99.6 96.695-99.6 28.009 0 57.305 5 57.305 5v63h-32.281c-31.801 0-41.719 19.734-41.719 39.979V256h71l-11.35 74H296v178.887C418.319 489.661 512 383.684 512 256 512 114.71 397.29 0 256 0z"
+                                    fill="#fff"></path>
+                            </svg>
+                        </a>
+                        <!-- TikTok -->
+                        <a
+                            href="https://www.tiktok.com/yamahaguatemala"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-red-600 transition-colors"
+                            aria-label="TikTok Yamaha"
+                        >
+                            <svg
+                                height="24"
+                                width="24"
+                                viewBox="0 0 512 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                                class="w-6 h-6"
+                            >
+                                <circle cx="256" cy="256" r="256" fill="#000"
+                                ></circle>
+                                <path
+                                    d="M313.5 106.01c.01 4.58 1.36 70.83 70.87 74.96v51.18c-5.26.3-45.76-2.64-70.97-25.12l-.08 99.64c.96 69.16-49.93 111.24-116.46 96.7-114.71-34.31-76.59-204.44 38.59-186.24v54.93c-47.58-7-63.5 32.58-50.85 60.93 11.5 25.8 58.88 31.39 75.41-5.01 1.87-7.12 2.8-15.25 2.8-24.37V106.26l50.64.25z"
+                                    fill="#fff"></path>
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a
+                            href="https://www.instagram.com/yamahaguatemala"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-red-600 transition-colors"
+                            aria-label="Instagram Yamaha"
+                        >
+                            <svg
+                                height="24"
+                                width="24"
+                                version="1.1"
+                                id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 512 512"
+                                xml:space="preserve"
+                                aria-hidden="true"
+                                class="w-6 h-6"
+                            >
+                                <circle
+                                    style="fill:#EF72AD;"
+                                    cx="256"
+                                    cy="256"
+                                    r="256"></circle>
+                                <path
+                                    style="fill:#EE539E;"
+                                    d="M256,0c-11.317,0-22.461,0.744-33.391,2.167C348.216,18.53,445.217,125.933,445.217,256
+                        s-97.002,237.47-222.609,253.833C233.539,511.256,244.683,512,256,512c141.385,0,256-114.616,256-256S397.385,0,256,0z"
+                                ></path>
+                                <g>
+                                    <path
+                                        style="fill:#FFFFFF;"
+                                        d="M350.84,91.826H161.16c-38.231,0-69.334,31.103-69.334,69.334v189.682
+                        c0,38.231,31.103,69.334,69.334,69.334h189.682c38.231,0,69.334-31.103,69.334-69.334V161.16
+                        C420.174,122.929,389.071,91.826,350.84,91.826z M403.478,350.84c0,29.025-23.613,52.638-52.638,52.638H161.16
+                        c-29.025,0-52.638-23.613-52.638-52.638V161.16c0-29.025,23.613-52.638,52.638-52.638h189.682
+                        c29.025,0,52.638,23.613,52.638,52.638v189.68H403.478z"
+                                    ></path>
+                                    <path
+                                        style="fill:#FFFFFF;"
+                                        d="M256,169.739c-47.565,0-86.261,38.696-86.261,86.261s38.696,86.261,86.261,86.261
+                        s86.261-38.696,86.261-86.261S303.565,169.739,256,169.739z M256,325.565c-38.358,0-69.565-31.208-69.565-69.565
+                        s31.208-69.565,69.565-69.565s69.565,31.208,69.565,69.565S294.358,325.565,256,325.565z"
+                                    ></path>
+                                    <circle
+                                        style="fill:#FFFFFF;"
+                                        cx="345.043"
+                                        cy="155.826"
+                                        r="22.261"></circle>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <ul
-                class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:mt-0 lg:justify-end lg:gap-12"
-            >
-                <li>
-                    <a
-                        class="text-gray-700 transition hover:text-gray-700/75"
-                        href="#"
-                    >
-                        Inicio
-                    </a>
-                </li>
+            <!-- Enlaces útiles -->
+            <div class="mb-8 lg:mb-0">
+                <h2 class="text-lg font-bold mb-4">Productos</h2>
+                <ul class="text-gray-400 space-y-2">
+                    <li>
+                        <a href="#" class="hover:text-red-600 transition-colors"
+                            >Motocicletas</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-red-600 transition-colors"
+                            >Side by Side & ATVs</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-red-600 transition-colors"
+                            >Motores Marinos</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-red-600 transition-colors"
+                            >Wave Runners</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-red-600 transition-colors"
+                            >Bombas de agua</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#" class="hover:text-red-600 transition-colors"
+                            >Generadores</a
+                        >
+                    </li>
+                </ul>
+            </div>
 
-                <li>
+            <!-- Sección de contacto -->
+            <div class="mb-8 lg:mb-0">
+                <h2 class="text-lg font-bold mb-4">Contáctanos</h2>
+                <p class="text-gray-400 mb-2">
+                    <strong>Teléfono:</strong>
                     <a
-                        class="text-gray-700 transition hover:text-gray-700/75"
-                        href="#"
+                        href="tel:+50212345678"
+                        class="hover:text-red-600 transition-colors"
+                        >+502 1234 5678</a
                     >
-                        Servicios
-                    </a>
-                </li>
-
-                <li>
+                </p>
+                <p class="text-gray-400 mb-2">
+                    <strong>Email:</strong>
                     <a
-                        class="text-gray-700 transition hover:text-gray-700/75"
-                        href="#"
+                        href="mailto:info@yamaha.com.gt"
+                        class="hover:text-red-600 transition-colors"
+                        >info@yamaha.com.gt</a
                     >
-                        Productos
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        class="text-gray-700 transition hover:text-gray-700/75"
-                        href="#"
-                    >
-                        Blog
-                    </a>
-                </li>
-            </ul>
+                </p>
+                <p class="text-gray-400">
+                    <strong>Dirección:</strong> Boulevard Liberación 5-55 Zona 9,
+                    Ciudad de Guatemala
+                </p>
+            </div>
         </div>
 
         <p class="mt-12 text-center text-sm text-gray-500 lg:text-right">
-            &copy; 2024. Yamaha de Canella.
+            &copy; 2024 Yamaha de Canella. Todos los derechos reservados.
         </p>
     </div>
 </footer>
