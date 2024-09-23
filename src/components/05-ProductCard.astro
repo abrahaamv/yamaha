@@ -26,7 +26,7 @@ const { product } = Astro.props as ProductCardProps;
         <img
             src={product.image}
             alt={product.name}
-            class="w-full h-64 object-contain transition-transform duration-300 animate-scale animate-duration-fast group-hover:animate-pulsing group-hover:animate-duration-fast"
+            class="w-full h-64 object-contain transition-transform duration-300 animate-scale animate-duration-fast group-hover:animate-pulsing group-hover:animate-duration-slow"
         />
         {
             product.discount && (
