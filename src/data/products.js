@@ -1991,26 +1991,104 @@ const products = [
         subcategories: {
             null: [
                 {
-          image: "/assets/images/products/wave-runners/FX-SVHO.webp",
-          name: "FX SVHO",
-           category: "wave runners",
-            subcategory: null,
-          description: null,
-          discount: null,
-          isNew: false,
-          technicalInformation: {
-            Motor: "4 Tiempos, Bicilíndrico, DOHC",
-            Refrigeración: "Por líquido",
-            Cilindrada: "689 c.c.",
-            Caballaje: "67.0 Hp",
-            Revolución: "9000 RPM",
-            TransmisiónFinal: "Cadena",
-            Velocidades: "6 velocidades",
-            Arranque: "Eléctrico",
-            SistemaDeAlimentación: "Inyección Electrónica",
-            CapacidadDeCombustible: "4.3 Galones",
-                    },
+                    "image": "/assets/images/products/wave-runners/SUPERJET2024.webp",
+                    "name": "SUPERJET 2024",
+                    "category": "wave runners",
+                    "subcategory": null,
+                    "discount": null,
+                    "isNew": false,
+                    "technicalInformation": {
+                        "Tipo de motor": "4 Tiempos, 3 Cilindros DOHC",
+                        "Refrigeración": "Por liquido",
+                        "Cilindrada": "1,049 cc",
+                        "Connext": "N/A",
+                        "Audio": "N/A",
+                        "Capacidad de tanque": "5 Galones",
+                        "Peso": "170 Kg",
+                        "Reversa": "N/A",
+                        "Pasajeros": "1",
+                        "Sistema": "Inyección Electrónica"
+                    }
                 },
+                {
+                    "image": "/assets/images/products/wave-runners/VXCRUISERHO.webp",
+                    "name": "VX CRUISER HO",
+                    "category": "wave runners",
+                    "subcategory": null,
+                    "discount": null,
+                    "isNew": false,
+                    "technicalInformation": {
+                        "Tipo de motor": "4 Tiempos, 4 Cilindros, DOHC",
+                        "Refrigeración": "Por liquido",
+                        "Cilindrada": "1,898 cc",
+                        "Connext": "Pantalla de 4.3″, control manual",
+                        "Arranque": "Eléctrico",
+                        "Capacidad de tanque": "18.5 Galones",
+                        "Peso": "354 Kg",
+                        "Retrovisores": "Doble",
+                        "Pasajeros": "1 a 3",
+                        "Sistema": "Inyección Electrónica"
+                    }
+                },
+                {
+                    "image": "/assets/images/products/wave-runners/VXCRUISER.webp",
+                    "name": "VX CRUISER",
+                    "category": "wave runners",
+                    "subcategory": null,
+                    "discount": null,
+                    "isNew": false,
+                    "technicalInformation": {
+                        "Tipo de motor": "4 Tiempos, 3 Cilindros, DOHC",
+                        "Refrigeración": "Por liquido",
+                        "Cilindrada": "1,049 cc",
+                        "Arranque": "Eléctrico",
+                        "Capacidad de tanque": "18.5 Galones",
+                        "Peso": "312 Kg",
+                        "Combustible": "Gasolina",
+                        "Pasajeros": "1 a 3",
+                        "Sistema": "Inyección Electrónica"
+                    }
+                },
+                {
+                    "image": "/assets/images/products/wave-runners/FXCRUISERSVHO.webp",
+                    "name": "FX CRUISER SVHO",
+                    "category": "wave runners",
+                    "subcategory": null,
+                    "discount": null,
+                    "isNew": false,
+                    "technicalInformation": {
+                        "Tipo de motor": "4 Tiempos, 4 Cilindros, DOHC  Super Vortex",
+                        "Refrigeración": "Por liquido",
+                        "Cilindrada": "1,812 cc Supercargada",
+                        "Connext": "Pantalla de 7″, touchscreen",
+                        "Audio": "2 Bocinas Bluetooth",
+                        "Capacidad de tanque": "18.5 Galones",
+                        "Peso": "397 Kg",
+                        "Reversa": "RiDE con control de tracción",
+                        "Pasajeros": "1 a 3",
+                        "Sistema": "Inyección Electrónica"
+                    }
+                },
+                {
+                    "image": "/assets/images/products/wave-runners/FXSVHO.webp",
+                    "name": "FX SVHO",
+                    "category": "wave runners",
+                    "subcategory": null,
+                    "discount": null,
+                    "isNew": false,
+                    "technicalInformation": {
+                        "Tipo de motor": "4 Tiempos, 4 Cilindros, DOHC  Super Vortex",
+                        "Refrigeración": "Por liquido",
+                        "Cilindrada": "1,812 cc Supercargada",
+                        "Connext": "Pantalla de 7″, touchscreen",
+                        "Audio": "2 Bocinas Bluetooth",
+                        "Capacidad de tanque": "18.5 Galones",
+                        "Peso": "397 Kg",
+                        "Reversa": "RiDE con control de tracción",
+                        "Pasajeros": "1 a 3",
+                        "Sistema": "Inyección Electrónica"
+                    }
+                }
             ]
         }
     },
@@ -2019,25 +2097,43 @@ const products = [
         subcategories: {
             null: [
                 {
-          image: "/assets/images/products/bombas-de-agua/YP30C.webp",
-          name: "YP30C",
-           category: "bombas de agua",
-            subcategory: null,
-          description: null,
-          discount: null,
-          isNew: false,
-          technicalInformation: {
-            Motor: "4 Tiempos, OHV",
-            Refrigeración: "Por aire forzada",
-            Cilindrada: "179 c.c.",
-            Caballaje: "4.2 Hp",
-            Transmisión: "No especificada",
-            Arranque: "Manual",
-            CapacidadDeTanque: "0.9 Gal",
-            Combustible: "Gasolina",
-            Peso: "28.7 Kg",
-                    },
+                    "image": "/assets/images/products/bombas-de-agua/YP30C.webp",
+                    "name": "YP30C",
+                    "category": "bombas de agua",
+                    "subcategory": null,
+                    "discount": null,
+                    "isNew": false,
+                    "technicalInformation": {
+                        "Tipo de motor": "4 Tiempos, OHV",
+                        "Refrigeración": "Por aire forzada",
+                        "Cilindrada": "179 c.c.",
+                        "Caballaje": "4 .2Hp",
+                        "Transmisión": "",
+                        "Arranque": "Manual",
+                        "Capacidad de tanque": "0.9 Galones",
+                        "Combustible": "Gasolina",
+                        "Peso": "28.7 Kg"
+                    }
                 },
+                {
+                    "image": "/assets/images/products/bombas-de-agua/YP20C.webp",
+                    "name": "YP20C",
+                    "category": "bombas de agua",
+                    "subcategory": null,
+                    "discount": null,
+                    "isNew": false,
+                    "technicalInformation": {
+                        "Tipo de motor": "4 tiempos, OHV",
+                        "Refrigeración": "Por aire forzada",
+                        "Cilindrada": "179 c.c.",
+                        "Caballaje": "4.2 Hp",
+                        "Trasmisión": "",
+                        "Arranque": "Manual",
+                        "Capacidad de tanque": "0.9 Galones",
+                        "Combustible": "Gasolina",
+                        "Peso": "25.2 Kg"
+                    }
+                }
             ]
         }
     },
@@ -2046,25 +2142,69 @@ const products = [
         subcategories: {
             null: [
                 {
-          image: "/assets/images/products/generadores/MZ175B2B.webp",
-          name: "MZ175B2B",
-           category: "generadores",
-            subcategory: null,
-          description: null,
-          discount: null,
-          isNew: false,
-          technicalInformation: {
-            Motor: "4 Tiempos, OHV",
-            Refrigeración: "Por aire forzada",
-            Cilindrada: "179 c.c.",
-            Caballaje: "4.2 Hp",
-            Transmisión: "No especificada",
-            Arranque: "Manual",
-            CapacidadDeTanque: "0.9 Gal",
-            Combustible: "Gasolina",
-            Peso: "28.7 Kg",
-                    },
+                    "image": "/assets/images/products/generadores/MZ175B2B.webp",
+                    "name": "MZ175B2B",
+                    "category": "generadores",
+                    "subcategory": null,
+                    "discount": null,
+                    "isNew": false,
+                     "technicalInformation": {
+                        "TIPO": "Generador de CA sincrónico/monofásico",
+                        "Tensión (V)": "120",
+                        "Frecuencia (Hz)": "60",
+                        "Potencia nominal (kVA)": "0,8",
+                        "Potencia máxima (kVA)": "0,96",
+                        "Salida de corriente continua": "12V / 8.3A"
+                    }
                 },
+                {
+                    "image": "/assets/images/products/generadores/EF7200DE.webp",
+                    "name": "EF7200DE",
+                    "category": "generadores",
+                    "subcategory": null,
+                    "discount": null,
+                    "isNew": false,
+                    "technicalInformation": {
+                        "TIPO": "Generador de CA sin escobillas/monofásico",
+                        "Tensión (V)": "120/240",
+                        "Frecuencia (Hz)": "60",
+                        "Potencia nominal (kVA)": "6",
+                        "Potencia máxima (kVA)": "7,2",
+                        "Salida de corriente continua": "x"
+                    }
+                },
+                {
+                    "image": "/assets/images/products/generadores/EF2600D.webp",
+                    "name": "EF2600D",
+                    "category": "generadores",
+                    "subcategory": null,
+                    "discount": null,
+                    "isNew": false,
+                    "technicalInformation": {
+                        "TIPO": "Generador de CA sin escobillas/monofásico",
+                        "Tensión (V)": "120/240",
+                        "Frecuencia (Hz)": "60",
+                        "Potencia nominal (kVA)": "2,3",
+                        "Potencia máxima (kVA)": "2,6",
+                        "Salida de corriente continua": "12V / 8.3A"
+                    }
+                },
+                {
+                    "image": "/assets/images/products/generadores/ET-1.webp",
+                    "name": "ET-1",
+                    "category": "generadores",
+                    "subcategory": null,
+                    "discount": null,
+                    "isNew": false,
+                    "technicalInformation": {
+                        "TIPO": "Generador de CA sincrónico/monofásico",
+                        "Tensión (V)": "120",
+                        "Frecuencia (Hz)": "60",
+                        "Potencia nominal (kVA)": "0,8",
+                        "Potencia máxima (kVA)": "0,96",
+                        "Salida de corriente continua": "12V / 8.3A"
+                    }
+                }
             ]
         }
     }
