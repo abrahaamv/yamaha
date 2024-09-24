@@ -51,108 +51,113 @@ const subcategories = categories.reduce(
 );
 ---
 
-<div class="new_arrivals bg-white py-8 sm:py-16" id="new_arrivals">
-    <div class="container mx-auto px-4">
-        <span class="relative flex justify-center mb-4">
-            <div
-                class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"
-            >
-            </div>
-            <span class="relative z-10 bg-white px-6">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
-                    EXPLORA NUESTRA TIENDA
-                </h2>
-            </span>
-        </span>
-        <div class="mb-6 sm:mb-8 relative">
-            <div class="overflow-x-auto">
-                <ul
-                    class="flex mx-1 my-1 flex-nowrap justify-start sm:justify-center gap-2 sm:gap-4 pb-2 sm:pb-0"
-                    id="category-buttons"
+<section id="productos">
+    <div class="new_arrivals bg-white py-8 sm:py-16" id="new_arrivals">
+        <div class="container mx-auto px-4">
+            <span class="relative flex justify-center mb-4">
+                <div
+                    class="absolute inset-x-0 top-1/2 h-px -translate-y-1/2 bg-transparent bg-gradient-to-r from-transparent via-gray-500 to-transparent opacity-75"
                 >
-                    {
-                        categories.map((category, index) => (
-                            <li class="relative">
-                                <button
-                                    class:list={[
-                                        "category-button",
-                                        { active: index === 0 },
-                                    ]}
-                                    data-category={category.id}
-                                >
-                                    {category.name}
-                                    {subcategories[category.id]?.length > 0 && (
-                                        <span class="ml-2 dropdown-toggle">
-                                            <svg
-                                                class="w-4 h-4 inline-block"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                            >
-                                                <path
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M19 9l-7 7-7-7"
-                                                />
-                                            </svg>
-                                        </span>
-                                    )}
-                                </button>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
-            <div id="dropdown-container" class="absolute left-0 right-0">
-                {
-                    categories.map(
-                        (category) =>
-                            subcategories[category.id] &&
-                            subcategories[category.id].length > 0 && (
-                                <ul
-                                    class="subcategory-dropdown hidden rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10"
-                                    data-category={category.id}
-                                >
-                                    <li>
-                                        <button
-                                            class="subcategory-button block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                            data-category={category.id}
-                                            data-subcategory="all"
-                                        >
-                                            TODAS
-                                        </button>
-                                    </li>
-                                    {subcategories[category.id].map(
-                                        (subcategory) => (
-                                            <li>
-                                                <button
-                                                    class="subcategory-button block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                                    data-category={category.id}
-                                                    data-subcategory={
-                                                        subcategory
-                                                    }
+                </div>
+                <span class="relative z-10 bg-white px-6">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
+                        EXPLORA NUESTRA TIENDA
+                    </h2>
+                </span>
+            </span>
+            <div class="mb-6 sm:mb-8 relative">
+                <div class="overflow-x-auto">
+                    <ul
+                        class="flex mx-1 my-1 flex-nowrap justify-start sm:justify-center gap-2 sm:gap-4 pb-2 sm:pb-0"
+                        id="category-buttons"
+                    >
+                        {
+                            categories.map((category, index) => (
+                                <li class="relative">
+                                    <button
+                                        class:list={[
+                                            "category-button",
+                                            { active: index === 0 },
+                                        ]}
+                                        data-category={category.id}
+                                    >
+                                        {category.name}
+                                        {subcategories[category.id]?.length >
+                                            0 && (
+                                            <span class="ml-2 dropdown-toggle">
+                                                <svg
+                                                    class="w-4 h-4 inline-block"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    stroke="currentColor"
                                                 >
-                                                    {subcategory.toUpperCase()}
-                                                </button>
-                                            </li>
-                                        ),
-                                    )}
-                                </ul>
-                            ),
-                    )
-                }
+                                                    <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M19 9l-7 7-7-7"
+                                                    />
+                                                </svg>
+                                            </span>
+                                        )}
+                                    </button>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+                <div id="dropdown-container" class="absolute left-0 right-0">
+                    {
+                        categories.map(
+                            (category) =>
+                                subcategories[category.id] &&
+                                subcategories[category.id].length > 0 && (
+                                    <ul
+                                        class="subcategory-dropdown hidden rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-10"
+                                        data-category={category.id}
+                                    >
+                                        <li>
+                                            <button
+                                                class="subcategory-button block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                                data-category={category.id}
+                                                data-subcategory="all"
+                                            >
+                                                TODAS
+                                            </button>
+                                        </li>
+                                        {subcategories[category.id].map(
+                                            (subcategory) => (
+                                                <li>
+                                                    <button
+                                                        class="subcategory-button block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                                        data-category={
+                                                            category.id
+                                                        }
+                                                        data-subcategory={
+                                                            subcategory
+                                                        }
+                                                    >
+                                                        {subcategory.toUpperCase()}
+                                                    </button>
+                                                </li>
+                                            ),
+                                        )}
+                                    </ul>
+                                ),
+                        )
+                    }
+                </div>
             </div>
-        </div>
-        <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-0"
-            id="product-grid"
-        >
-            {products.map((product) => <ProductCard product={product} />)}
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-0"
+                id="product-grid"
+            >
+                {products.map((product) => <ProductCard product={product} />)}
+            </div>
         </div>
     </div>
-</div>
+</section>
 
 <style>
     .category-button {
