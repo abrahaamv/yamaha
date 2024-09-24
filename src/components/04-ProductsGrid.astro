@@ -195,6 +195,11 @@ const subcategories = categories.reduce(
     const dropdownToggles =
         document.querySelectorAll<HTMLSpanElement>(".dropdown-toggle");
 
+    // Get list of valid categories from category buttons
+    const validCategories = Array.from(categoryButtons).map((btn) =>
+        btn.getAttribute("data-category"),
+    );
+
     function filterProducts(
         category: string,
         subcategory: string | null = null,
@@ -237,7 +242,7 @@ const subcategories = categories.reduce(
         dropdown.style.minWidth = `${buttonRect.width}px`;
     }
 
-    categoryButtons.forEach((button, index) => {
+    categoryButtons.forEach((button) => {
         button.addEventListener("click", (event) => {
             if (!(event.target as HTMLElement).closest(".dropdown-toggle")) {
                 const category = button.getAttribute("data-category");
@@ -250,13 +255,6 @@ const subcategories = categories.reduce(
                 }
             }
         });
-
-        if (index === 0) {
-            const category = button.getAttribute("data-category");
-            if (category) {
-                filterProducts(category);
-            }
-        }
     });
 
     dropdownToggles.forEach((toggle) => {
@@ -320,6 +318,43 @@ const subcategories = categories.reduce(
         }
     });
 
-    filterProducts("motocicletas");
-    setActiveButton("motocicletas");
+    // Function to parse the URL hash and set the category accordingly
+    function parseHash() {
+        const hash = window.location.hash;
+        if (hash) {
+            const hashValue = hash.substring(1); // Remove the '#' character
+            const [section, categoryEncoded] = hashValue.split(":");
+            const category = decodeURIComponent(categoryEncoded || "");
+            if (section === "productos") {
+                // Scroll to the 'productos' section
+                const productosSection = document.getElementById("productos");
+                if (productosSection) {
+                    productosSection.scrollIntoView({ behavior: "smooth" });
+                }
+
+                if (category && validCategories.includes(category)) {
+                    filterProducts(category);
+                    setActiveButton(category);
+                } else {
+                    // If category is invalid or not specified, default to 'motocicletas'
+                    filterProducts("motocicletas");
+                    setActiveButton("motocicletas");
+                }
+            } else {
+                // Default category if the section is not 'productos'
+                filterProducts("motocicletas");
+                setActiveButton("motocicletas");
+            }
+        } else {
+            // No hash, default category
+            filterProducts("motocicletas");
+            setActiveButton("motocicletas");
+        }
+    }
+
+    // Initial call to set up the products based on the URL hash
+    parseHash();
+
+    // Listen for changes in the URL hash
+    window.addEventListener("hashchange", parseHash);
 </script>
