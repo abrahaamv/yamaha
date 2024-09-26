@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+---
+
+<a
+    href="https://wa.me/15551234567?text=Hi%2C%20I'm%20interested%20in%20your%20services%21"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with us on WhatsApp"
+    class="fixed
+    bottom-6
+    right-6
+    bg-green-500
+    hover:bg-green-600
+    text-white
+    p-3
+    rounded-full
+    shadow-lg
+    flex
+    items-center
+    justify-center
+    transition
+    transform
+    hover:scale-110
+    focus:outline-none
+    focus:ring-2
+    focus:ring-green-500
+    z-50
+    dark:bg-green-600
+    dark:hover:bg-green-700
+    md:p-4
+    md:bottom-8
+    md:right-8"
+>
+    <Image
+        src="/assets/images/whatsapp-logo.png"
+        alt="Chat with us on WhatsApp"
+        class="w-6 h-6 md:w-8 md:h-8 transition duration-300 ease-in-out"
+        width={32}
+        height={32}
+    />
+</a>
