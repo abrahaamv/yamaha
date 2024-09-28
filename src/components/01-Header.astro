@@ -1,50 +1,22 @@
 ---
+// Header.astro
 import { Image } from "astro:assets";
 
-// Definir los elementos de navegación
 const navItems = [
   { href: "#hero", text: "INICIO" },
   { href: "#servicios", text: "SERVICIOS" },
   { href: "#productos", text: "PRODUCTOS" },
   { href: "#blog", text: "BLOG" },
 ];
-
-// Definir las categorías de productos
-const productCategories = [
-  { href: "#productos:motocicletas", text: "Motocicletas", icon: "motorcycle" },
-  {
-    href: "#productos:side-by-side-atvs",
-    text: "Side by Side & ATVs",
-    icon: "atv",
-  },
-  {
-    href: "#productos:motores-marinos",
-    text: "Motores Marinos",
-    icon: "marine-engine",
-  },
-  {
-    href: "#productos:wave-runners",
-    text: "Wave Runners",
-    icon: "wave-runner",
-  },
-  {
-    href: "#productos:bombas-de-agua",
-    text: "Bombas de Agua",
-    icon: "water-pump",
-  },
-  { href: "#productos:generadores", text: "Generadores", icon: "generator" },
-];
 ---
 
 <header
   id="main-header"
-  class="fixed w-full transition-all duration-300 z-50 bg-transparent text-white"
+  class="animate-fade-in-down fixed w-full transition-all duration-300 z-50 bg-transparent text-white"
 >
-  <!-- Navegación Principal -->
   <nav
-    class="container animate-fade-in-down mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
+    class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center"
   >
-    <!-- Logo -->
     <a href="/" class="flex items-center">
       <Image
         id="logo"
@@ -52,25 +24,21 @@ const productCategories = [
         alt="Yamaha Logo"
         width={120}
         height={40}
-        class="h-14 sm:h-20 w-auto transition-all duration-300 hover:scale-105"
+        class="h-14 sm:h-20 w-auto transition-all duration-300"
       />
     </a>
-
-    <!-- Menú de Escritorio -->
-    <div class="hidden lg:flex items-center space-x-6">
-      {
-        navItems.map(({ href, text }) => (
-          <a
-            href={href}
-            class=" hover:text-red-600 transition-colors text-sm sm:text-base font-medium"
-          >
-            {text}
-          </a>
-        ))
-      }
-
-      <!-- Iconos de Redes Sociales -->
-      <div class="flex items-center space-x-4 ml-6">
+    <div class="hidden lg:flex items-center space-x-1 xl:space-x-4">
+      <>
+        {
+          navItems.map(({ href, text }) => (
+            <a
+              href={href}
+              class="px-3 py-2 text-sm lg:text-base font-medium hover:text-gray-300 transition-colors"
+            >
+              {text}
+            </a>
+          ))
+        }
         <a
           href="https://www.facebook.com/yamahaguatemala"
           target="_blank"
@@ -82,7 +50,7 @@ const productCategories = [
             viewBox="0 0 512 512"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle cx="256" cy="256" r="200" fill="#ffffff"></circle>
+            <circle cx="256" cy="256" r="200" fill="#ffff"></circle>
             <path
               d="M256 0C114.71 0 0 114.71 0 256c0 127.684 93.681 233.661 216 252.887V330h-65v-74h65v-56.4c0-64.16 38.219-99.6 96.695-99.6 28.009 0 57.305 5 57.305 5v63h-32.281c-31.801 0-41.719 19.734-41.719 39.979V256h71l-11.35 74H296v178.887C418.319 489.661 512 383.684 512 256 512 114.71 397.29 0 256 0z"
             ></path>
@@ -99,10 +67,10 @@ const productCategories = [
             viewBox="0 0 512 512"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle cx="256" cy="256" r="256" fill="#000000"></circle>
+            <circle cx="256" cy="256" r="256" fill="#000"></circle>
             <path
               d="M313.5 106.01c.01 4.58 1.36 70.83 70.87 74.96v51.18c-5.26.3-45.76-2.64-70.97-25.12l-.08 99.64c.96 69.16-49.93 111.24-116.46 96.7-114.71-34.31-76.59-204.44 38.59-186.24v54.93c-47.58-7-63.5 32.58-50.85 60.93 11.5 25.8 58.88 31.39 75.41-5.01 1.87-7.12 2.8-15.25 2.8-24.37V106.26l50.64.25z"
-              fill="#ffffff"></path>
+              fill="#fff"></path>
           </svg>
         </a>
         <a
@@ -116,298 +84,100 @@ const productCategories = [
             viewBox="0 0 512 512"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle cx="256" cy="256" r="200" fill="#ffffff"></circle>
+            <circle cx="256" cy="256" r="200" fill="#ffff"></circle>
             <path
               d="M256 0c141.29 0 256 114.71 256 256S397.29 512 256 512 0 397.29 0 256 114.71 0 256 0zm0 96c-43.453 0-48.902.184-65.968.963-17.03.777-28.661 3.482-38.839 7.437-10.521 4.089-19.444 9.56-28.339 18.455-8.895 8.895-14.366 17.818-18.455 28.339-3.955 10.177-6.659 21.808-7.437 38.838-.778 17.066-.962 22.515-.962 65.968 0 43.453.184 48.902.962 65.968.778 17.03 3.482 28.661 7.437 38.838 4.089 10.521 9.56 19.444 18.455 28.34 8.895 8.895 17.818 14.366 28.339 18.455 10.178 3.954 21.809 6.659 38.839 7.436 17.066.779 22.515.963 65.968.963 43.453 0 48.902-.184 65.968-.963 17.03-.777 28.661-3.482 38.838-7.436 10.521-4.089 19.444-9.56 28.34-18.455 8.895-8.896 14.366-17.819 18.455-28.34 3.954-10.177 6.659-21.808 7.436-38.838.779-17.066.963-22.515.963-65.968 0-43.453-.184-48.902-.963-65.968-.777-17.03-3.482-28.661-7.436-38.838-4.089-10.521-9.56-19.444-18.455-28.339-8.896-8.895-17.819-14.366-28.34-18.455-10.177-3.955-21.808-6.66-38.838-7.437C304.902 96.184 299.453 96 256 96zm0 28.829c42.722 0 47.782.163 64.654.933 15.6.712 24.071 3.318 29.709 5.509 7.469 2.902 12.799 6.37 18.397 11.969 5.6 5.598 9.067 10.929 11.969 18.397 2.191 5.638 4.798 14.109 5.509 29.709.77 16.872.933 21.932.933 64.654 0 42.722-.163 47.782-.933 64.654-.711 15.6-3.318 24.071-5.509 29.709-2.902 7.469-6.369 12.799-11.969 18.397-5.598 5.6-10.928 9.067-18.397 11.969-5.638 2.191-14.109 4.798-29.709 5.509-16.869.77-21.929.933-64.654.933-42.725 0-47.784-.163-64.654-.933-15.6-.711-24.071-3.318-29.709-5.509-7.469-2.902-12.799-6.369-18.398-11.969-5.599-5.598-9.066-10.928-11.968-18.397-2.191-5.638-4.798-14.109-5.51-29.709-.77-16.872-.932-21.932-.932-64.654 0-42.722.162-47.782.932-64.654.712-15.6 3.319-24.071 5.51-29.709 2.902-7.468 6.369-12.799 11.968-18.397 5.599-5.599 10.929-9.067 18.398-11.969 5.638-2.191 14.109-4.797 29.709-5.509 16.872-.77 21.932-.933 64.654-.933zm0 49.009c-45.377 0-82.162 36.785-82.162 82.162 0 45.377 36.785 82.162 82.162 82.162 45.377 0 82.162-36.785 82.162-82.162 0-45.377-36.785-82.162-82.162-82.162zm0 135.495c-29.455 0-53.333-23.878-53.333-53.333s23.878-53.333 53.333-53.333 53.333 23.878 53.333 53.333-23.878 53.333-53.333 53.333zm104.609-138.741c0 10.604-8.597 19.199-19.201 19.199-10.603 0-19.199-8.595-19.199-19.199 0-10.604 8.596-19.2 19.199-19.2 10.604 0 19.201 8.596 19.201 19.2z"
             ></path>
           </svg>
         </a>
-      </div>
+      </>
     </div>
-
-    <!-- Botón de Menú Móvil -->
     <button
       id="mobile-menu-button"
-      class="lg:hidden p-2 rounded-md text-gray-700 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-600"
+      class="lg:hidden p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
       aria-label="Abrir menú móvil"
-      aria-expanded="false"
     >
-      <span class="sr-only">Abrir menú</span>
-      <!-- Ícono de Hamburger -->
+      <span class="sr-only">Menú</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="w-6 h-6"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        stroke-width="2"
+        class="w-6 h-6"
       >
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width="2"
           d="M4 6h16M4 12h16m-7 6h7"></path>
       </svg>
     </button>
   </nav>
-
-  <!-- Menú Móvil -->
   <div
     id="mobile-menu"
-    class="fixed inset-0 bg-white text-gray-800 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-50"
-    aria-hidden="true"
+    class="h-screen w-full hidden lg:hidden bg-white text-gray-800 shadow-md"
   >
-    <!-- Encabezado del Menú Móvil -->
-    <div class="flex items-center justify-between px-4 py-4 border-b">
-      <a href="/" class="flex items-center">
-        <Image
-          id="logo-mobile"
-          src="/assets/images/yamaha-logo.svg"
-          alt="Yamaha Logo"
-          width={120}
-          height={40}
-          class="h-10 w-auto transition-transform duration-300 hover:scale-105"
-        />
-      </a>
-      <!-- Botón de Cerrar -->
-      <button
-        id="mobile-menu-close"
-        class="p-2 rounded-md text-gray-700 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-600"
-        aria-label="Cerrar menú móvil"
-      >
-        <!-- Ícono de Cerrar Personalizado -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="w-6 h-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Enlaces de Navegación -->
-    <ul class="px-4 py-6 space-y-4">
-      {
-        navItems.map(({ href, text }) => {
-          if (text === "PRODUCTOS") {
-            return (
-              <li>
-                <details class="group [&_summary::-webkit-details-marker]:hidden">
-                  <summary class="flex items-center justify-between w-full px-3 py-2 text-gray-700 rounded-lg hover:bg-gray-100 cursor-pointer">
-                    <span class="flex items-center">{text}</span>
-                    <svg
-                      class="w-5 h-5 transition-transform duration-300 group-open:rotate-180"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </summary>
-                  <ul class="mt-2 space-y-2 pl-4">
-                    {productCategories.map(({ href, text }) => (
-                      <li>
-                        <a
-                          href={href}
-                          class="flex items-center px-3 py-2 text-gray-600 rounded-lg hover:bg-gray-100"
-                        >
-                          {text}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </details>
-              </li>
-            );
-          }
-
-          return (
-            <li>
-              <a
-                href={href}
-                class="block px-3 py-2 text-gray-700 rounded-lg hover:bg-gray-100"
-              >
-                {text}
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-
-    <!-- Iconos de Redes Sociales en el Menú Móvil -->
-    <div class="px-4 py-4 border-t">
-      <h2 class="text-lg font-semibold mb-4">Síguenos en redes sociales</h2>
-      <div class="flex space-x-4">
+    {
+      navItems.map(({ href, text }) => (
         <a
-          href="https://www.facebook.com/yamahaguatemala"
-          target="_blank"
-          rel="noopener noreferrer"
+          href={href}
+          class="block px-4 py-3 text-base font-medium hover:bg-gray-100 transition-colors"
         >
-          <svg
-            height="24"
-            width="24"
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="256" cy="256" r="200" fill="#ffffff"></circle>
-            <path
-              d="M256 0C114.71 0 0 114.71 0 256c0 127.684 93.681 233.661 216 252.887V330h-65v-74h65v-56.4c0-64.16 38.219-99.6 96.695-99.6 28.009 0 57.305 5 57.305 5v63h-32.281c-31.801 0-41.719 19.734-41.719 39.979V256h71l-11.35 74H296v178.887C418.319 489.661 512 383.684 512 256 512 114.71 397.29 0 256 0z"
-            ></path>
-          </svg>
+          {text}
         </a>
-        <a
-          href="https://www.tiktok.com/@yamaha_gt"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            height="24"
-            width="24"
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="256" cy="256" r="256" fill="#000000"></circle>
-            <path
-              d="M313.5 106.01c.01 4.58 1.36 70.83 70.87 74.96v51.18c-5.26.3-45.76-2.64-70.97-25.12l-.08 99.64c.96 69.16-49.93 111.24-116.46 96.7-114.71-34.31-76.59-204.44 38.59-186.24v54.93c-47.58-7-63.5 32.58-50.85 60.93 11.5 25.8 58.88 31.39 75.41-5.01 1.87-7.12 2.8-15.25 2.8-24.37V106.26l50.64.25z"
-              fill="#ffffff"></path>
-          </svg>
-        </a>
-        <a
-          href="https://www.instagram.com/yamaha_gt/?hl=es"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg
-            height="24"
-            width="24"
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="256" cy="256" r="200" fill="#ffffff"></circle>
-            <path
-              d="M256 0c141.29 0 256 114.71 256 256S397.29 512 256 512 0 397.29 0 256 114.71 0 256 0zm0 96c-43.453 0-48.902.184-65.968.963-17.03.777-28.661 3.482-38.839 7.437-10.521 4.089-19.444 9.56-28.339 18.455-8.895 8.895-14.366 17.818-18.455 28.339-3.955 10.177-6.659 21.808-7.437 38.838-.778 17.066-.962 22.515-.962 65.968 0 43.453.184 48.902.962 65.968.778 17.03 3.482 28.661 7.437 38.838 4.089 10.521 9.56 19.444 18.455 28.34 8.895 8.895 17.818 14.366 28.339 18.455 10.178 3.954 21.809 6.659 38.839 7.436 17.066.779 22.515.963 65.968.963 43.453 0 48.902-.184 65.968-.963 17.03-.777 28.661-3.482 38.838-7.436 10.521-4.089 19.444-9.56 28.34-18.455 8.895-8.896 14.366-17.819 18.455-28.34 3.954-10.177 6.659-21.808 7.436-38.838.779-17.066.963-22.515.963-65.968 0-43.453-.184-48.902-.963-65.968-.777-17.03-3.482-28.661-7.436-38.838-4.089-10.521-9.56-19.444-18.455-28.339-8.896-8.895-17.819-14.366-28.34-18.455-10.177-3.955-21.808-6.66-38.838-7.437C304.902 96.184 299.453 96 256 96zm0 28.829c42.722 0 47.782.163 64.654.933 15.6.712 24.071 3.318 29.709 5.509 7.469 2.902 12.799 6.37 18.397 11.969 5.6 5.598 9.067 10.929 11.969 18.397 2.191 5.638 4.798 14.109 5.509 29.709.77 16.872.933 21.932.933 64.654 0 42.722-.163 47.782-.933 64.654-.711 15.6-3.318 24.071-5.509 29.709-2.902 7.469-6.369 12.799-11.969 18.397-5.598 5.6-10.928 9.067-18.397 11.969-5.638 2.191-14.109 4.798-29.709 5.509-16.869.77-21.929.933-64.654.933-42.725 0-47.784-.163-64.654-.933-15.6-.711-24.071-3.318-29.709-5.509-7.469-2.902-12.799-6.369-18.398-11.969-5.599-5.598-9.066-10.928-11.968-18.397-2.191-5.638-4.798-14.109-5.51-29.709-.77-16.872-.932-21.932-.932-64.654 0-42.722.162-47.782.932-64.654.712-15.6 3.319-24.071 5.51-29.709 2.902-7.468 6.369-12.799 11.968-18.397 5.599-5.599 10.929-9.067 18.398-11.969 5.638-2.191 14.109-4.797 29.709-5.509 16.872-.77 21.932-.933 64.654-.933zm0 49.009c-45.377 0-82.162 36.785-82.162 82.162 0 45.377 36.785 82.162 82.162 82.162 45.377 0 82.162-36.785 82.162-82.162 0-45.377-36.785-82.162-82.162-82.162zm0 135.495c-29.455 0-53.333-23.878-53.333-53.333s23.878-53.333 53.333-53.333 53.333 23.878 53.333 53.333-23.878 53.333-53.333 53.333zm104.609-138.741c0 10.604-8.597 19.199-19.201 19.199-10.603 0-19.199-8.595-19.199-19.199 0-10.604 8.596-19.2 19.199-19.2 10.604 0 19.201 8.596 19.201 19.2z"
-            ></path>
-          </svg>
-        </a>
-      </div>
-    </div>
+      ))
+    }
   </div>
 </header>
 
-<!-- Script para manejar la interactividad del Header -->
-<script lang="ts">
-  document.addEventListener("DOMContentLoaded", () => {
-    const header = document.getElementById("main-header");
-    const logo = document.getElementById("logo");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const mobileMenuButton = document.getElementById("mobile-menu-button");
-    const mobileMenuClose = document.getElementById("mobile-menu-close");
+<script>
+  const header = document.getElementById("main-header");
+  const logo = document.getElementById("logo");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
 
-    // Asegurarse de que todos los elementos existen
-    if (
-      !header ||
-      !logo ||
-      !mobileMenu ||
-      !mobileMenuButton ||
-      !mobileMenuClose
-    ) {
-      console.error("Uno o más elementos del DOM no fueron encontrados.");
-      return;
+  function updateHeaderOnScroll() {
+    if (window.scrollY > 50) {
+      header.classList.add("pt-4");
+      header.classList.add("bg-white", "shadow-lg", "text-gray-800");
+      header.classList.remove("bg-transparent", "text-white");
+      logo.classList.remove("mt-4");
+      logo.classList.remove("h-14");
+      logo.classList.add("h-8");
+      logo.classList.add("sm:h-10");
+      logo.classList.remove("sm:h-20");
+    } else {
+      header.classList.remove("pt-4");
+      header.classList.remove("bg-white", "shadow-lg", "text-gray-800");
+      header.classList.add("bg-transparent", "text-white");
+      logo.classList.remove("h-8");
+      logo.classList.add("h-14");
+      logo.classList.add("mt-4");
+      logo.classList.remove("sm:h-10");
+      logo.classList.add("sm:h-20");
     }
+  }
 
-    // Función para actualizar el estilo del header al hacer scroll
-    function updateHeaderOnScroll() {
-      if (window.scrollY > 50) {
-        header.classList.add("pt-4");
-        header.classList.add("bg-white", "shadow-lg", "text-gray-800");
-        header.classList.remove("bg-transparent", "text-white");
-        logo.classList.remove("mt-4");
-        logo.classList.remove("h-14");
-        logo.classList.add("h-8");
-        logo.classList.add("sm:h-10");
-        logo.classList.remove("sm:h-20");
-      } else {
-        header.classList.remove("pt-4");
-        header.classList.remove("bg-white", "shadow-lg", "text-gray-800");
-        header.classList.add("bg-transparent", "text-white");
-        logo.classList.remove("h-8");
-        logo.classList.add("h-14");
-        logo.classList.add("mt-4");
-        logo.classList.remove("sm:h-10");
-        logo.classList.add("sm:h-20");
-      }
-    }
+  function toggleMobileMenu() {
+    mobileMenu.classList.toggle("hidden");
+  }
 
-    // Función para abrir el menú móvil
-    function openMobileMenu() {
-      mobileMenu.classList.remove("-translate-x-full");
-      mobileMenu.setAttribute("aria-hidden", "false");
-      mobileMenuButton.setAttribute("aria-expanded", "true");
-      document.body.classList.add("overflow-hidden"); // Evita el scroll detrás del menú
-    }
-
-    // Función para cerrar el menú móvil
-    function closeMobileMenu() {
-      mobileMenu.classList.add("-translate-x-full");
-      mobileMenu.setAttribute("aria-hidden", "true");
-      mobileMenuButton.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("overflow-hidden");
-    }
-
-    // Evento para abrir el menú móvil
-    mobileMenuButton.addEventListener("click", openMobileMenu);
-
-    // Evento para cerrar el menú móvil
-    mobileMenuClose.addEventListener("click", closeMobileMenu);
-
-    // Cerrar el menú móvil al hacer clic en cualquier enlace dentro del menú
-    const mobileMenuLinks = mobileMenu.querySelectorAll("a");
-    mobileMenuLinks.forEach((link) => {
-      link.addEventListener("click", closeMobileMenu);
-    });
-
-    // Manejar la apertura y cierre de submenús en el menú móvil
-    const summaries = mobileMenu.querySelectorAll("summary");
-    summaries.forEach((summary) => {
-      summary.addEventListener("click", (e) => {
-        e.preventDefault();
-        const parent = summary.parentElement;
-        if (parent instanceof HTMLDetailsElement) {
-          parent.open = !parent.open;
-        }
-      });
-    });
-
-    // Cerrar el menú móvil al hacer clic fuera del mismo
-    document.addEventListener("click", (event) => {
-      const target = event.target;
-      if (
-        target instanceof Node &&
-        !mobileMenu.contains(target) &&
-        !mobileMenuButton.contains(target) &&
-        !mobileMenuClose.contains(target)
-      ) {
-        closeMobileMenu();
-      }
-    });
-
-    // Actualizar el header al hacer scroll
-    window.addEventListener("scroll", updateHeaderOnScroll);
-
-    // Inicializar el estado del header
-    updateHeaderOnScroll();
+  window.addEventListener("scroll", updateHeaderOnScroll, {
+    passive: true,
   });
+  mobileMenuButton.addEventListener("click", toggleMobileMenu);
+
+  updateHeaderOnScroll();
 </script>
+
+<style>
+  @media (max-width: 1023px) {
+    #mobile-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 40;
+    }
+  }
+</style>
