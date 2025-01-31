@@ -3,7 +3,9 @@ import { Image } from "astro:assets";
 ---
 
 <a
-    href="https://wa.me/50237233999?text=Hola,%2C%20Necesito%20iformacion%20sobre%20un%20producto%21"
+    href={`https://wa.me/50241056562    ?text=${encodeURIComponent(
+        "Hola, me gustaría recibir información sobre los productos que ofrecen. ¿Podrían ayudarme?",
+    )}`}
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Chatea con nosotros en WhatsApp"
