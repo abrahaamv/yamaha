@@ -1,5 +1,7 @@
-:80 {
+yamahaconjulissa.com {
     root * /srv
     file_server
-    tls internal
+    tls {
+        dns cloudflare
+    }
 }
