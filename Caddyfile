@@ -1,8 +1,5 @@
 yamahaconjulissa.com {
     root * /srv
     file_server
-    tls {
-        issuer acme
-        disable_redirects
-    }
+    tls
 }
