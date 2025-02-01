@@ -3,5 +3,6 @@ yamahaconjulissa.com {
     file_server
     tls {
         issuer acme
+        disable_redirects
     }
 }
