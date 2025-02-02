@@ -4,11 +4,6 @@
 }
 
 
-http://yamahaconjulissa.com {
-    redir https://yamahaconjulissa.com{uri}
-}
-
-
 yamahaconjulissa.com {
     root * /srv
     file_server
