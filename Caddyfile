@@ -6,9 +6,4 @@
 yamahaconjulissa.com {
     root * /srv
     file_server
-    tls {
-        issuer acme {
-            challenge http
-        }
-    }
 }
