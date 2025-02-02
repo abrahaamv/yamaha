@@ -3,7 +3,15 @@
     file_server
 }
 
+
+http://yamahaconjulissa.com {
+    redir https://yamahaconjulissa.com{uri}
+}
+
+
 yamahaconjulissa.com {
     root * /srv
     file_server
+    encode gzip
+    tls internal
 }
