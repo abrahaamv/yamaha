@@ -25,9 +25,6 @@ RUN cp -r dist/* /srv/
 # Copia el archivo de configuración de Caddy
 COPY Caddyfile /etc/caddy/Caddyfile
 
-# Crea directorios necesarios y otorga permisos a Caddy
-RUN mkdir -p /data /config && chown -R caddy:caddy /data /config
-
 # Expone puertos estándar para HTTP y HTTPS
 EXPOSE 80 443
 
