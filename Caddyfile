@@ -3,12 +3,9 @@
     file_server
 }
 
-
-yamahaconjulissa.com {
+:443 {
     root * /srv
     file_server
     encode gzip
-    tls {
-        on_demand
-    }
+    tls internal
 }
