@@ -6,7 +6,4 @@
 yamahaconjulissa.com {
     root * /srv
     file_server
-    tls {
-        on_demand
-    }
 }
