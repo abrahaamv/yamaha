@@ -7,6 +7,6 @@ yamahaconjulissa.com {
     root * /srv
     file_server
     tls {
-        issuer acme
+        on_demand
     }
 }
