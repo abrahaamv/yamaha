@@ -26,24 +26,25 @@ const blogPosts = [
 
 <section
     id="blog"
-    class="relative flex flex-col justify-center max-w-6xl min-h-screen mx-auto"
+    class="relative flex flex-col justify-center max-w-6xl min-h-screen px-4 py-8 mx-auto sm:px-6"
 >
-    <!-- Background pattern -->
-    <div
-        class="absolute inset-0 overflow-hidden pointer-events-none opacity-5 z-0"
-    >
-        <div class="absolute -right-40 top-0 transform rotate-12">
+    <!-- Background pattern - quitamos overflow:hidden para permitir que las imágenes sobresalgan -->
+    <div class="absolute inset-0 pointer-events-none opacity-5 z-0">
+        <!-- Aumentamos la distancia para que sobresalga más del borde -->
+        <div class="absolute -right-60 top-0 transform rotate-12">
             <img
                 src="/assets/images/yamaha-logo.svg"
                 alt=""
-                class="w-96 h-96"
+                class="w-80 h-80"
+            />
             />
         </div>
-        <div class="absolute -left-40 bottom-0 transform -rotate-12">
+        <div class="absolute -left-60 bottom-0 transform -rotate-12">
             <img
                 src="/assets/images/yamaha-logo.svg"
                 alt=""
-                class="w-96 h-96"
+                class="w-80 h-80"
+            />
             />
         </div>
     </div>
@@ -57,9 +58,13 @@ const blogPosts = [
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">BLOG</h2>
         </span>
     </span>
-    <p class="text-center sm:text-xl text-gray-600 mb-6 relative z-10">
+    <p class="text-center sm:text-xl text-gray-600 relative z-10">
         Mantente al tanto de todo lo que está sucediendo en el mundo Yamaha en
         Guatemala
+    </p>
+    <p class="text-center sm:text-md text-gray-600 mb-8 relative z-10">
+        Suscribete a nuestro newsletter para recibir las últimas noticias y
+        novedades.
     </p>
 
     <div
@@ -130,6 +135,15 @@ const blogPosts = [
             border-style: solid;
             border-width: 0 20px 20px 0;
             border-color: transparent #1a202c transparent transparent;
+        }
+
+        /* Definimos w-120 y h-120 ya que Tailwind no los incluye por defecto */
+        .w-120 {
+            width: 30rem; /* 480px */
+        }
+
+        .h-120 {
+            height: 30rem; /* 480px */
         }
     </style>
 </section>
