@@ -7,6 +7,7 @@ import { Image } from "astro:assets";
 	id="hero"
 	class="relative w-full h-screen max-h-screen overflow-hidden"
 >
+	<!-- Background video/image with grayscale effect -->
 	<div id="video-background" class="absolute inset-0 w-full h-full">
 		<div
 			id="image-placeholder"
@@ -15,7 +16,7 @@ import { Image } from "astro:assets";
 			<Image
 				src="/assets/images/hero-background.webp"
 				alt="Fondo de Yamaha Motos"
-				class="w-full h-full object-cover"
+				class="w-full h-full object-cover grayscale"
 				width={1920}
 				height={1080}
 				loading="eager"
@@ -24,137 +25,123 @@ import { Image } from "astro:assets";
 		</div>
 		<div
 			id="video-container"
-			class="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-300 z-20"
+			class="relative w-full h-full overflow-hidden"
 		>
+			<!-- Blur backdrop for aesthetics -->
+			<div
+				class="absolute inset-0 backdrop-filter backdrop-blur-sm bg-black/20 z-0"
+				aria-hidden="true"
+			>
+			</div>
+
+			<!-- Video with enhanced styling -->
 			<video
 				id="background-video"
-				class="w-full h-full object-cover"
+				class="absolute inset-0 w-full h-full object-cover transform scale-105 filter contrast-105 brightness-50s opacity-0 transition-opacity duration-700 ease-in-out"
 				autoplay
 				loop
 				muted
 				playsinline
 				preload="metadata"
 				poster="/assets/images/hero-background.webp"
+				oncanplay="this.classList.remove('opacity-0'); this.classList.add('opacity-90');"
 				aria-hidden="true"></video>
-		</div>
-		<div class="absolute inset-0 bg-black bg-opacity-40 z-30"></div>
-	</div>
 
-	<div
-		class="relative z-40 h-full flex flex-col justify-between items-center text-center"
-	>
-		<div
-			class="flex-grow flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 mt-32"
-		>
-			<div class="max-w-3xl">
-				<div class="animate-blurred-fade-in flex items-center mb-4">
-					<Image
-						src="/assets/images/map.svg"
-						alt=""
-						class="w-5 h-5 mr-2"
-						width={20}
-						height={20}
-						loading="lazy"
-					/>
-					<span class="text-white text-sm sm:text-base">
-						Boulevard Liberación 5-55 Zona 9 Ciudad de Guatemala
-					</span>
-				</div>
-				<h1
-					class="animate-bounce-fade-in text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight"
-				>
-					ESTRENA LA YAMAHA DE TUS SUEÑOS
-				</h1>
-				<a
-					class="animate-fade-in-down group relative inline-block focus:outline-none focus:ring mt-6"
-					href="#productos"
-				>
-					<span
-						class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-red-700 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"
-					></span>
-
-					<span
-						class="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-white group-active:text-opacity-75"
-					>
-						Descubre nuestro catálogo
-					</span>
-				</a>
+			<!-- Optional noise texture overlay -->
+			<div
+				class="absolute inset-0 bg-noise opacity-5 mix-blend-overlay pointer-events-none z-10"
+				aria-hidden="true"
+			>
 			</div>
 		</div>
+	</div>
 
-		<div class="text-center pb-8">
-			<a
-				href="#content"
-				aria-label="Explorar más contenido"
-				class="animate-rubber-band inline-block"
-			>
+	<!-- Text overlay -->
+	<div
+		class="relative z-40 h-full flex flex-col justify-end pb-32 px-8 sm:px-16"
+	>
+		<div class="max-w-2xl">
+			<div class="animate-blurred-fade-in flex items-center mb-4">
 				<Image
-					src="/assets/images/arrow-down.svg"
+					src="/assets/images/map.svg"
 					alt=""
-					class="w-8 h-8 mb-16"
-					width={32}
-					height={32}
+					class="w-5 h-5 mr-2"
+					width={20}
+					height={20}
 					loading="lazy"
 				/>
+				<span class="text-white text-lg font-bold">
+					Comercial Pesqueros Local 3, Puerto Barrios Izabal
+				</span>
+			</div>
+			<h1
+				class="animate-bounce-fade-in text-white text-5xl sm:text-6xl md:text-7xl font-extrabold mb-8 leading-tight"
+			>
+				DOMINA EL AGUA, CONQUISTA LA AVENTURA
+			</h1>
+			<a
+				href="#productos"
+				class="animate-fade-in-down inline-flex items-center bg-white text-black
+			font-semibold px-6 py-3 rounded-full hover:bg-red-500
+			hover:text-white transition-colors duration-300"
+			>
+				<span class="mr-2">DESCUBRE MÁS</span>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-5 w-5"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+						clip-rule="evenodd"></path>
+				</svg>
 			</a>
 		</div>
 	</div>
-</section>
 
-<style>
-	@keyframes bounce {
-		0%,
-		100% {
-			transform: translateY(-25%);
-			animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-		}
-		50% {
-			transform: translateY(0);
-			animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-		}
-	}
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const videoContainer = document.getElementById(
+				"video-container",
+			) as HTMLDivElement | null;
+			const imagePlaceholder = document.getElementById(
+				"image-placeholder",
+			) as HTMLDivElement | null;
+			const video = document.getElementById(
+				"background-video",
+			) as HTMLVideoElement | null;
 
-	.animate-bounce {
-		animation: bounce 2s infinite;
-	}
-</style>
+			if (video) {
+				video.src = "/assets/hero-background.mp4";
 
-<script>
-	document.addEventListener("DOMContentLoaded", function () {
-		const videoContainer = document.getElementById(
-			"video-container",
-		) as HTMLDivElement | null;
-		const imagePlaceholder = document.getElementById(
-			"image-placeholder",
-		) as HTMLDivElement | null;
-		const video = document.getElementById(
-			"background-video",
-		) as HTMLVideoElement | null;
+				const playVideo = () => {
+					video
+						.play()
+						.then(() => {
+							if (videoContainer)
+								videoContainer.style.opacity = "1";
+							if (imagePlaceholder)
+								imagePlaceholder.style.opacity = "0";
+						})
+						.catch((error) => {
+							console.error(
+								"Error al reproducir el video:",
+								error,
+							);
+						});
+				};
 
-		if (video) {
-			video.src = "/assets/hero-background.mp4";
+				video.addEventListener("canplay", playVideo, { once: true });
 
-			const playVideo = () => {
-				video
-					.play()
-					.then(() => {
-						if (videoContainer) videoContainer.style.opacity = "1";
-						if (imagePlaceholder)
-							imagePlaceholder.style.opacity = "0";
-					})
-					.catch((error) => {
-						console.error("Error al reproducir el video:", error);
+				// Fallback for mobile devices
+				["touchstart", "click"].forEach((event) => {
+					document.body.addEventListener(event, playVideo, {
+						once: true,
 					});
-			};
-
-			video.addEventListener("canplay", playVideo, { once: true });
-
-			// Fallback para dispositivos móviles
-			["touchstart", "click"].forEach((event) => {
-				document.body.addEventListener(event, playVideo, {
-					once: true,
 				});
-			});
-		}
-	});
-</script>
+			}
+		});
+	</script>
+</section>
