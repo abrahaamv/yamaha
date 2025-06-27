@@ -13,7 +13,7 @@ import { Image } from "astro:assets";
 			<Image
 				src="/assets/images/hero-background.webp"
 				alt="Fondo de Yamaha Motos"
-				class="w-full h-full object-cover grayscale"
+				class="animate-pulsing w-full h-full object-cover"
 				width={1920}
 				height={1080}
 				loading="eager"
@@ -40,7 +40,6 @@ import { Image } from "astro:assets";
 				muted
 				playsinline
 				preload="metadata"
-				poster="/assets/images/hero-background.webp"
 				oncanplay="this.classList.remove('opacity-0'); this.classList.add('opacity-90');"
 				aria-hidden="true"
 			>
@@ -60,7 +59,7 @@ import { Image } from "astro:assets";
 		class="relative z-40 h-full flex flex-col justify-end pb-32 px-8 sm:px-16"
 	>
 		<div class="max-w-2xl">
-			<div class="animate-blurred-fade-in flex items-center mb-4">
+			<div class="animate-pulsing flex items-center mb-4">
 				<Image
 					src="/assets/images/map.svg"
 					alt=""
