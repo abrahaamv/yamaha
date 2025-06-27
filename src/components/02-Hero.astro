@@ -3,15 +3,12 @@
 import { Image } from "astro:assets";
 ---
 
-<section
-	id="hero"
-	class="relative w-full h-screen max-h-screen overflow-hidden"
->
+<section id="hero" class="relative w-full h-[90vh] overflow-hidden">
 	<!-- Background video/image with grayscale effect -->
 	<div id="video-background" class="absolute inset-0 w-full h-full">
 		<div
 			id="image-placeholder"
-			class="absolute inset-0 bg-cover bg-center bg-no-repeat z-10 transition-opacity duration-300"
+			class="absolute inset-0 bg-cover bg-center bg-no-repeat z-10 m-auto transition-opacity duration-300"
 		>
 			<Image
 				src="/assets/images/hero-background.webp"
@@ -25,7 +22,7 @@ import { Image } from "astro:assets";
 		</div>
 		<div
 			id="video-container"
-			class="relative w-full h-full overflow-hidden"
+			class="relative w-full h-[90vh] overflow-hidden"
 		>
 			<!-- Blur backdrop for aesthetics -->
 			<div
@@ -37,7 +34,7 @@ import { Image } from "astro:assets";
 			<!-- Video with enhanced styling -->
 			<video
 				id="background-video"
-				class="absolute inset-0 w-full h-full object-cover transform scale-105 filter contrast-105 brightness-50s opacity-0 transition-opacity duration-700 ease-in-out"
+				class="absolute inset-0 w-full h-full object-cover object-center transform scale-105 filter contrast-105 brightness-50s opacity-0 transition-opacity duration-700 ease-in-out"
 				autoplay
 				loop
 				muted
@@ -45,7 +42,9 @@ import { Image } from "astro:assets";
 				preload="metadata"
 				poster="/assets/images/hero-background.webp"
 				oncanplay="this.classList.remove('opacity-0'); this.classList.add('opacity-90');"
-				aria-hidden="true"></video>
+				aria-hidden="true"
+			>
+			</video>
 
 			<!-- Optional noise texture overlay -->
 			<div
@@ -77,7 +76,7 @@ import { Image } from "astro:assets";
 			<h1
 				class="animate-bounce-fade-in text-white text-5xl sm:text-6xl md:text-7xl font-extrabold mb-8 leading-tight"
 			>
-				DOMINA EL AGUA, CONQUISTA LA AVENTURA
+				ESTRENA LA YAMAHA DE TUS SUEÑOS
 			</h1>
 			<a
 				href="#productos"
@@ -85,7 +84,7 @@ import { Image } from "astro:assets";
 			font-semibold px-6 py-3 rounded-full hover:bg-red-500
 			hover:text-white transition-colors duration-300"
 			>
-				<span class="mr-2">DESCUBRE MÁS</span>
+				<span class="mr-2">DESCUBRE NUESTRO CATÁLOGO</span>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					class="h-5 w-5"
