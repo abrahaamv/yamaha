@@ -52,3 +52,16 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+
+● Deployed.
+
+  - Preview URL: https://05b79fe3.yamaha-flagship.pages.dev
+  - Production URL (once promoted): https://yamaha-flagship.pages.dev
+
+  The deploy went to the master branch which you set as production, so that production URL should also be live. Open the preview, click
+   through the blog cards and the "Regresar al blog" link to confirm everything renders correctly in the cloud.
+
+  To redeploy after future changes:
+  npm run build && npx wrangler@3 pages deploy dist --project-name=yamaha-flagship --branch=master --commit-dirty=true

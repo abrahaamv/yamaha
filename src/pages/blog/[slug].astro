@@ -1,0 +1,170 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "@components/01-Header.astro";
+import Footer from "@components/10-Footer.astro";
+import WhatsAppButton from "@components/11-WhatsAppButton.astro";
+import blogPosts from "../../data/blog-posts.js";
+
+export function getStaticPaths() {
+    return blogPosts.map((post) => ({
+        params: { slug: post.slug },
+        props: { post },
+    }));
+}
+
+const { post } = Astro.props;
+const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
+---
+
+<Layout title={`${post.title} - Yamaha Guatemala`}>
+    <Header />
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 pt-32 sm:pt-40 pb-12">
+        <header class="mb-8">
+            <p class="text-sm font-bold text-blue-600 uppercase mb-2">{post.date}</p>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-gray-900">
+                {post.title}
+            </h1>
+        </header>
+
+        <img
+            src={post.image}
+            alt={post.title}
+            class="w-full h-64 sm:h-96 object-cover mb-8"
+        />
+
+        <div class="max-w-none text-gray-800 text-lg leading-relaxed space-y-6">
+            {post.body.map((block) =>
+                typeof block === "string" ? (
+                    <p>{block}</p>
+                ) : (
+                    <div class="bg-gray-50 border-l-4 border-blue-600 p-6 my-6">
+                        {block.title && (
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">
+                                {block.title}
+                            </h3>
+                        )}
+                        <ul class="space-y-3">
+                            {block.items.map((item) => (
+                                <li class="flex items-start gap-3">
+                                    <span class="flex-shrink-0 text-blue-600 mt-1">
+                                        {item.icon === "calendar" && (
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="h-6 w-6"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.8"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                                                />
+                                            </svg>
+                                        )}
+                                        {item.icon === "clock" && (
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="h-6 w-6"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.8"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                                                />
+                                            </svg>
+                                        )}
+                                        {item.icon === "map-pin" && (
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="h-6 w-6"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.8"
+                                                stroke="currentColor"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                                                />
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                                                />
+                                            </svg>
+                                        )}
+                                    </span>
+                                    <span>
+                                        <strong class="font-semibold">{item.label}:</strong>{" "}
+                                        {item.value}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )
+            )}
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-300">
+            <a
+                href="/#blog"
+                class="inline-flex items-center gap-2 text-base font-black text-blue-600 hover:underline"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                    />
+                </svg>
+                Regresar al blog
+            </a>
+        </div>
+    </article>
+
+    {related.length > 0 && (
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12 border-t border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                También te puede interesar...
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {related.map((p) => (
+                    <a
+                        href={`/blog/${p.slug}`}
+                        class="block group hover:transition-transform duration-300 hover:scale-105"
+                    >
+                        <img
+                            src={p.image}
+                            alt={p.title}
+                            class="w-full h-48 object-cover mb-3"
+                        />
+                        <p class="text-xs font-bold text-blue-600 uppercase mb-1">
+                            {p.date}
+                        </p>
+                        <h3 class="text-lg font-black leading-tight text-gray-900 group-hover:text-blue-600">
+                            {p.title}
+                        </h3>
+                    </a>
+                ))}
+            </div>
+        </section>
+    )}
+
+    <Footer />
+    <WhatsAppButton />
+</Layout>
